@@ -1,0 +1,82 @@
+.intro {
+    min-height: 100vh;
+    padding: rem-calc(30) rem-calc(70) rem-calc(30) rem-calc(30);
+    position: relative;
+}
+
+.intro__title {
+    font-size: rem-calc(30);
+    line-height: rem-calc(36);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.intro__summary {
+    padding-bottom: rem-calc(20);
+}
+
+.intro__client {
+    font-weight: 300;
+}
+
+.intro__client,
+.intro__name {
+    display: block;
+}
+
+.intro__thumb {
+    padding: 0 rem-calc(15);
+    overflow:hidden;
+    clear: both;
+}
+
+
+@include mq($and: '(orientation: portrait)') {
+    
+    .intro {
+        padding: rem-calc(70) rem-calc(30);
+        position: relative;
+    }
+    
+    .intro__summary {
+        padding-bottom: 71%;
+    }
+    
+    .intro__thumb {
+        position: absolute;
+        bottom: rem-calc(30);
+        right: rem-calc(30);
+    }
+}
+
+@include mq($from: medium, $and: '(orientation: portrait)') {
+    
+    .intro {
+        min-height: 50vh;
+    }
+    
+    .intro__title {
+        margin-bottom: rem-calc(30);
+    }
+    
+    .intro__summary {
+        padding-bottom: 0;
+    }
+}
+
+@include mq($from: large) {
+    
+    .intro {
+        padding: rem-calc(110);
+    }
+    
+    .intro__summary {
+        padding-bottom: 0;
+    }
+    
+    .intro__thumb {
+        position: absolute;
+        bottom: rem-calc(110);
+        right: 16.666%;
+    }
+}
