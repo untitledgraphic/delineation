@@ -1,0 +1,103 @@
+.hero {
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero__banner {
+    background: $bg;
+    position: absolute;
+    left: rem-calc(15);
+    bottom: rem-calc(15);
+    right: rem-calc(15);
+    padding: rem-calc(30) rem-calc(15);
+}
+
+.hero__title {
+    margin: 0;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.hero__summary {
+    font-family: $text-secondary;
+    letter-spacing: 0.02em;
+    font-size: rem-calc(24);
+    line-height: rem-calc(30);
+    margin-bottom: rem-calc(20);
+}
+
+.project-meta__type,
+.project-meta__detail {
+    margin: 0;
+    display: block;
+}
+
+.project-meta__type {
+	margin-right: rem-calc(4);
+}
+
+.project-meta__detail {
+    font-weight: 600;
+}
+
+
+@include mq($from: medium) {
+    
+    .hero__banner {
+        background: $bg;
+        position: absolute;
+        left: 50%;
+        bottom: rem-calc(70);
+        right: auto;
+        width: 100%;
+        transform: translateX(-50%);
+        //padding: rem-calc(70) 10%;
+    }
+    
+    .hero__summary {
+        margin-bottom: rem-calc(60);
+    }
+    
+    .project-meta__block.column {
+        width: 25%;
+    }
+
+    .project-meta__block--double.column {
+        width: 50%;
+    }
+}
+
+@include mq($from: large) {
+
+    .project-meta__type,
+    .project-meta__detail {
+        float: left;
+    }
+}
+
+
+@include mq($from: xlarge) {
+    
+    .hero__banner {
+         padding: rem-calc(70) 10%;
+    }
+}
+
+
+@include mq($until: large, $and: '(orientation: landscape)') {
+    
+    .hero__banner {
+        right: rem-calc(70);
+    }
+    
+    .hero__summary {
+        margin-bottom: 0;
+    }
+    
+    .project-meta {
+        display: none;
+    }
+}

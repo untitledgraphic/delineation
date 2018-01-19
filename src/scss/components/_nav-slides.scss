@@ -1,0 +1,21 @@
+.slide-nav__item {
+    display: block;
+    width: rem-calc(12);
+    height: rem-calc(12);
+    border: rem-calc(2) solid $text-colour--neg;
+    border-radius: 50%;
+    float: left;
+    margin-right: rem-calc(8);
+    opacity: 0.4;
+    transition: $transition-all;
+    
+    &:hover,
+    &.slide-nav__item--current {
+        opacity: 1;
+    }
+}
+
+.slide-nav__link {
+	display: block;
+    height: 100%;
+}

@@ -1,0 +1,106 @@
+/**
+ * Assets paths
+ */
+
+$path--compile:             "../";
+
+/**
+ * Base
+ */
+
+$base--rem:                 16px !default;
+$base--font-size:           100%; // Typical default browser font-size is 16px
+$base--line-height:         1.4;
+
+/**
+ * Global
+ */
+
+$sans-serif:   "raleway", Helvetica, Roboto, Arial, sans-serif;
+$serif:        "mrs-eaves", Georgia, Cambria, "Times New Roman", Times, serif;
+$monospace:    Monaco, Consolas, "Liberation Mono", Courier, monospace;
+
+// Descriptive base colors
+$white:                     #fff;
+$black:                     #000;
+$not-black:                 #262626;
+$grey:                      #999;
+$dark-grey:                 #666;
+$vdark-grey:                #333;
+$light-grey:                #ebebeb;
+
+// Color usage
+$color--primary:             $black !default;
+//$color--secondary:           $green !default;
+
+// We use these to control various global styles
+$text-colour:               $black;
+$text-colour--neg:          $white;
+$text-colour--light:        $grey;
+$text-weight--normal:       400;
+$text-weight--bold:         700;
+$text-primary:              $sans-serif;
+$text-secondary:            $serif;
+
+$bg:                        $white;
+$bg--dark:                  $not-black;
+$bg--quite-dark:            $vdark-grey;
+$bg--mid:                   $dark-grey;
+
+$t-time:                    0.3s;
+$transition-all:            all ease $t-time;
+$bezier:                    cubic-bezier(.66, 0, .33, 1);
+
+// Grid settings
+$row-width:                 rem-calc(1400);
+$column-gutter:             rem-calc(30);
+$total-columns:             12;
+
+// Heading sizes at various breakpoints
+$header-sizes: (
+  small: (
+    'h1': 42,
+    'h2': 30,
+    'h3': 19,
+    'h4': 18,
+    'h5': 17,
+    'h6': 16,
+  ),
+  medium: (
+    'h1': 48,
+    'h2': 36,
+    'h3': 36,
+    'h4': 20,
+    'h5': 18,
+    'h6': 16,
+  ),
+) !default;
+
+/**
+ * Breakpoints
+ * Override default settings from _mq.scss partial
+ * https://github.com/sass-mq/sass-mq
+ */
+
+$mq-breakpoints: (
+  small:   321px,
+  medium:  640px,
+  large:   1024px,
+  xlarge:  1380px,
+  xxlarge: 1920px
+);
+
+// Set the media type
+$mq-media-type: only screen;
+
+// Show the breakpoints in the browser
+// $mq-show-breakpoints: (small, medium, large, xlarge, xxlarge);
+
+/**
+ * Icons
+ */
+
+$icons: (
+  // example1: (size: 100px),
+  // example2: (size: 100px, fallback: white)
+);
