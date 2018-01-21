@@ -31,54 +31,53 @@
 <div class="wrap">
     
     <section class="cd-section visible">
-        <div class="feature__container">
-        </div>
+        <div class="feature__container"></div>
     </section>
     
-    <section class="cd-section meadow-arts">
+    <section id="meadow" class="cd-section meadow-arts">
         <div class="feature__container">
             
             <div class="feature__overlay">
                 <svg viewbox="0,0,100,100" preserveaspectratio="none">
-		<defs>
-			<filter id="maa" x="0" y="0" width="100" height="100" filterunits="userSpaceOnUse">
-				<fecolormatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"/>
-			</filter>
-		</defs>
-		<mask id="mad" x="0" y="0" width="100" height="100" maskunits="userSpaceOnUse">
-			<g class="mask--horz" filter="url(#maa)">
-				<lineargradient id="mab" x1="0" y1="50" x2="100" y2="50" gradientunits="userSpaceOnUse">
-					<stop offset="0.2" stop-color="#fff"/>
-					<stop offset="0.8"/>
-				</lineargradient>
-				<rect fill="url(#mab)" width="100" height="100"/>
-			</g>
-			<g class="mask--vert" filter="url(#maa)">
-				<lineargradient id="mab1" x1="50" y1="0" x2="50" y2="100" gradientunits="userSpaceOnUse">
-					<stop offset="0.2" stop-color="#fff"/>
-					<stop offset="0.8"/>
-				</lineargradient>
-				<rect fill="url(#mab1)" width="100" height="100"/>
-			</g>
-		</mask>
-		<lineargradient id="mac" x1="40" y1="107" x2="60" y2="-7" gradientunits="userSpaceOnUse">
-			<stop offset="0" stop-color="#008e4c"/>
-			<stop offset="1" stop-color="#4ab6e9"/>
-		</lineargradient>
-		<rect fill="url(#mac)" y="0" width="100" height="100" mask="url(#mad)"/>
-	</svg>
+                    <defs>
+                        <filter id="maa" x="0" y="0" width="100" height="100" filterunits="userSpaceOnUse">
+                            <fecolormatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"/>
+                        </filter>
+                    </defs>
+                    <mask id="mad" x="0" y="0" width="100" height="100" maskunits="userSpaceOnUse">
+                        <g class="mask--horz" filter="url(#maa)">
+                            <lineargradient id="mab" x1="0" y1="50" x2="100" y2="50" gradientunits="userSpaceOnUse">
+                                <stop offset="0.2" stop-color="#fff"/>
+                                <stop offset="0.8"/>
+                            </lineargradient>
+                            <rect fill="url(#mab)" width="100" height="100"/>
+                        </g>
+                        <g class="mask--vert" filter="url(#maa)">
+                            <lineargradient id="mab1" x1="50" y1="0" x2="50" y2="100" gradientunits="userSpaceOnUse">
+                                <stop offset="0.2" stop-color="#fff"/>
+                                <stop offset="0.8"/>
+                            </lineargradient>
+                            <rect fill="url(#mab1)" width="100" height="100"/>
+                        </g>
+                    </mask>
+                    <lineargradient id="mac" x1="40" y1="107" x2="60" y2="-7" gradientunits="userSpaceOnUse">
+                        <stop offset="0" stop-color="#008e4c"/>
+                        <stop offset="1" stop-color="#4ab6e9"/>
+                    </lineargradient>
+                    <rect fill="url(#mac)" y="0" width="100" height="100" mask="url(#mad)"/>
+                </svg>
             </div>
             
             <div class="feature__head">
                 <h2 class="feature__title" itemprop="name">Meadow Arts</h2>
                 <p class="feature__summary" itemprop="description">Marketing & interpretation material</p>
             </div> 
-            <a href="project.html" class="feature__link">View project <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-right"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right"></use></svg></a>
-            <nav class="slide-nav" itemscope itemtype="http://schema.org/ItemList"> 
-                <a href="#Parkway" class="slide-nav__prev"><span class="visuallyhidden">Previous item: Parkway Restaurant website & branding</span></a>
-                <a href="#Parkway" class="slide-nav__next"><span class="visuallyhidden">Next item: Parkway Restaurant website & branding</span></a> 
-            </nav>
-            <div class="feature__image"><img src="https://unsplash.it/900/800" alt="Meadow Arts" itemprop="image" /></div>
+            <a href="project.html" class="feature__link">View project</a>
+            <ul class="cd-vertical-nav listless">
+                <li><a href="#0" class="cd-prev inactive">Prev</a></li>
+                <li><a href="#0" class="cd-next">Next</a></li>
+            </ul>
+            <div class="feature__image"><img src="/images/feature-meadowarts.jpg" alt="Meadow Arts" itemprop="image" /></div>
         </div>
     </section>
     
@@ -122,7 +121,11 @@
             <div class="feature__head">
                 <h2 class="feature__title">Parkway</h2>
                 <p class="feature__summary">Restarant website & branding</p>
-            </div> <a href="project.html" class="feature__link">View project <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-right"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right"></use></svg></a>
+            </div> <a href="project.html" class="feature__link">View project</a>
+            <ul class="cd-vertical-nav listless">
+                <li><a href="#0" class="cd-prev inactive">Prev</a></li>
+                <li><a href="#0" class="cd-next">Next</a></li>
+            </ul>
             <div class="feature__image"><img src="/images/feature-parkway.jpg" /></div>
         </div>
     </section>
@@ -170,22 +173,22 @@
                 <h2 class="feature__title">Benedict Homer</h2>
                 <p class="feature__summary">Designer-Maker branding & website</p>
             </div> 
-            <a href="project.html" class="feature__link">View project <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-right"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right"></use></svg></a>
+            <a href="project.html" class="feature__link">View project</a>
+            <ul class="cd-vertical-nav listless">
+                <li><a href="#0" class="cd-prev inactive">Prev</a></li>
+                <li><a href="#0" class="cd-next">Next</a></li>
+            </ul>
             <div class="feature__image"><img src="/images/feature-ben.jpg" /></div>
         </div>
     </section>
     </div>
 
+<!--
 <nav>
-    <ul class="cd-vertical-nav">
-        <li><a href="#0" class="cd-prev inactive">Next</a></li>
-        <li><a href="#0" class="cd-next">Prev</a></li>
-        <!--
-            <li><a href="#one" class="cd-link">one</a></li>
-            <li><a href="" class="cd-link">two</a></li>
-            <li><a href="" class="cd-link">three</a></li>
-            <li><a href="" class="cd-link">four</a></li>
--->
+    <ul class="cd-vertical-nav listless">
+        <li><a href="#0" class="cd-prev inactive">Prev</a></li>
+        <li><a href="#0" class="cd-next">Next</a></li>
     </ul>
 </nav>
+-->
 <!-- .cd-vertical-nav -->{% endblock %}
