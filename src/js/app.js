@@ -23,7 +23,7 @@ var app = (function ($) {
             this.bindUIActions();       // UI Actions (click, focus etc)
             this.bindWindowActions();   // Window actions (scrolling, resize etc)
             this.nav();                 // Main navigation
-            this.features();            // do stuff on scroll (Scrollify)
+//            this.features();            // do stuff on scroll (Scrollify)
             this.lazy();                // lazyload config
         },
 
@@ -73,31 +73,31 @@ var app = (function ($) {
             });
         },
         
-        features: function() {
-            $.scrollify({
-                section : '.panel',
-                easing: 'easeOutExpo',
-                scrollbars: false,
-                setHeights: false,
-                overflowScroll: true,
-                updateHash: true,
-                touchScroll:true,
-                before: function(i) {
-                    var active = $('.slide.active');
-                    active.addClass('remove');
-
-                    $('[data-slide=' + i + ']').addClass('active');
-                    active.removeClass('remove active');
-                },
-                afterRender: function() {
-                    $('.panel').each(function() {
-                        $(this).css('height', parseInt($(window).height()));
-                    });
-                    $.scrollify.update();
-                    $('[data-slide=0]').addClass('active');
-                }
-            });            
-        },
+//        features: function() {
+//            $.scrollify({
+//                section : '.panel',
+//                easing: 'easeOutExpo',
+//                scrollbars: false,
+//                setHeights: false,
+//                overflowScroll: true,
+//                updateHash: true,
+//                touchScroll:true,
+//                before: function(i) {
+//                    var active = $('.slide.active');
+//                    active.addClass('remove');
+//
+//                    $('[data-slide=' + i + ']').addClass('active');
+//                    active.removeClass('remove active');
+//                },
+//                afterRender: function() {
+//                    $('.panel').each(function() {
+//                        $(this).css('height', parseInt($(window).height()));
+//                    });
+//                    $.scrollify.update();
+//                    $('[data-slide=0]').addClass('active');
+//                }
+//            });            
+//        },
         
         lazy: function() {
 

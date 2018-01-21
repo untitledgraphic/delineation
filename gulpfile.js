@@ -46,6 +46,9 @@ var uiscripts = [
 ];
 
 var homescripts = [
+    pathJs + 'libs/velocity.min.js',
+    pathJs + 'libs/velocity.ui.min.js',
+    pathJs + 'libs/scrollFX.js',
     pathJs + 'app.js',
     pathJs + 'libs/jquery.lazy.js'
 ];
@@ -95,7 +98,7 @@ gulp.task('js', ['js-lint'], function() {
 gulp.task('js1', ['js-lint'], function() {
   return gulp.src(homescripts)
     .pipe(sourcemaps.init())
-    .pipe(concat('app.min.js'))
+    .pipe(concat('home.min.js'))
     .pipe(uglify({
       preserveComments: 'license'
     }))
