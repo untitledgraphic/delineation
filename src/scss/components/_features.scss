@@ -36,38 +36,40 @@
     padding: rem-calc(15);
     height: 100%;
     position: relative;
+    color: $text-colour--neg;
+
 }
 
 
 @include mq($and: '(orientation: landscape)') {
     
-    .feature__container {
-        top: 0;
-        right: 100%;
-        transition: right ease 0.5s;
-        transition-delay: 0.5s;
-    }
-    
-    .active .feature__container {
-        right: 0;
-        transition: right ease 0.5s;
-    }
+//    .feature__container {
+//        top: 0;
+//        right: 100%;
+//        transition: right ease 0.5s;
+//        transition-delay: 0.5s;
+//    }
+//    
+//    .active .feature__container {
+//        right: 0;
+//        transition: right ease 0.5s;
+//    }
 }
 
 
 @include mq($and: '(orientation: portrait)') {
         
-    .feature__container {
-        top: 100%;
-        right: 0;
-        transition: top ease 0.5s;
-        transition-delay: 0.5s;
-    }
-    
-    .active .feature__container {
-        top: 0;
-        transition: top ease 0.5s;
-    }
+//    .feature__container {
+//        top: 100%;
+//        right: 0;
+//        transition: top ease 0.5s;
+//        transition-delay: 0.5s;
+//    }
+//    
+//    .active .feature__container {
+//        top: 0;
+//        transition: top ease 0.5s;
+//    }
 }
 
 .feature__overlay {
@@ -81,13 +83,16 @@
     svg {
         display:block;
         width:100%;
-        height:100%
+        height:100%;
+        position: relative;
+        z-index: 5;
     }
 }
 
 .feature__head {
 	position: absolute;
     top: rem-calc(15);
+    z-index: 10;
 }
 
 .feature__title {
@@ -111,8 +116,8 @@
 }
 
 .feature__image {
-    background-size: cover; 
-    background-position: center;
+//    background-size: cover; 
+//    background-position: center;
     mix-blend-mode: overlay;
     position: absolute;
     top: 0;
@@ -121,6 +126,13 @@
     width: 100%;
     z-index: 2;
     //filter: blur(30px);
+    
+    img {
+        mix-blend-mode: overlay;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
 }
 
 .mask--horz {
@@ -214,14 +226,14 @@ $pw2:   #35bfae;
 $bh1:   #774636;
 $bh2:   #c9914a;
 
-.meadow-arts .feature__container {
-    background: linear-gradient(to top, $ma1 0%, $ma2 100%);
+.meadow-arts .feature__overlay {
+    background-image: linear-gradient(to top, $ma1 0%, $ma2 100%);
 }
 
-.ben .feature__container {
-    background: linear-gradient(to top, $bh1 0%, $bh2 100%);
+.ben .feature__overlay {
+    background-image: linear-gradient(to top, $bh1 0%, $bh2 100%);
 }
 
-.parkway .feature__container {
-    background: linear-gradient(to top, $pw1 0%, $pw2 100%);
+.parkway .feature__overlay {
+    background-image: linear-gradient(to top, $pw1 0%, $pw2 100%);
 }

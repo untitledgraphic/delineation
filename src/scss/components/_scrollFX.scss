@@ -49,12 +49,12 @@ body::before {
     overflow: hidden;
 }
 
-.container {
+.feature__container {
     height: 100%;
 }
 
 .cd-section {
-    height: 100vh;
+    height: 100%;
 }
 
 .cd-section h2 {
@@ -102,7 +102,6 @@ body::before {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("../img/img-1.jpg");
 }
 
 //[data-animation="parallax"] .cd-section:first-of-type > div,

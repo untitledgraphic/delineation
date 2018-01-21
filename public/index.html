@@ -47,7 +47,7 @@
 </script>
 
 </head>
-<body class="test" data-hijacking="on" data-animation="fixed" itemscope="" itemtype="http://schema.org/WebPage">
+<body class="test" data-hijacking="on" data-animation="parallax" itemscope="" itemtype="http://schema.org/WebPage">
 
     <header class="pageHeader">
     <a href="/" class="logo">
@@ -143,7 +143,6 @@
 
 <main id="main" class="home">
     
-    <section class="fixed-content">
     
         <section class="section splash">
             <h1 class="site" itemprop="name">Craig_Cooper_Digital_Designer</h1>
@@ -175,10 +174,13 @@
             </nav>
         </section>
         
-        <div itemscope itemtype="http://schema.org/ItemList">
-            <div class="feature slide" data-slide="0"> </div>
+        
+        
+        <div class="wrap" itemscope itemtype="http://schema.org/ItemList">
+            <!-- section 1 -->
+            <section class="feature slide cd-section visible"></section>
 
-            <article class="feature meadow-arts slide" data-slide="1" itemscope itemtype="http://schema.org/CreativeWork"> 
+            <section class="feature meadow-arts slide cd-section" itemscope itemtype="http://schema.org/CreativeWork"> 
                 <div class="feature__container">
                     <div class="feature__overlay">
                         <svg viewBox="0,0,100,100" preserveAspectRatio="none">
@@ -241,9 +243,9 @@
                         <img src="/images/feature-meadowarts.jpg" alt="Meadow Arts" itemprop="image" />
                     </div>
                 </div>
-            </article>
+            </section>
 
-        <article class="feature parkway slide" data-slide="2" > 
+            <section class="feature parkway slide cd-section"> 
             <div class="feature__container">   
                 <div class="feature__overlay">
 
@@ -292,66 +294,67 @@
 
                 <div class="feature__image" style="background-image: url(/images/feature-parkway.jpg);"></div>
             </div>
-        </article>
+        </section>
 
-        <article class="feature ben slide" data-slide="3">
-            <div class="feature__container">
-            <div class="feature__overlay">
+            <section class="feature ben slide cd-section">
+                <div class="feature__container">
+                <div class="feature__overlay">
 
-                    <svg viewBox="0,0,100,100" preserveAspectRatio="none">
-                        <defs>
-                            <filter id="bhMaskFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
-                                <feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
-                            </filter>
-                        </defs>
-                        <!-- fade out to nothing -->
-                        <mask maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100" id="bh1">
-                            <!-- left to right -->
-                            <g class="mask--horz" style="filter:url(#bhMaskFilter);">
-                                <linearGradient id="bh2" gradientUnits="userSpaceOnUse" x1="0" y1="50" x2="100" y2="50">
-                                    <stop  offset="0.2" style="stop-color:#FFFFFF"/>
-                                    <stop  offset="0.8" style="stop-color:#000000"/>
+                        <svg viewBox="0,0,100,100" preserveAspectRatio="none">
+                            <defs>
+                                <filter id="bhMaskFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+                                    <feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+                                </filter>
+                            </defs>
+                            <!-- fade out to nothing -->
+                            <mask maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100" id="bh1">
+                                <!-- left to right -->
+                                <g class="mask--horz" style="filter:url(#bhMaskFilter);">
+                                    <linearGradient id="bh2" gradientUnits="userSpaceOnUse" x1="0" y1="50" x2="100" y2="50">
+                                        <stop  offset="0.2" style="stop-color:#FFFFFF"/>
+                                        <stop  offset="0.8" style="stop-color:#000000"/>
+                                    </linearGradient>
+                                    <rect style="fill:url(#bh2);" width="100" height="100"/>
+                                </g>
+                                <!-- top to bottom -->
+                                <g class="mask--vert" style="filter:url(#bhMaskFilter);">
+                                    <linearGradient id="bh2b" gradientUnits="userSpaceOnUse"  x1="50" y1="0" x2="50" y2="100">
+                                        <stop  offset="0.2" style="stop-color:#FFFFFF"/>
+                                        <stop  offset="0.8" style="stop-color:#000000"/>
+                                    </linearGradient>
+                                    <rect style="fill:url(#bh2b);" width="100" height="100"/>
+                                </g>
+                            </mask>
+                            <!-- gradient -->
+                            <g style="mask:url(#bh1);">
+                                <linearGradient id="bh3" gradientUnits="userSpaceOnUse" x1="40" y1="107" x2="60" y2="-7">
+                                    <stop class="start" offset="0.2" style="stop-color: #774636"/>
+                                    <stop class="stop" offset="0.8" style="stop-color: #c9914a"/>
                                 </linearGradient>
-                                <rect style="fill:url(#bh2);" width="100" height="100"/>
+                                <rect y="0" style="fill:url(#bh3);" width="100" height="100"/>
                             </g>
-                            <!-- top to bottom -->
-                            <g class="mask--vert" style="filter:url(#bhMaskFilter);">
-                                <linearGradient id="bh2b" gradientUnits="userSpaceOnUse"  x1="50" y1="0" x2="50" y2="100">
-                                    <stop  offset="0.2" style="stop-color:#FFFFFF"/>
-                                    <stop  offset="0.8" style="stop-color:#000000"/>
-                                </linearGradient>
-                                <rect style="fill:url(#bh2b);" width="100" height="100"/>
-                            </g>
-                        </mask>
-                        <!-- gradient -->
-                        <g style="mask:url(#bh1);">
-                            <linearGradient id="bh3" gradientUnits="userSpaceOnUse" x1="40" y1="107" x2="60" y2="-7">
-                                <stop class="start" offset="0.2" style="stop-color: #774636"/>
-                                <stop class="stop" offset="0.8" style="stop-color: #c9914a"/>
-                            </linearGradient>
-                            <rect y="0" style="fill:url(#bh3);" width="100" height="100"/>
-                        </g>
-                    </svg>
+                        </svg>
 
+                    </div>
+
+                <div class="feature__head">
+                    <h2 class="feature__title">Benedict Homer</h2>
+                    <p class="feature__summary">Designer-Maker branding & website</p>
                 </div>
+                <a href="project.html" class="feature__link">View project <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-right"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right"></use></svg></a>
 
-            <div class="feature__head">
-                <h2 class="feature__title">Benedict Homer</h2>
-                <p class="feature__summary">Designer-Maker branding & website</p>
-            </div>
-            <a href="project.html" class="feature__link">View project <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-right"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right"></use></svg></a>
-
-            <div class="feature__image" style="background-image: url(/images/feature-ben.jpg);"></div>
-            </div>
-        </article>
+                <div class="feature__image" style="background-image: url(/images/feature-ben.jpg);"></div>
+                </div>
+            </section>
         </div>
 
-    </section>
 
+<!--
     <section class="panel panel1" data-section-name="Home"></section>
     <section class="panel panel1" data-section-name="MeadowArts"></section>
     <section class="panel panel2" data-section-name="Parkway"></section>
     <section class="panel panel3" data-section-name="BenedictHomer"></section>
+-->
     
 </main>
 

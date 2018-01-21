@@ -1,0 +1,191 @@
+{% extends "_layout-home.html" %} {% block content %}
+<section class="section splash">
+        <h1 class="site" itemprop="name">Craig_Cooper_Digital_Designer</h1>
+
+        <div class="splash__content">
+            <div class="splash__monogram"><img src="images/monogram.svg" alt="slowly animating logo"></div>
+            <h2 class="splash__strap" itemprop="description">Creating user-focused design <br>for the web and in print</h2>
+        </div>
+
+        <nav class="secondary-nav" itemscope itemtype="http://schema.org/ItemList">
+            <meta itemprop="numberOfItems" content="5" />
+            <ul class="secondary-nav__list listless">
+                <li class="secondary-nav__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="contact.php" class="secondary-nav__link" itemprop="item">get in touch</a>
+                </li>
+                <li class="secondary-nav__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="https://twitter.com/CraigDoesDesign" class="secondary-nav__link" itemprop="item">twitter</a>
+                </li>
+                <li class="secondary-nav__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="https://dribbble.com/craigomatic" class="secondary-nav__link" itemprop="item">dribbble</a>
+                </li>
+                <li class="secondary-nav__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="https://www.behance.net/craigcooper" class="secondary-nav__link" itemprop="item">behance</a>
+                </li>
+                <li class="secondary-nav__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a href="https://www.linkedin.com/in/craigjcooper/" class="secondary-nav__link" itemprop="item">linked in</a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+<div class="wrap">
+    
+    <section class="cd-section visible">
+        <div class="feature__container">
+        </div>
+    </section>
+    
+    <section class="cd-section meadow-arts">
+        <div class="feature__container">
+            
+            <div class="feature__overlay">
+                <svg viewbox="0,0,100,100" preserveaspectratio="none">
+		<defs>
+			<filter id="maa" x="0" y="0" width="100" height="100" filterunits="userSpaceOnUse">
+				<fecolormatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask id="mad" x="0" y="0" width="100" height="100" maskunits="userSpaceOnUse">
+			<g class="mask--horz" filter="url(#maa)">
+				<lineargradient id="mab" x1="0" y1="50" x2="100" y2="50" gradientunits="userSpaceOnUse">
+					<stop offset="0.2" stop-color="#fff"/>
+					<stop offset="0.8"/>
+				</lineargradient>
+				<rect fill="url(#mab)" width="100" height="100"/>
+			</g>
+			<g class="mask--vert" filter="url(#maa)">
+				<lineargradient id="mab1" x1="50" y1="0" x2="50" y2="100" gradientunits="userSpaceOnUse">
+					<stop offset="0.2" stop-color="#fff"/>
+					<stop offset="0.8"/>
+				</lineargradient>
+				<rect fill="url(#mab1)" width="100" height="100"/>
+			</g>
+		</mask>
+		<lineargradient id="mac" x1="40" y1="107" x2="60" y2="-7" gradientunits="userSpaceOnUse">
+			<stop offset="0" stop-color="#008e4c"/>
+			<stop offset="1" stop-color="#4ab6e9"/>
+		</lineargradient>
+		<rect fill="url(#mac)" y="0" width="100" height="100" mask="url(#mad)"/>
+	</svg>
+            </div>
+            
+            <div class="feature__head">
+                <h2 class="feature__title" itemprop="name">Meadow Arts</h2>
+                <p class="feature__summary" itemprop="description">Marketing & interpretation material</p>
+            </div> 
+            <a href="project.html" class="feature__link">View project <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-right"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right"></use></svg></a>
+            <nav class="slide-nav" itemscope itemtype="http://schema.org/ItemList"> 
+                <a href="#Parkway" class="slide-nav__prev"><span class="visuallyhidden">Previous item: Parkway Restaurant website & branding</span></a>
+                <a href="#Parkway" class="slide-nav__next"><span class="visuallyhidden">Next item: Parkway Restaurant website & branding</span></a> 
+            </nav>
+            <div class="feature__image"><img src="https://unsplash.it/900/800" alt="Meadow Arts" itemprop="image" /></div>
+        </div>
+    </section>
+    
+    <section class="cd-section parkway">
+        <div class="feature__container">
+            <div class="feature__overlay">
+                <svg viewbox="0,0,100,100" preserveaspectratio="none">
+                    <defs>
+                        <filter id="pwa" x="0" y="0" width="100" height="100" filterunits="userSpaceOnUse">
+                            <fecolormatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"/>
+                        </filter>
+                    </defs>
+
+                    <mask id="pwd" x="0" y="0" width="100" height="100" maskunits="userSpaceOnUse">
+
+                        <g class="mask--horz" filter="url(#pwa)">
+                            <lineargradient id="pwb" x1="0" y1="50" x2="100" y2="50" gradientunits="userSpaceOnUse">
+                                <stop offset="0.2" stop-color="#fff"/>
+                                <stop offset="0.8"/>
+                            </lineargradient>
+                            <rect fill="url(#pwb)" width="100" height="100"/>
+                        </g>
+
+                        <g class="mask--vert" filter="url(#pwa)">
+                            <lineargradient id="pwb1" x1="50" y1="0" x2="50" y2="100" gradientunits="userSpaceOnUse">
+                                <stop offset="0.2" stop-color="#fff"/>
+                                <stop offset="0.8"/>
+                            </lineargradient>
+                            <rect fill="url(#pwb1)" width="100" height="100"/>
+                        </g>
+
+                    </mask>
+
+                    <lineargradient id="pwc" x1="40" y1="107" x2="60" y2="-7" gradientunits="userSpaceOnUse">
+                        <stop offset="1" stop-color="#341160"/>
+                        <stop offset="0" stop-color="#35bfae"/>
+                    </lineargradient>
+                    <rect fill="url(#pwc)" y="0" width="100" height="100" mask="url(#pwd)"/>
+                </svg>
+            </div>
+            <div class="feature__head">
+                <h2 class="feature__title">Parkway</h2>
+                <p class="feature__summary">Restarant website & branding</p>
+            </div> <a href="project.html" class="feature__link">View project <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-right"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right"></use></svg></a>
+            <div class="feature__image"><img src="/images/feature-parkway.jpg" /></div>
+        </div>
+    </section>
+    
+    <section class="cd-section ben">
+        <div class="feature__container">
+            <div class="feature__overlay">
+            
+                <svg viewbox="0,0,100,100" preserveaspectratio="none">
+                    <defs>
+                        <filter id="a" x="0" y="0" width="100" height="100" filterunits="userSpaceOnUse">
+                            <fecolormatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"/>
+                        </filter>
+                    </defs>
+
+                    <mask id="d" x="0" y="0" width="100" height="100" maskunits="userSpaceOnUse">
+
+                        <g class="mask--horz" filter="url(#a)">
+                            <lineargradient id="b" x1="0" y1="50" x2="100" y2="50" gradientunits="userSpaceOnUse">
+                                <stop offset="0.2" stop-color="#fff"/>
+                                <stop offset="0.8"/>
+                            </lineargradient>
+                            <rect fill="url(#b)" width="100" height="100"/>
+                        </g>
+
+                        <g class="mask--vert" filter="url(#a)">
+                            <lineargradient id="b1" x1="50" y1="0" x2="50" y2="100" gradientunits="userSpaceOnUse">
+                                <stop offset="0.2" stop-color="#fff"/>
+                                <stop offset="0.8"/>
+                            </lineargradient>
+                            <rect fill="url(#b1)" width="100" height="100"/>
+                        </g>
+
+                    </mask>
+
+                    <lineargradient id="c" x1="40" y1="107" x2="60" y2="-7" gradientunits="userSpaceOnUse">
+                        <stop offset="1" stop-color="#774636"/>
+                        <stop offset="0" stop-color="#c9914a"/>
+                    </lineargradient>
+                    <rect fill="url(#c)" y="0" width="100" height="100" mask="url(#d)"/>
+                </svg>
+
+            </div>
+            <div class="feature__head">
+                <h2 class="feature__title">Benedict Homer</h2>
+                <p class="feature__summary">Designer-Maker branding & website</p>
+            </div> 
+            <a href="project.html" class="feature__link">View project <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-right"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right"></use></svg></a>
+            <div class="feature__image"><img src="/images/feature-ben.jpg" /></div>
+        </div>
+    </section>
+    </div>
+
+<nav>
+    <ul class="cd-vertical-nav">
+        <li><a href="#0" class="cd-prev inactive">Next</a></li>
+        <li><a href="#0" class="cd-next">Prev</a></li>
+        <!--
+            <li><a href="#one" class="cd-link">one</a></li>
+            <li><a href="" class="cd-link">two</a></li>
+            <li><a href="" class="cd-link">three</a></li>
+            <li><a href="" class="cd-link">four</a></li>
+-->
+    </ul>
+</nav>
+<!-- .cd-vertical-nav -->{% endblock %}
