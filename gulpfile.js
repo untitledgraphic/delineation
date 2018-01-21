@@ -10,6 +10,7 @@
 var pathSass     = 'src/scss/';
 var pathJs       = 'src/js/';
 var pathHtml     = 'src/html/';
+var baseHtmlLoc  = 'src/html/templates/';
 var pathImg      = 'src/images/';
 
 // General
@@ -39,7 +40,12 @@ var nunjucksRender = require('gulp-nunjucks-render');
 /*
  * Scripts object
  */
-var scripts = [
+var uiscripts = [
+    pathJs + 'app.js',
+    pathJs + 'libs/jquery.lazy.js'
+];
+
+var homescripts = [
     pathJs + 'app.js',
     pathJs + 'libs/jquery.lazy.js'
 ];
@@ -75,7 +81,19 @@ gulp.task('js-lint', function() {
  * JavaScript concat and minify
  */
 gulp.task('js', ['js-lint'], function() {
-  return gulp.src(scripts)
+  return gulp.src(uiscripts)
+    .pipe(sourcemaps.init())
+    .pipe(concat('app.min.js'))
+    .pipe(uglify({
+      preserveComments: 'license'
+    }))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('public/js'));
+});
+
+// Homepage only
+gulp.task('js1', ['js-lint'], function() {
+  return gulp.src(homescripts)
     .pipe(sourcemaps.init())
     .pipe(concat('app.min.js'))
     .pipe(uglify({
@@ -89,7 +107,7 @@ gulp.task('js', ['js-lint'], function() {
  * JavaScript watch
  * Ensures the 'js' task is complete before reloading browsers
  */
-gulp.task('js-watch', ['js'], browserSync.reload);
+gulp.task('js-watch', ['js', 'js1'], browserSync.reload);
 
 /*
  * SVG sprite
@@ -149,7 +167,7 @@ gulp.task('html-watch', ['html'], browserSync.reload);
 /*
  * Serve
  */
-gulp.task('serve', ['sass', 'js', 'html', 'svg'], function() {
+gulp.task('serve', ['sass', 'js', 'js1', 'html', 'svg'], function() {
   browserSync.init({
     server: {
       baseDir: './public'
@@ -165,4 +183,4 @@ gulp.task('serve', ['sass', 'js', 'html', 'svg'], function() {
 /*
  * Tasks
  */
-gulp.task('default', ['sass', 'js', 'html', 'svg', 'serve'], browserSync.reload);
+gulp.task('default', ['sass', 'js', 'js1', 'html', 'svg', 'serve'], browserSync.reload);
