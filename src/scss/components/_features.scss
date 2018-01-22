@@ -37,7 +37,6 @@
     height: 100%;
     position: relative;
     color: $text-colour--neg;
-
 }
 
 
@@ -99,9 +98,10 @@
     transition-delay: 0.4s;
 }
 
-.cd-section.visible .feature__head {
+.cd-section.visible .feature__head{
     top: rem-calc(15);
     opacity: 1;
+    transition-delay: 0;
 }
 
 .feature__title {
@@ -124,11 +124,25 @@
     font-weight: 700;
     position: relative;
     z-index: 10;
+    opacity: 0;
+    transition: all ease 0.6s;
+    transition-delay: 0.6s;
+    
+    .icon--arrow-right {
+        font-size: rem-calc(16);
+        position: relative;
+        left: 0;
+        transition: left ease .2s;
+    }
+    
+    &:hover {
+        .icon--arrow-right {
+            left: rem-calc(5);
+        }
+    }
 }
 
 .feature__image {
-//    background-size: cover; 
-//    background-position: center;
     mix-blend-mode: overlay;
     position: absolute;
     top: 0;
@@ -136,10 +150,8 @@
     height: 100%;
     width: 100%;
     z-index: 2;
-    //filter: blur(30px);
     
     img {
-        mix-blend-mode: overlay;
         object-fit: cover;
         height: 100%;
         width: 100%;
@@ -152,6 +164,17 @@
     
 .mask--vert {
     display: inline;
+}
+
+mask lineargradient stop {
+    
+    &:first-of-type {
+        stop-color: #fff;
+    }
+    
+    &:last-of-type {
+        stop-color: #000;
+    }
 }
 
 
@@ -229,9 +252,6 @@
     .feature__link {
         position: relative;
         top: 30px;
-        opacity: 0;
-        transition: all ease 0.6s;
-        transition-delay: 0.6s;
     }
     
     .cd-section.visible {
@@ -261,14 +281,47 @@ $pw2:   #35bfae;
 $bh1:   #774636;
 $bh2:   #c9914a;
 
-.meadow-arts .feature__overlay {
-    background-image: linear-gradient(to top, $ma1 0%, $ma2 100%);
+.meadow-arts {
+    
+    .feature__overlay {
+        background-image: linear-gradient(to top, $ma1 0%, $ma2 100%);
+    }
+    
+    .start {
+        stop-color: $ma1;
+    }
+    
+    .stop {
+        stop-color: $ma2;
+    }
 }
 
-.ben .feature__overlay {
-    background-image: linear-gradient(to top, $bh1 0%, $bh2 100%);
+.ben {
+    
+    .feature__overlay {
+        background-image: linear-gradient(to top, $bh1 0%, $bh2 100%);
+    }
+    
+    .start {
+        stop-color: $bh1;
+    }
+    
+    .stop {
+        stop-color: $bh2;
+    }
 }
 
-.parkway .feature__overlay {
-    background-image: linear-gradient(to top, $pw1 0%, $pw2 100%);
+.parkway {
+    
+    .feature__overlay {
+        background-image: linear-gradient(to top, $pw1 0%, $pw2 100%);
+    }
+    
+    .start {
+        stop-color: $pw1;
+    }
+    
+    .stop {
+        stop-color: $pw2;
+    }
 }

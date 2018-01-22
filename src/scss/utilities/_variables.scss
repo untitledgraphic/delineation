@@ -100,7 +100,11 @@ $mq-media-type: only screen;
  * Icons
  */
 
-$icons: (
-  // example1: (size: 100px),
-  // example2: (size: 100px, fallback: white)
-);
+$icon-font-path:    "../fonts" !default;
+
+$icon-monogram:     "\e900";
+$icon-arrow-down:   "\e901";
+$icon-arrow-left:   "\e902";
+$icon-arrow-right:  "\e903";
+$icon-close:        "\e904";
+
