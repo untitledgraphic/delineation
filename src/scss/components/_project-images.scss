@@ -1,27 +1,3 @@
-//img {
-//    filter: blur(40px);
-//    transition: all 0.5s ease;
-//    //transition-delay: 2s;
-//    transform: scale(1.05);
-//    
-//    &.lazy {
-//        display: none;
-//    }
-//    
-//    &.loaded {
-//        filter: blur(0);
-//        transform: scale(1);
-//        position: relative;
-//        z-index: 1;
-//    }
-//}
-
-//.pre {
-//    position: relative;
-//    //top: -100%;
-//    //overflow: hidden;
-//}
-
 .image {
     height: 100vh;
     overflow: hidden;
@@ -47,10 +23,6 @@
     }
 }
 
-.image--full {
-    //padding: rem-calc(15) rem-calc(70) rem-calc(15) rem-calc(15);
-}
-
 
 @include mq($from: medium) {
     
@@ -67,7 +39,8 @@
     .text__container {
         background: $bg;
         z-index: 1;
-        padding: rem-calc(40) 40% rem-calc(40) 0;
+        padding: rem-calc(40) 40% rem-calc(40) 20%;
+        box-shadow: rem-calc(-20) 0 rem-calc(60) 0 rgba(0,0,0,0.1);
     }
 }
 

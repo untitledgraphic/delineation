@@ -136,9 +136,8 @@
 
     <section class="hero">
         <div class="image__container">
-            <img class="lazy" data-src="../../images/cader-idris.jpg" alt="image" />
-            <img class="pre" src="../../images/cader-idris.jpg" alt="image" />
-            <noscript><img src="../../images/cader-idris.jpg" alt="image" /></noscript>
+            <img  class="lazy" data-class="lazy" data-src="images/cader-idris.jpg" alt="image" />
+            <noscript><img src="images/cader-idris.jpg" alt="image" /></noscript> 
         </div>
         <header class="hero__banner medium-centered medium-10">
             <h1 class="hero__title column">Cader Idris</h1>
@@ -200,12 +199,12 @@
     </section>
 
     <section class="image split">
-        <div class="split__text medium-5 large-4 medium-push-2 large-push-3 column">
+        <div class="split__text medium-6 large-5 medium-push-1 large-push-2 column">
             <div class="text__container">
                 <p>A careful balance of typography and colour to compliment the artworks yet still let them leap from the page</p>
             </div>
         </div>
-        <div class="image__container split__image medium-5 large-4 medium-push-1 large-push-2 column">
+        <div class="image__container split__image medium-5 large-4 large-push-1 column">
             <img class="lazy" data-src="https://unsplash.it/540/720" alt="image" />
         </div>
     </section>
@@ -233,48 +232,57 @@
     
 </main>
 
-<footer class="preview meadow-arts">
+<footer class="preview parkway">
     
     <article class="preview__content">
         
-        <div class="preview__image">
-            <img class="lazy" data-src="https://unsplash.it/1400/384/?random">
-        </div>
-        <svg viewBox="0,0,100,100" preserveAspectRatio="none">
-        <defs>
-            <filter id="maMaskFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
-                <feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
-            </filter>
-        </defs>
-        <!-- fade out to nothing -->
-        <mask maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100" id="ma1">
-            <!-- left to right -->
-            <g class="mask--horz" style="filter:url(#maMaskFilter);">
-                <linearGradient id="ma2" gradientUnits="userSpaceOnUse" x1="0" y1="50" x2="100" y2="50">
-                    <stop  offset="0.2" style="stop-color:#FFFFFF"/>
-                    <stop  offset="0.8" style="stop-color:#000000"/>
-                </linearGradient>
-                <rect style="fill:url(#ma2);" width="100" height="100"/>
-            </g>
-        </mask>
-        <!-- gradient -->
-        <g style="mask:url(#ma1);">
-            <linearGradient id="ma3" gradientUnits="userSpaceOnUse" x1="40" y1="107" x2="60" y2="-7">
-                <stop class="start" offset="0.2" style="stop-color: #008e4c"/>
-                <stop class="stop" offset="0.8" style="stop-color: #4ab6e9"/>
-            </linearGradient>
-            <rect y="0" style="fill:url(#ma3);" width="100" height="100"/>
-        </g>
-    </svg>
+        <div class="feature__overlay">
+                <svg viewbox="0,0,100,100" preserveaspectratio="none">
+                    <defs>
+                        <filter id="maMaskFilter" filterunits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+                            <fecolormatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+                        </filter>
+                    </defs>
+                    <!-- fade out to nothing -->
+                    <mask maskunits="userSpaceOnUse" x="0" y="0" width="100" height="100" id="ma1">
+                    <!-- left to right -->
+                        <g class="mask--horz" style="filter:url(#maMaskFilter);">
+                            <lineargradient id="ma2" gradientunits="userSpaceOnUse" x1="0" y1="50" x2="100" y2="50">
+                                <stop  offset="0.2"/>
+                                <stop  offset="0.8"/>
+                            </lineargradient>
+                            <rect style="fill:url(#ma2);" width="100" height="100"/>
+                        </g>
+                        <!-- top to bottom -->
+                        <g class="mask--vert" style="filter:url(#maMaskFilter);">
+                            <lineargradient id="ma2b" gradientunits="userSpaceOnUse"  x1="50" y1="0" x2="50" y2="100">
+                                <stop  offset="0.2"/>
+                                <stop  offset="0.8"/>
+                            </lineargradient>
+                            <rect style="fill:url(#ma2b);" width="100" height="100"/>
+                        </g>
+                    </mask>
+                    <!-- gradient -->
+                    <g style="mask:url(#ma1);">
+                        <lineargradient id="ma3" gradientunits="userSpaceOnUse" x1="40" y1="107" x2="60" y2="-7">
+                            <stop class="start" offset="0.2"/>
+                            <stop class="stop" offset="0.8"/>
+                        </lineargradient>
+                        <rect y="0" style="fill:url(#ma3);" width="100" height="100"/>
+                    </g>
+                </svg> 
+            </div>
+                <div class="feature__image"><img class="lazy" data-src="images/feature-parkway.jpg"></div>
+
         <div class="row column">
             <div class="medium-10 medium-centered column">
-                <a href="#" class="preview__previous"><span class="preview__direction">Back to</span> Benedict Homer</a>
-                <a href="#" class="preview__link">
+                <a href="ben-homer.html" class="preview__previous"><span class="preview__direction">Back to</span> Benedict Homer</a>
+                <a href="meadow-arts.html" class="preview__link">
                     <h3 class="preview__next"><span class="preview__direction">Next up</span> <span>Meadow Arts</span></h3>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-right"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right"></use></svg>
                 </a>
             </div>
         </div>
+        <div class="feature__image"><img class="lazy" data-src="images/feature-parkway.jpg"></div>
     </article>
 </footer>
 

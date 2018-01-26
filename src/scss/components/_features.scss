@@ -1,38 +1,52 @@
-.fixed-content {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+body:before {
+    content: 'mobile'; // never visible - this is used in jQuery to check the current MQ 
+    display: none;
 }
 
+@include mq($from: large) {
+    
+    body {
+        
+        &:before {
+            content: 'desktop'; // never visible - this is used in jQuery to check the current MQ
+        }
+        
+        &[data-hijacking="on"] {
+            overflow: hidden;
+        }
+    }
+}
+
+.wrap {
+    height: 100vh;
+}
+
+@include mq($from: large) {
+    
+    .wrap {
+        position: absolute;
+        left: rem-calc(110);
+        right: rem-calc(110);
+        top: rem-calc(85);
+        bottom: rem-calc(85);
+        overflow: hidden;
+        height: auto;
+    }
+}
 
 .feature {
-    position: absolute;
-    top: rem-calc(85);
-    left: rem-calc(15);
-    right: rem-calc(15);
-    bottom: rem-calc(15);
-    color: $text-colour--neg;
-    z-index: 1;
-    overflow: hidden;
-        
-    * {
-        z-index: 3;
-    }
+    height: 100%;
+    padding: rem-calc(85) rem-calc(15) rem-calc(15);
     
-    &.active {
-       z-index: 2; 
+    &:first-of-type {
+        display: none;
     }
 }
 
 .feature__container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+//    justify-content: center;
     padding: rem-calc(15);
     height: 100%;
     position: relative;
@@ -89,16 +103,12 @@
 }
 
 .feature__head {
-	position: absolute;
-//    top: rem-calc(15);
-    top: rem-calc(20);
-    z-index: 10;
-    opacity: 0;
-    transition: all ease 0.5s;
-    transition-delay: 0.4s;
+    position: relative;
+    z-index: 5;
+//    text-align: center;
 }
 
-.cd-section.visible .feature__head{
+.feature.visible .feature__head{
     top: rem-calc(15);
     opacity: 1;
     transition-delay: 0;
@@ -114,7 +124,8 @@
 .feature__summary {
     font-family: $text-secondary;
     letter-spacing: 0.02em;
-    font-size: rem-calc(20);
+    font-size: rem-calc(24);
+    margin-top: rem-calc(10);
     line-height: 1;
 }
 
@@ -123,8 +134,7 @@
     text-transform: uppercase;
     font-weight: 700;
     position: relative;
-    z-index: 10;
-    opacity: 0;
+    z-index: 5;
     transition: all ease 0.6s;
     transition-delay: 0.6s;
     
@@ -149,7 +159,6 @@
     left: 0;
     height: 100%;
     width: 100%;
-    z-index: 2;
     
     img {
         object-fit: cover;
@@ -180,12 +189,55 @@ mask lineargradient stop {
 
 @include mq($from: large) {
     
+    .feature {
+        
+        &:first-of-type {
+            display: block; 
+            
+            > .feature__container:before {
+                display: none;
+            } 
+        }
+    }
+    
+    .feature__container {
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        /* Force Hardware Acceleration */
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
+    
+    [data-hijacking="on"] {
+        
+        .feature {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        
+        .feature__container {
+            visibility: visible;
+            position: absolute;
+        }
+    }
+    
     .feature__title {
 	   font-size: rem-calc(54);
     }
     
     .feature__summary {
         font-size: rem-calc(28);
+    }
+    
+    .feature__link {
+        opacity: 0;
     }
 }
 
@@ -199,7 +251,6 @@ mask lineargradient stop {
     }
     
     .feature__head {
-//        top: rem-calc(15);
     }
     
     .mask--horz {
@@ -219,14 +270,13 @@ mask lineargradient stop {
         right: rem-calc(75);
         top: rem-calc(85);
         bottom: rem-calc(85);
-        //padding: 10%;
     }
     
     .feature__head {
         top: rem-calc(110);
     }
     
-    .cd-section.visible .feature__head {
+    .feature.visible .feature__head {
         top: rem-calc(90);
     }
 }
@@ -235,10 +285,10 @@ mask lineargradient stop {
 @include mq($from: medium, $and: '(orientation: landscape)') {
     
     .feature {
-        left: rem-calc(110);
-        right: rem-calc(110);
-        top: rem-calc(85);
-        bottom: rem-calc(85);
+//        left: rem-calc(110);
+//        right: rem-calc(110);
+//        top: rem-calc(85);
+//        bottom: rem-calc(85);
     }
     
     .feature__container {
@@ -254,7 +304,7 @@ mask lineargradient stop {
         top: 30px;
     }
     
-    .cd-section.visible {
+    .feature.visible {
         
         .feature__head {
             top: 25%;
@@ -264,6 +314,62 @@ mask lineargradient stop {
             top: 0;
             opacity: 1;
         }
+    }
+}
+
+@include mq($from: large) {
+    
+    .feature__head {
+        position: absolute;
+        top: rem-calc(20);
+        z-index: 10;
+        opacity: 0;
+        transition: all ease 0.5s;
+        transition-delay: 0.4s;
+    }
+    
+    .feature__summary {
+        margin-top: 0;
+    }
+}
+
+.feature__nav {
+    /* lateral navigation */
+    position: absolute;
+    z-index: 5;
+    display: none;
+    color: $text-colour--neg;
+    bottom: 10%;
+    
+    li {
+        float: left;
+    }
+}
+
+.feature__nav a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    border: solid 1px $text-colour--neg;
+    padding: 0 20px;
+}
+
+.feature__nav a.cd-prev {
+    margin-right: 10px;
+}
+
+.feature__nav a.inactive {
+    visibility: hidden;
+    opacity: 0;
+    transition: 
+        opacity 0.2s 0s, 
+        visibility 0s 0.2s;
+}
+
+@include mq($from: large) {
+    
+    .feature__nav {
+        display: block;
     }
 }
 
@@ -280,48 +386,29 @@ $pw1:   #341160;
 $pw2:   #35bfae;
 $bh1:   #774636;
 $bh2:   #c9914a;
+$pb1:   #d0c7d8;
+$pb2:   #4f869a;
 
 .meadow-arts {
-    
-    .feature__overlay {
-        background-image: linear-gradient(to top, $ma1 0%, $ma2 100%);
-    }
-    
-    .start {
-        stop-color: $ma1;
-    }
-    
-    .stop {
-        stop-color: $ma2;
-    }
+    .feature__overlay { background-image: linear-gradient(to top, $ma1 0%, $ma2 100%); }
+    .start { stop-color: $ma1; }
+    .stop { stop-color: $ma2; }
 }
 
 .ben {
-    
-    .feature__overlay {
-        background-image: linear-gradient(to top, $bh1 0%, $bh2 100%);
-    }
-    
-    .start {
-        stop-color: $bh1;
-    }
-    
-    .stop {
-        stop-color: $bh2;
-    }
+    .feature__overlay { background-image: linear-gradient(to top, $bh1 0%, $bh2 100%); }
+    .start { stop-color: $bh1; }
+    .stop { stop-color: $bh2; }
 }
 
 .parkway {
-    
-    .feature__overlay {
-        background-image: linear-gradient(to top, $pw1 0%, $pw2 100%);
-    }
-    
-    .start {
-        stop-color: $pw1;
-    }
-    
-    .stop {
-        stop-color: $pw2;
-    }
+    .feature__overlay { background-image: linear-gradient(to top, $pw1 0%, $pw2 100%); }
+    .start { stop-color: $pw1; }
+    .stop { stop-color: $pw2; }
+}
+
+.peter-bishop {
+    .feature__overlay { background-image: linear-gradient(to top, $pb1 0%, $pb2 100%); }
+    .start { stop-color: $pb1; }
+    .stop { stop-color: $pb2; }
 }

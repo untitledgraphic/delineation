@@ -8,8 +8,8 @@ jQuery(document).ready(function($){
         animating = false;
     
     //DOM elements
-    var sectionsAvailable = $('.cd-section'),
-    	verticalNav = $('.cd-vertical-nav'),
+    var sectionsAvailable = $('.feature'),
+    	verticalNav = $('.feature__nav'),
     	prevArrow = verticalNav.find('a.cd-prev'),
     	nextArrow = verticalNav.find('a.cd-next');
 
@@ -102,8 +102,8 @@ jQuery(document).ready(function($){
 	function initHijacking() {
 		// initialize section style - scrollhijacking
 		var visibleSection = sectionsAvailable.filter('.visible'),
-			topSection = visibleSection.prevAll('.cd-section'),
-			bottomSection = visibleSection.nextAll('.cd-section'),
+			topSection = visibleSection.prevAll('.feature'),
+			bottomSection = visibleSection.nextAll('.feature'),
 			animationParams = selectAnimation(animationType, false),
 			animationVisible = animationParams[0],
 			animationTop = animationParams[1],
@@ -136,15 +136,15 @@ jQuery(document).ready(function($){
     	
     	var visibleSection = sectionsAvailable.filter('.visible'),
     		middleScroll = ( hijacking == 'off' && $(window).scrollTop() != visibleSection.offset().top) ? true : false;
-    	visibleSection = middleScroll ? visibleSection.next('.cd-section') : visibleSection;
+    	visibleSection = middleScroll ? visibleSection.next('.feature') : visibleSection;
 
     	var animationParams = selectAnimation(animationType, middleScroll, 'prev');
-    	unbindScroll(visibleSection.prev('.cd-section'), animationParams[3]);
+    	unbindScroll(visibleSection.prev('.feature'), animationParams[3]);
 
         if( !animating && !visibleSection.is(":first-child") ) {
         	animating = true;
             visibleSection.removeClass('visible').children('div').velocity(animationParams[2], animationParams[3], animationParams[4])
-            .end().prev('.cd-section').addClass('visible').children('div').velocity(animationParams[0] , animationParams[3], animationParams[4], function(){
+            .end().prev('.feature').addClass('visible').children('div').velocity(animationParams[0] , animationParams[3], animationParams[4], function(){
             	animating = false;
             	if( hijacking == 'off') $(window).on('scroll', scrollAnimation);
             });
@@ -163,12 +163,12 @@ jQuery(document).ready(function($){
     		middleScroll = ( hijacking == 'off' && $(window).scrollTop() != visibleSection.offset().top) ? true : false;
 
     	var animationParams = selectAnimation(animationType, middleScroll, 'next');
-    	unbindScroll(visibleSection.next('.cd-section'), animationParams[3]);
+    	unbindScroll(visibleSection.next('.feature'), animationParams[3]);
 
         if(!animating && !visibleSection.is(":last-of-type") ) {
             animating = true;
             visibleSection.removeClass('visible').children('div').velocity(animationParams[1], animationParams[3], animationParams[4] )
-            .end().next('.cd-section').addClass('visible').children('div').velocity(animationParams[0], animationParams[3], animationParams[4], function(){
+            .end().next('.feature').addClass('visible').children('div').velocity(animationParams[0], animationParams[3], animationParams[4], function(){
             	animating = false;
             	if( hijacking == 'off') $(window).on('scroll', scrollAnimation);
             });
@@ -561,3 +561,4 @@ $.Velocity
             [ { translateY: '-50%'}, 1]
         ]
     });
+

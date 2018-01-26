@@ -20,8 +20,6 @@
     transition: all 1s ease;
     transition-delay: 1s;
     position: relative;
-    left: rem-calc(-20);
-//    z-index: 1;
 }
 
 .splash__strap br {
@@ -120,6 +118,7 @@
         left: calc(-9% - 10px);
         position: relative;
         text-align: left;
+        left: rem-calc(-20);
     }
     
     .loaded .splash__strap {

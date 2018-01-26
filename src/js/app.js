@@ -67,39 +67,20 @@ var app = (function ($) {
             });
         },
         
-//        features: function() {
-//            $.scrollify({
-//                section : '.panel',
-//                easing: 'easeOutExpo',
-//                scrollbars: false,
-//                setHeights: false,
-//                overflowScroll: true,
-//                updateHash: true,
-//                touchScroll:true,
-//                before: function(i) {
-//                    var active = $('.slide.active');
-//                    active.addClass('remove');
-//
-//                    $('[data-slide=' + i + ']').addClass('active');
-//                    active.removeClass('remove active');
-//                },
-//                afterRender: function() {
-//                    $('.panel').each(function() {
-//                        $(this).css('height', parseInt($(window).height()));
-//                    });
-//                    $.scrollify.update();
-//                    $('[data-slide=0]').addClass('active');
-//                }
-//            });            
-//        },
-        
         lazy: function() {
 
-            $('.lazy').show().lazy( {
+            $('.lazy').Lazy({
+                // your configuration goes here
+                scrollDirection: 'vertical',
                 effect: 'fadeIn',
-                threshold: 0,
+                effectTime: 1000,
+                visibleOnly: true,
+                onError: function(element) {
+                    console.log('error loading ' + element.data('src'));
+                },
                 afterLoad: function(e) {
-                    e.addClass('loaded');
+                    $(this).addClass('loadeded');
+                    console.log('loaded' + e.data('src'));
                 }
             });
         }    

@@ -1,15 +1,15 @@
 .secondary-nav {
-    position: absolute;
+    position: fixed;
     bottom: rem-calc(30);
-    left: rem-calc(15);
-    padding: 0 rem-calc(15);
-    z-index: 20;
+    left: 0;
+    padding: 0 rem-calc(30);
+    z-index: 1;
 }
 
 .secondary-nav__item {
     float: left;
-    font-size: rem-calc(14);
-    line-height: rem-calc(30);
+    font-size: rem-calc(16);
+    line-height: rem-calc(24);
     font-weight: 700;
     color: $text-colour--neg;
     
@@ -60,6 +60,7 @@
 @include mq($from: large, $and: '(orientation: landscape)') {
     
     .secondary-nav {
+        position: absolute;
         left: rem-calc(95);
         bottom: rem-calc(50);
     }

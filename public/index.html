@@ -85,10 +85,10 @@
         </li>
         
         <li class="mainNav__item">
-            <a href="/#MeadowArts" id="works" class="mainNav__link">
+            <a href="/examples.html" id="works" class="mainNav__link"> 
                 <div class="mainNav__block">
                     <div class="mainNav__content">
-                        <p class="mainNav__title">Selectd Works</p>
+                        <p class="mainNav__title">Selected Works</p>
                         <p class="mainNav__summary">These, I like.</p>
                     </div>
                 </div>
@@ -125,227 +125,256 @@
         </a>
     </div>
     
-</nav>
+</nav> 
 
     <!-- You write code for this content block in another file -->
+     
+
+<section class="section splash">
+    <h1 class="site">Craig_Cooper_Digital_Designer</h1>
+
+    <div class="splash__content">
+        <div class="splash__monogram"><img src="images/monogram.svg" alt="slowly animating logo"></div>
+        <h2 class="splash__strap">Creating user-focused design <br>for the web and in print</h2>
+    </div>
+
+            <nav class="secondary-nav">
+            <ul class="secondary-nav__list listless">
+                <li class="secondary-nav__item">
+                    <a href="contact.php" class="secondary-nav__link">get in touch</a>
+                </li>
+                <li class="secondary-nav__item">
+                    <a href="https://twitter.com/CraigDoesDesign" class="secondary-nav__link">twitter</a>
+                </li>
+                <li class="secondary-nav__item">
+                    <a href="https://dribbble.com/craigomatic" class="secondary-nav__link">dribbble</a>
+                </li>
+                <li class="secondary-nav__item">
+                    <a href="https://www.behance.net/craigcooper" class="secondary-nav__link">behance</a>
+                </li>
+                <li class="secondary-nav__item">
+                    <a href="https://www.linkedin.com/in/craigjcooper/" class="secondary-nav__link">linked in</a>
+                </li>
+            </ul>
+        </nav>
+</section>
+
+<div class="wrap">
     
-
-<main id="main" class="home">
+    <section class="feature visible">
+        <div class="feature__container"></div>
+    </section>
     
-    
-        <section class="section splash">
-            <h1 class="site" itemprop="name">Craig_Cooper_Digital_Designer</h1>
-
-            <div class="splash__content">
-                <div class="splash__monogram"><img src="images/monogram.svg" alt="slowly animating logo"></div>
-                <h2 class="splash__strap" itemprop="description">Creating user-focused design <br>for the web and in print</h2>
-            </div>
-
-            <nav class="secondary-nav" itemscope itemtype="http://schema.org/ItemList">
-                <meta itemprop="numberOfItems" content="5" />
-                <ul class="secondary-nav__list listless">
-                    <li class="secondary-nav__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                        <a href="contact.php" class="secondary-nav__link" itemprop="item">get in touch</a>
-                    </li>
-                    <li class="secondary-nav__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                        <a href="https://twitter.com/CraigDoesDesign" class="secondary-nav__link" itemprop="item">twitter</a>
-                    </li>
-                    <li class="secondary-nav__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                        <a href="https://dribbble.com/craigomatic" class="secondary-nav__link" itemprop="item">dribbble</a>
-                    </li>
-                    <li class="secondary-nav__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                        <a href="https://www.behance.net/craigcooper" class="secondary-nav__link" itemprop="item">behance</a>
-                    </li>
-                    <li class="secondary-nav__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                        <a href="https://www.linkedin.com/in/craigjcooper/" class="secondary-nav__link" itemprop="item">linked in</a>
-                    </li>
-                </ul>
-            </nav>
-        </section>
-        
-        
-        
-        <div class="wrap" itemscope itemtype="http://schema.org/ItemList">
-            <!-- section 1 -->
-            <section class="feature slide cd-section visible"></section>
-
-            <section class="feature meadow-arts slide cd-section" itemscope itemtype="http://schema.org/CreativeWork"> 
-                <div class="feature__container">
-                    <div class="feature__overlay">
-                        <svg viewBox="0,0,100,100" preserveAspectRatio="none">
-                            <defs>
-                                <filter id="maMaskFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
-                                    <feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
-                                </filter>
-                            </defs>
-                            <!-- fade out to nothing -->
-                            <mask maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100" id="ma1">
-                                <!-- left to right -->
-                                <g class="mask--horz" style="filter:url(#maMaskFilter);">
-                                    <linearGradient id="ma2" gradientUnits="userSpaceOnUse" x1="0" y1="50" x2="100" y2="50">
-                                        <stop  offset="0.2" style="stop-color:#FFFFFF"/>
-                                        <stop  offset="0.8" style="stop-color:#000000"/>
-                                    </linearGradient>
-                                    <rect style="fill:url(#ma2);" width="100" height="100"/>
-                                </g>
-                                <!-- top to bottom -->
-                                <g class="mask--vert" style="filter:url(#maMaskFilter);">
-                                    <linearGradient id="ma2b" gradientUnits="userSpaceOnUse"  x1="50" y1="0" x2="50" y2="100">
-                                        <stop  offset="0.2" style="stop-color:#FFFFFF"/>
-                                        <stop  offset="0.8" style="stop-color:#000000"/>
-                                    </linearGradient>
-                                    <rect style="fill:url(#ma2b);" width="100" height="100"/>
-                                </g>
-                            </mask>
-                            <!-- gradient -->
-                            <g style="mask:url(#ma1);">
-                                <linearGradient id="ma3" gradientUnits="userSpaceOnUse" x1="40" y1="107" x2="60" y2="-7">
-                                    <stop class="start" offset="0.2" style="stop-color: #008e4c"/>
-                                    <stop class="stop" offset="0.8" style="stop-color: #4ab6e9"/>
-                                </linearGradient>
-                                <rect y="0" style="fill:url(#ma3);" width="100" height="100"/>
-                            </g>
-                        </svg> 
-                    </div>
-
-                    <div class="feature__head">
-                        <h2 class="feature__title" itemprop="name">Meadow Arts</h2>
-                        <p class="feature__summary" itemprop="description">Marketing & interpretation material</p>
-                    </div>
-                    <a href="project.html" class="feature__link">View project <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-right"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right"></use></svg></a>
-
-                    <nav class="slide-nav" itemscope itemtype="http://schema.org/ItemList">
-                        <a href="#Parkway" class="slide-nav__prev"><span class="visuallyhidden">Previous item: Parkway Restaurant website & branding</span></a>
-                        <ul class="slide-nav__list listless">
-                            <li class="slide-nav__item slide-nav__item--current" itemscope itemtype="http://schema.org/CreativeWork"></li>
-                            <li class="slide-nav__item" itemscope itemtype="http://schema.org/CreativeWork">
-                                <a href="/#Parkway" class="slide-nav__link"><span class="visuallyhidden">Parkway Restaurant website & branding</span></a>
-                            </li>
-                            <li class="slide-nav__item" itemscope itemtype="http://schema.org/CreativeWork">
-                                <a href="/#BenedictHomer" class="slide-nav__link"><span class="visuallyhidden">Benedict Homer Designer-Maker branding & website</span></a>
-                            </li>
-                        </ul>
-                        <a href="#Parkway" class="slide-nav__next"><span class="visuallyhidden">Next item: Parkway Restaurant website & branding</span></a>
-                    </nav>
-
-                    <div class="feature__image">
-                        <img src="/images/feature-meadowarts.jpg" alt="Meadow Arts" itemprop="image" />
-                    </div>
-                </div>
-            </section>
-
-            <section class="feature parkway slide cd-section"> 
-            <div class="feature__container">   
-                <div class="feature__overlay">
-
-                    <svg viewBox="0,0,100,100" preserveAspectRatio="none">
-                        <defs>
-                            <filter id="pwMaskFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
-                                <feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
-                            </filter>
-                        </defs>
-                        <!-- fade out to nothing -->
-                        <mask maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100" id="pw1">
-                            <!-- left to right -->
-                            <g class="mask--horz" style="filter:url(#pwMaskFilter);">
-                                <linearGradient id="pw2" gradientUnits="userSpaceOnUse" x1="0" y1="50" x2="100" y2="50">
-                                    <stop  offset="0.2" style="stop-color:#FFFFFF"/>
-                                    <stop  offset="0.8" style="stop-color:#000000"/>
-                                </linearGradient>
-                                <rect style="fill:url(#pw2);" width="100" height="100"/>
-                            </g>
-                            <!-- top to bottom -->
-                            <g class="mask--vert" style="filter:url(#pwMaskFilter);">
-                                <linearGradient id="pw2b" gradientUnits="userSpaceOnUse"  x1="50" y1="0" x2="50" y2="100">
-                                    <stop  offset="0.2" style="stop-color:#FFFFFF"/>
-                                    <stop  offset="0.8" style="stop-color:#000000"/>
-                                </linearGradient>
-                                <rect style="fill:url(#pw2b);" width="100" height="100"/>
-                            </g>
-                        </mask>
-                        <!-- gradient -->
-                        <g style="mask:url(#pw1);">
-                            <linearGradient id="pw3" gradientUnits="userSpaceOnUse" x1="40" y1="107" x2="60" y2="-7">
-                                <stop class="start" offset="0.2" style="stop-color: #341160"/>
-                                <stop class="stop" offset="0.8" style="stop-color: #35bfae"/>
-                            </linearGradient>
-                            <rect y="0" style="fill:url(#pw3);" width="100" height="100"/>
+        <section id="meadow" class="feature meadow-arts">
+        <div class="feature__container"> 
+            
+            <div class="feature__overlay">
+                <svg viewbox="0,0,100,100" preserveaspectratio="none">
+                    <defs>
+                        <filter id="maMaskFilter" filterunits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+                            <fecolormatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+                        </filter>
+                    </defs>
+                    <!-- fade out to nothing -->
+                    <mask maskunits="userSpaceOnUse" x="0" y="0" width="100" height="100" id="ma1">
+                    <!-- left to right -->
+                        <g class="mask--horz" style="filter:url(#maMaskFilter);">
+                            <lineargradient id="ma2" gradientunits="userSpaceOnUse" x1="0" y1="50" x2="100" y2="50">
+                                <stop  offset="0.2"/>
+                                <stop  offset="0.8"/>
+                            </lineargradient>
+                            <rect style="fill:url(#ma2);" width="100" height="100"/>
                         </g>
-                    </svg>
-
-                </div>
-
-                <div class="feature__head">
-                    <h2 class="feature__title">Parkway</h2>
-                    <p class="feature__summary">Restarant website & branding</p>
-                </div>
-                <a href="project.html" class="feature__link">View project <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-right"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right"></use></svg></a>
-
-                <div class="feature__image" style="background-image: url(/images/feature-parkway.jpg);"></div>
+                        <!-- top to bottom -->
+                        <g class="mask--vert" style="filter:url(#maMaskFilter);">
+                            <lineargradient id="ma2b" gradientunits="userSpaceOnUse"  x1="50" y1="0" x2="50" y2="100">
+                                <stop  offset="0.2"/>
+                                <stop  offset="0.8"/>
+                            </lineargradient>
+                            <rect style="fill:url(#ma2b);" width="100" height="100"/>
+                        </g>
+                    </mask>
+                    <!-- gradient -->
+                    <g style="mask:url(#ma1);">
+                        <lineargradient id="ma3" gradientunits="userSpaceOnUse" x1="40" y1="107" x2="60" y2="-7">
+                            <stop class="start" offset="0.2"/>
+                            <stop class="stop" offset="0.8"/>
+                        </lineargradient>
+                        <rect y="0" style="fill:url(#ma3);" width="100" height="100"/>
+                    </g>
+                </svg> 
             </div>
-        </section>
-
-            <section class="feature ben slide cd-section">
-                <div class="feature__container">
-                <div class="feature__overlay">
-
-                        <svg viewBox="0,0,100,100" preserveAspectRatio="none">
-                            <defs>
-                                <filter id="bhMaskFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
-                                    <feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
-                                </filter>
-                            </defs>
-                            <!-- fade out to nothing -->
-                            <mask maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100" id="bh1">
-                                <!-- left to right -->
-                                <g class="mask--horz" style="filter:url(#bhMaskFilter);">
-                                    <linearGradient id="bh2" gradientUnits="userSpaceOnUse" x1="0" y1="50" x2="100" y2="50">
-                                        <stop  offset="0.2" style="stop-color:#FFFFFF"/>
-                                        <stop  offset="0.8" style="stop-color:#000000"/>
-                                    </linearGradient>
-                                    <rect style="fill:url(#bh2);" width="100" height="100"/>
-                                </g>
-                                <!-- top to bottom -->
-                                <g class="mask--vert" style="filter:url(#bhMaskFilter);">
-                                    <linearGradient id="bh2b" gradientUnits="userSpaceOnUse"  x1="50" y1="0" x2="50" y2="100">
-                                        <stop  offset="0.2" style="stop-color:#FFFFFF"/>
-                                        <stop  offset="0.8" style="stop-color:#000000"/>
-                                    </linearGradient>
-                                    <rect style="fill:url(#bh2b);" width="100" height="100"/>
-                                </g>
-                            </mask>
-                            <!-- gradient -->
-                            <g style="mask:url(#bh1);">
-                                <linearGradient id="bh3" gradientUnits="userSpaceOnUse" x1="40" y1="107" x2="60" y2="-7">
-                                    <stop class="start" offset="0.2" style="stop-color: #774636"/>
-                                    <stop class="stop" offset="0.8" style="stop-color: #c9914a"/>
-                                </linearGradient>
-                                <rect y="0" style="fill:url(#bh3);" width="100" height="100"/>
-                            </g>
-                        </svg>
-
-                    </div>
-
-                <div class="feature__head">
-                    <h2 class="feature__title">Benedict Homer</h2>
-                    <p class="feature__summary">Designer-Maker branding & website</p>
-                </div>
-                <a href="project.html" class="feature__link">View project <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-right"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right"></use></svg></a>
-
-                <div class="feature__image" style="background-image: url(/images/feature-ben.jpg);"></div>
-                </div>
-            </section>
+            
+            <div class="feature__head">
+                <h2 class="feature__title">Meadow Arts</h2>
+                <p class="feature__summary">Marketing & interpretation material</p>
+            </div> 
+            <a href="project.html" class="feature__link">View project<span class="icon--arrow-right"></span></a>
+            <ul class="feature__nav listless">
+                <li><a href="#0" class="cd-prev inactive">Prev</a></li>
+                <li><a href="#0" class="cd-next">Next</a></li>
+            </ul>
+            <div class="feature__image"><img src="/images/feature-meadowarts.jpg" alt="Meadow Arts" /></div>
         </div>
+    </section>
 
-
-<!--
-    <section class="panel panel1" data-section-name="Home"></section>
-    <section class="panel panel1" data-section-name="MeadowArts"></section>
-    <section class="panel panel2" data-section-name="Parkway"></section>
-    <section class="panel panel3" data-section-name="BenedictHomer"></section>
--->
+    <section id="peterbishop" class="feature peter-bishop">
+        <div class="feature__container">
+            
+            <div class="feature__overlay">
+                <svg viewbox="0,0,100,100" preserveaspectratio="none">
+                    <defs>
+                        <filter id="pbMaskFilter" filterunits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+                            <fecolormatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+                        </filter>
+                    </defs>
+                    <!-- fade out to nothing -->
+                    <mask maskunits="userSpaceOnUse" x="0" y="0" width="100" height="100" id="pb1">
+                    <!-- left to right -->
+                        <g class="mask--horz" style="filter:url(#pbMaskFilter);">
+                            <lineargradient id="pb2" gradientunits="userSpaceOnUse" x1="0" y1="50" x2="100" y2="50">
+                                <stop  offset="0.2"/>
+                                <stop  offset="0.8"/>
+                            </lineargradient>
+                            <rect style="fill:url(#pb2);" width="100" height="100"/>
+                        </g>
+                        <!-- top to bottom -->
+                        <g class="mask--vert" style="filter:url(#maMaskFilter);">
+                            <lineargradient id="pb2b" gradientunits="userSpaceOnUse"  x1="50" y1="0" x2="50" y2="100">
+                                <stop  offset="0.2"/>
+                                <stop  offset="0.8"/>
+                            </lineargradient>
+                            <rect style="fill:url(#pb2b);" width="100" height="100"/>
+                        </g>
+                    </mask>
+                    <!-- gradient -->
+                    <g style="mask:url(#pb1);">
+                        <lineargradient id="pb3" gradientunits="userSpaceOnUse" x1="40" y1="107" x2="60" y2="-7">
+                            <stop class="start" offset="0.2"/>
+                            <stop class="stop" offset="0.8"/>
+                        </lineargradient>
+                        <rect y="0" style="fill:url(#pb3);" width="100" height="100"/>
+                    </g>
+                </svg> 
+            </div>
+            
+            <div class="feature__head">
+                <h2 class="feature__title">Cader Idris</h2>
+                <p class="feature__summary">Exhibition Catalogue</p>
+            </div> 
+            <a href="peter-bishop.html" class="feature__link">View project<span class="icon--arrow-right"></span></a>
+            <ul class="feature__nav listless">
+                <li><a href="#0" class="cd-prev inactive">Prev</a></li>
+                <li><a href="#0" class="cd-next">Next</a></li>
+            </ul>
+            <div class="feature__image"><img src="/images/feature-cader-idris.jpg" alt="Meadow Arts" /></div>
+        </div>
+    </section>
     
-</main>
+    <section class="feature parkway">
+        <div class="feature__container">
+            <div class="feature__overlay">
+                <svg viewbox="0,0,100,100" preserveaspectratio="none">
+                    <defs>
+                        <filter id="pwMaskFilter" filterunits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+                            <fecolormatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+                        </filter>
+                    </defs>
+                    <!-- fade out to nothing -->
+                    <mask maskunits="userSpaceOnUse" x="0" y="0" width="100" height="100" id="pw1">
+                    <!-- left to right -->
+                        <g class="mask--horz" style="filter:url(#pwMaskFilter);">
+                            <lineargradient id="pw2" gradientunits="userSpaceOnUse" x1="0" y1="50" x2="100" y2="50">
+                                <stop  offset="0.2"/>
+                                <stop  offset="0.8"/>
+                            </lineargradient>
+                            <rect style="fill:url(#pw2);" width="100" height="100"/>
+                        </g>
+                        <!-- top to bottom -->
+                        <g class="mask--vert" style="filter:url(#pwMaskFilter);">
+                            <lineargradient id="pw2b" gradientunits="userSpaceOnUse"  x1="50" y1="0" x2="50" y2="100">
+                                <stop  offset="0.2"/>
+                                <stop  offset="0.8"/>
+                            </lineargradient>
+                            <rect style="fill:url(#pw2b);" width="100" height="100"/>
+                        </g>
+                    </mask>
+                    <!-- gradient -->
+                    <g style="mask:url(#pw1);">
+                        <lineargradient id="pw3" gradientunits="userSpaceOnUse" x1="40" y1="107" x2="60" y2="-7">
+                            <stop class="start" offset="0.2"/>
+                            <stop class="stop" offset="0.8"/>
+                        </lineargradient>
+                        <rect y="0" style="fill:url(#pw3);" width="100" height="100"/>
+                    </g>
+                </svg> 
+            </div>
+            <div class="feature__head">
+                <h2 class="feature__title">Parkway</h2>
+                <p class="feature__summary">Restarant website & branding</p>
+            </div> <a href="project.html" class="feature__link">View project<span class="icon--arrow-right"></span></a>
+            <ul class="feature__nav listless">
+                <li><a href="#0" class="cd-prev inactive">Prev</a></li>
+                <li><a href="#0" class="cd-next">Next</a></li>
+            </ul>
+            <div class="feature__image"><img src="/images/feature-parkway.jpg" /></div>
+        </div>
+    </section>
+    
+    <section class="feature ben">
+        <div class="feature__container">
+            <div class="feature__overlay">
+            
+                <svg viewbox="0,0,100,100" preserveaspectratio="none">
+                    <defs>
+                        <filter id="bhMaskFilter" filterunits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+                            <fecolormatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+                        </filter>
+                    </defs>
+                    <!-- fade out to nothing -->
+                    <mask maskunits="userSpaceOnUse" x="0" y="0" width="100" height="100" id="bh1">
+                    <!-- left to right -->
+                        <g class="mask--horz" style="filter:url(#bhMaskFilter);">
+                            <lineargradient id="bh2" gradientunits="userSpaceOnUse" x1="0" y1="50" x2="100" y2="50">
+                                <stop  offset="0.2"/>
+                                <stop  offset="0.8"/>
+                            </lineargradient>
+                            <rect style="fill:url(#bh2);" width="100" height="100"/>
+                        </g>
+                        <!-- top to bottom -->
+                        <g class="mask--vert" style="filter:url(#bhMaskFilter);">
+                            <lineargradient id="bh2b" gradientunits="userSpaceOnUse"  x1="50" y1="0" x2="50" y2="100">
+                                <stop  offset="0.2"/>
+                                <stop  offset="0.8"/>
+                            </lineargradient>
+                            <rect style="fill:url(#bh2b);" width="100" height="100"/>
+                        </g>
+                    </mask>
+                    <!-- gradient -->
+                    <g style="mask:url(#bh1);">
+                        <lineargradient id="bh3" gradientunits="userSpaceOnUse" x1="40" y1="107" x2="60" y2="-7">
+                            <stop class="start" offset="0.2"/>
+                            <stop class="stop" offset="0.8"/>
+                        </lineargradient>
+                        <rect y="0" style="fill:url(#bh3);" width="100" height="100"/>
+                    </g>
+                </svg> 
+
+            </div>
+            <div class="feature__head">
+                <h2 class="feature__title">Benedict Homer</h2>
+                <p class="feature__summary">Designer-Maker branding & website</p>
+            </div> 
+            <a href="project.html" class="feature__link">View project<span class="icon--arrow-right"></span></a>
+            <ul class="feature__nav listless">
+                <li><a href="#0" class="cd-prev inactive">Prev</a></li>
+                <li><a href="#0" class="cd-next">Next</a></li>
+            </ul>
+            <div class="feature__image"><img src="/images/feature-ben.jpg" /></div>
+        </div>
+    </section>
+    
+</div>
 
 
     
