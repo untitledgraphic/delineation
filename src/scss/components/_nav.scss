@@ -8,40 +8,37 @@
     box-sizing: border-box;
     
     a {
-        background: rgba(255,255,255,0.4);
         border-radius: 50%;
         width: rem-calc(40);
         height: rem-calc(40);
         z-index: 1;
         display: block;
-        position: absolute;
+        position: relative;
+        font-size: rem-calc(30);
+        line-height: rem-calc(36);
+//        position: absolute;
     }
 }
 
+.pageHeader__nav {
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
 a.navTrigger { 
-    position: absolute;
     background: $text-colour;
-    top: rem-calc(15);
-    left: rem-calc(15);
+    position: relative;
+    z-index: 1;
 }
         
 a.logo,
 a.pageHeader__helper {
     border: rem-calc(1.5) solid $text-colour;
-    font-size: rem-calc(32);
-    line-height: rem-calc(36);
     text-align: center;
-}
-
-a.logo {
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-a.pageHeader__helper { 
-    position: absolute;
-    top: rem-calc(15);
-    right: rem-calc(15);
+    background: $bg;
 }
 
 .navTrigger__bar1,
@@ -52,7 +49,8 @@ a.pageHeader__helper {
     transition: all $t-time $bezier;
     margin: auto;
     position: absolute;
-    left: rem-calc(10);
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .navTrigger__bar1 {
@@ -78,21 +76,17 @@ a.pageHeader__helper {
     display: block;
     height: 1px;
     background: $bg--dark;
-    position: relative;
-    top: rem-calc(20);
-    left: 40px;
-    width: calc(100% - 80px);
+    
+    position: absolute;
 }
 
 
-@include mq($from: medium) {
+@include mq($from: small, $and: '(orientation: portarit)') {
     
-    .pageHeader {
-        padding: rem-calc(16) rem-calc(70);
-    }
-    
-    .pageHeader__helper { 
-        right: rem-calc(25);
+    .rule {
+        top: 50%;
+        left: rem-calc(50);
+        width: calc(100% - 100px);
     }
 }
 
@@ -100,55 +94,34 @@ a.pageHeader__helper {
 @include mq($from: small, $and: '(orientation: landscape)') {
         
     .pageHeader {
-        padding: rem-calc(55) rem-calc(35);
         left: auto;
         right: 0;
-        width: rem-calc(71);
-        height: 100vh;        
+        width: rem-calc(84);
+        height: 100vh;   
     }
     
-    a.logo {
-        position: absolute;
-        top: rem-calc(15);
-        right: rem-calc(15);
-    }
-    
-    a.navTrigger { 
-        top: 50%;
-        left: auto;
-        right: rem-calc(15);
-        transform: translate(0, -50%);
-    }
-    
-    a.pageHeader__helper { 
-        top: auto;
-        right: rem-calc(15);
-        bottom: rem-calc(15);
+    .pageHeader__nav {
+        flex-direction: column;
+        height: 100%;
     }
     
     .rule {
-        height: 100%;
-        position: static;
         width: 1px;
-        margin: 0;
-        box-sizing: border-box;
-        left: auto;
+        left: 50%;
+        top: rem-calc(50);
+        height: calc(100% - 100px);
     }
 }
 
 @include mq($from: medium, $and: '(orientation: landscape)') {
-        
+    
     .pageHeader {
-        padding: rem-calc(80) rem-calc(35);
+	   width: 8.333%;
     }
-    
-    a.logo {
-        top: rem-calc(25);
-    }
-    
-    a.pageHeader__helper { 
-        right: rem-calc(15);
-        bottom: rem-calc(25);
+        
+    .rule {
+        top: rem-calc(60);
+        height: calc(100% - 120px);
     }
 }
 
@@ -156,30 +129,69 @@ a.pageHeader__helper {
 @include mq($from: medium, $and: '(orientation: portrait)') {
     
     .pageHeader {
-        padding: rem-calc(16) rem-calc(75);
+        padding: rem-calc(22) rem-calc(20);
     }
     
-    a.navTrigger { 
-        left: rem-calc(20);
-    }
-    
-    a.pageHeader__helper { 
-        right: rem-calc(20);
+    .rule {
+        left: rem-calc(60);
+        width: calc(100% - 120px);
     }
 }
 
 
 @include mq($from: large, $and: '(orientation: landscape)') {  
-    
+        
     .pageHeader {
-        padding: rem-calc(80) rem-calc(55);
-        width: rem-calc(111);
+        padding: rem-calc(20) 0;
     }
     
     a.logo,
-    a.navTrigger,
-    a.pageHeader__helper { 
-        right: rem-calc(35);
+    a.pageHeader__helper {
+        background: rgba(255,255,255,0.4);
+    }
+}
+
+@include mq($from: xxlarge) {  
+    
+    .pageHeader {
+        padding: rem-calc(30) 0;
+    }
+    
+    .pageHeader a {
+        width: rem-calc(60);
+        height: rem-calc(60);
+        font-size: rem-calc(46);
+        line-height: rem-calc(56);
+    }
+    
+    .navTrigger__bar1,
+    .navTrigger__bar2 {
+        width: rem-calc(30);
+        height: rem-calc(3);
+    }
+
+    .navTrigger__bar1 {
+        top: rem-calc(20);
+    }
+
+    .navTrigger__bar2 {
+        bottom: rem-calc(20);
+    }
+
+    .navTrigger:hover {
+
+        .navTrigger__bar1 { 
+            transform: translate(-50%, -3px);
+        }
+
+        .navTrigger__bar2 { 
+            transform: translate(-50%, 3px);
+        }
+    }
+    
+    .rule {
+        top: rem-calc(90);
+        height: calc(100% - 180px);
     }
 }
 

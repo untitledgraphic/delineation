@@ -36,11 +36,10 @@
 }
 
 
-@include mq($from: medium, $and: '(orientation: portrait)') {
+@include mq($from: medium) {
     
-    .secondary-nav {
-        left: rem-calc(60);
-        bottom: rem-calc(50);
+    .secondary__nav {
+        z-index: 0;
     }
     
     .secondary-nav__item {
@@ -49,10 +48,20 @@
 }
 
 
+@include mq($from: medium, $and: '(orientation: portrait)') {
+    
+    .secondary-nav {
+        left: rem-calc(60);
+        bottom: rem-calc(42);
+        padding-left: rem-calc(16);
+    }
+}
+
+
 @include mq($from: medium, $and: '(orientation: landscape)') {
     
     .secondary-nav {
-        left: rem-calc(95);
+        padding: 0 8.333%;
     }
 }
 
@@ -63,9 +72,5 @@
         position: absolute;
         left: rem-calc(95);
         bottom: rem-calc(50);
-    }
-    
-    .secondary-nav__item {
-        color: $text-colour;
     }
 }

@@ -1,7 +1,28 @@
 .site {
     display: none;
+}
+
+@include mq($from: medium, $and: '(orientation: portrait)') {
+    .site {
+        display: block;
+        position: fixed;
+        bottom: rem-calc(55);
+        right: 0;
+        transform: rotate(90deg);
+        transform-origin: top right;
+        font-size: rem-calc(18);
+        font-weight: 300;
+        line-height: 1;
+        padding-top: rem-calc(10);
+        margin: 0;
+        color: $grey;
+        z-index: 1;
+    }
+}
+
+@include mq($from: medium, $and: '(orientation: landscape)') {
     
-    @include mq($from: large) {
+    .site {
         display: block;
         position: fixed;
         top: rem-calc(80);

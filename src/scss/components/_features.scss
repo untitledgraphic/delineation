@@ -25,12 +25,20 @@ body:before {
     
     .wrap {
         position: absolute;
-        left: rem-calc(110);
-        right: rem-calc(110);
-        top: rem-calc(85);
-        bottom: rem-calc(85);
+        left: 8.333%;
+        right: 8.333%;
+        top: rem-calc(80);
+        bottom: rem-calc(80);
         overflow: hidden;
         height: auto;
+    }
+}
+
+@include mq($from: xxlarge) {
+    
+    .wrap {
+        top: rem-calc(120);
+        bottom: rem-calc(120);
     }
 }
 
@@ -46,7 +54,7 @@ body:before {
 .feature__container {
     display: flex;
     flex-direction: column;
-//    justify-content: center;
+    justify-content: center;
     padding: rem-calc(15);
     height: 100%;
     position: relative;
@@ -56,34 +64,11 @@ body:before {
 
 @include mq($and: '(orientation: landscape)') {
     
-//    .feature__container {
-//        top: 0;
-//        right: 100%;
-//        transition: right ease 0.5s;
-//        transition-delay: 0.5s;
-//    }
-//    
-//    .active .feature__container {
-//        right: 0;
-//        transition: right ease 0.5s;
-//    }
+    .feature {
+        padding: rem-calc(15) rem-calc(85) rem-calc(15) rem-calc(15);
+    }
 }
 
-
-@include mq($and: '(orientation: portrait)') {
-        
-//    .feature__container {
-//        top: 100%;
-//        right: 0;
-//        transition: top ease 0.5s;
-//        transition-delay: 0.5s;
-//    }
-//    
-//    .active .feature__container {
-//        top: 0;
-//        transition: top ease 0.5s;
-//    }
-}
 
 .feature__overlay {
     display: block;
@@ -103,13 +88,13 @@ body:before {
 }
 
 .feature__head {
-    position: relative;
+    position: absolute;
     z-index: 5;
-//    text-align: center;
+    top: rem-calc(10);
+    padding-right: 15px;
 }
 
-.feature.visible .feature__head{
-    top: rem-calc(15);
+.feature.visible .feature__head {
     opacity: 1;
     transition-delay: 0;
 }
@@ -174,6 +159,14 @@ body:before {
 .mask--vert {
     display: inline;
 }
+    
+@media (min-width:rem-calc(375)) and (orientation: portrait) {
+    
+    .feature__head,
+    .feature.visible .feature__head {
+	   top: 20%;
+    }
+}
 
 mask lineargradient stop {
     
@@ -201,7 +194,6 @@ mask lineargradient stop {
     }
     
     .feature__container {
-        justify-content: center;
         position: fixed;
         top: 0;
         left: 0;
@@ -243,16 +235,6 @@ mask lineargradient stop {
 
 @include mq($and: '(orientation: landscape)') {
     
-    .feature {
-        left: rem-calc(15);
-        right: rem-calc(85);
-        top: rem-calc(15);
-        bottom: rem-calc(15);
-    }
-    
-    .feature__head {
-    }
-    
     .mask--horz {
         display: inline;
     }
@@ -266,18 +248,24 @@ mask lineargradient stop {
 @include mq($from: medium, $and: '(orientation: portrait)') {
     
     .feature {
-        left: rem-calc(75);
-        right: rem-calc(75);
-        top: rem-calc(85);
-        bottom: rem-calc(85);
+        padding: rem-calc(85) rem-calc(80);
     }
     
     .feature__head {
-        top: rem-calc(110);
+        padding: rem-calc(75);
+        top: 0;
     }
     
-    .feature.visible .feature__head {
-        top: rem-calc(90);
+    .feature__link {
+        padding-left: rem-calc(75);
+    }
+    
+    .feature__title {
+        font-size:  rem-calc(54);
+    }
+    
+    .feature__summary {
+        font-size: rem-calc(30);
     }
 }
 
@@ -285,15 +273,33 @@ mask lineargradient stop {
 @include mq($from: medium, $and: '(orientation: landscape)') {
     
     .feature {
-//        left: rem-calc(110);
-//        right: rem-calc(110);
-//        top: rem-calc(85);
-//        bottom: rem-calc(85);
+        padding: rem-calc(80) 8.333%;
     }
     
     .feature__container {
 	   padding: 10%;
     }
+    
+    .feature__head {
+        top: 15%;
+    }
+    
+    .feature__title {
+        font-size:  rem-calc(54);
+    }
+    
+    .feature__summary {
+        font-size: rem-calc(30);
+    }
+    
+    .feature__link {
+        position: relative;
+        top: 30px;
+    }
+}
+
+
+@include mq($from: large, $and: '(orientation: landscape)') {
     
     .feature__head {
         top: calc(25% + 60px);
@@ -321,7 +327,6 @@ mask lineargradient stop {
     
     .feature__head {
         position: absolute;
-        top: rem-calc(20);
         z-index: 10;
         opacity: 0;
         transition: all ease 0.5s;
@@ -334,7 +339,6 @@ mask lineargradient stop {
 }
 
 .feature__nav {
-    /* lateral navigation */
     position: absolute;
     z-index: 5;
     display: none;
