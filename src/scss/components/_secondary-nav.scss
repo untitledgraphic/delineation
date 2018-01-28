@@ -48,6 +48,14 @@
 }
 
 
+@include mq($from: small, $and: '(orientation: landscape)') {
+    
+    .secondary-nav {
+        z-index: 6;
+    }
+}
+
+
 @include mq($from: medium, $and: '(orientation: portrait)') {
     
     .secondary-nav {
@@ -62,6 +70,7 @@
     
     .secondary-nav {
         padding: 0 8.333%;
+        z-index: 0;
     }
 }
 
