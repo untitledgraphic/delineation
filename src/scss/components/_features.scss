@@ -380,39 +380,15 @@ mask lineargradient stop {
 // Gradients & Masks
 //=================================================
 
-
-// Modifiers
-//=================================================
-
-$ma1:   #008e4c;
-$ma2:   #4ab6e9;
-$pw1:   #341160;
-$pw2:   #35bfae;
-$bh1:   #774636;
-$bh2:   #c9914a;
-$pb1:   #d0c7d8;
-$pb2:   #4f869a;
-
-.meadow-arts {
-    .feature__overlay { background-image: linear-gradient(to top, $ma1 0%, $ma2 100%); }
-    .start { stop-color: $ma1; }
-    .stop { stop-color: $ma2; }
-}
-
-.ben {
-    .feature__overlay { background-image: linear-gradient(to top, $bh1 0%, $bh2 100%); }
-    .start { stop-color: $bh1; }
-    .stop { stop-color: $bh2; }
-}
-
-.parkway {
-    .feature__overlay { background-image: linear-gradient(to top, $pw1 0%, $pw2 100%); }
-    .start { stop-color: $pw1; }
-    .stop { stop-color: $pw2; }
-}
-
-.peter-bishop {
-    .feature__overlay { background-image: linear-gradient(to top, $pb1 0%, $pb2 100%); }
-    .start { stop-color: $pb1; }
-    .stop { stop-color: $pb2; }
-}
+.meadow-arts {      @include colourway(#008e4c, #4ab6e9); }
+.ben {              @include colourway(#774636, #c9914a); }
+.parkway {          @include colourway(#341160, #35bfae); }
+.peter-bishop {     @include colourway(#d0c7d8, #4f869a); }
+.three-weeks {      @include colourway(#e763a4, #815fa8); }
+.marc-soubeyran {   @include colourway(#b15a27, #5a1d0b); }
+.gwynedd {          @include colourway(#408627, #404040); }
+.sbif {             @include colourway(#e6e6e6, #1a283a); }
+.wycombe {          @include colourway(#cccccc, #0070be); }
+.nmni {             @include colourway(#474747, #61116a); }
+.toolsave {         @include colourway(#a91f23, #881a22); }
+.ideal {            @include colourway(#d18642, #ad9d3b); }
