@@ -14,9 +14,6 @@
         z-index: 1;
         display: block;
         position: relative;
-        font-size: rem-calc(30);
-        line-height: rem-calc(36);
-//        position: absolute;
     }
 }
 
@@ -39,6 +36,21 @@ a.pageHeader__helper {
     border: rem-calc(1.5) solid $text-colour;
     text-align: center;
     background: $bg;
+}
+
+a.logo {
+    font-size: rem-calc(30);
+    line-height: rem-calc(36);
+}
+
+a.pageHeader__helper {
+    font-size: rem-calc(22);
+    line-height: rem-calc(36);
+    
+    &:before {
+        left: -0.1em;
+        position: relative;
+    }
 }
 
 .navTrigger__bar1,

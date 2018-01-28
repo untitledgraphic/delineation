@@ -1,6 +1,6 @@
 .secondary-nav {
     position: fixed;
-    bottom: rem-calc(30);
+    bottom: rem-calc(20);
     left: 0;
     padding: 0 rem-calc(30);
     z-index: 1;
@@ -79,7 +79,7 @@
     
     .secondary-nav {
         position: absolute;
-        left: rem-calc(95);
-        bottom: rem-calc(50);
+        left: 0;
+        bottom: rem-calc(27);
     }
 }

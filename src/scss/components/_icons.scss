@@ -53,3 +53,9 @@
         content: $icon-close;
     }
 }
+
+.icon--mail {
+    &:before {
+        content: $icon-mail;
+    }
+}
