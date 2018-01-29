@@ -21,68 +21,7 @@
     font-weight: 300;
     font-style: normal;
 }
-/*
 
-@font-face {
-    font-family: 'raleway';
-    src: url('../fonts/raleway/400/raleway-regular-italic-webfont.eot');
-    src: url('../fonts/raleway/400/raleway-regular-italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/raleway/400/raleway-regular-italic-webfont.woff2') format('woff2'),
-         url('../fonts/raleway/400/raleway-regular-italic-webfont.woff') format('woff'),
-         url('../fonts/raleway/400/raleway-regular-italic-webfont.ttf') format('truetype'),
-         url('../fonts/raleway/400/raleway-regular-italic-webfont.svg#ralewayitalic') format('svg');
-    font-weight: 400;
-    font-style: italic;
-}
- 
-@font-face {
-    font-family: 'raleway';
-    src: url('../fonts/raleway/400/raleway-regular-webfont.eot');
-    src: url('../fonts/raleway/400/raleway-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/raleway/400/raleway-regular-webfont.woff2') format('woff2'),
-         url('../fonts/raleway/400/raleway-regular-webfont.woff') format('woff'),
-         url('../fonts/raleway/400/raleway-regular-webfont.ttf') format('truetype'),
-         url('../fonts/raleway/400/raleway-regular-webfont.svg#ralewayregular') format('svg');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'raleway';
-    src: url('../fonts/raleway/500/raleway-medium-italic-webfont.eot');
-    src: url('../fonts/raleway/500/raleway-medium-italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/raleway/500/raleway-medium-italic-webfont.woff2') format('woff2'),
-         url('../fonts/raleway/500/raleway-medium-italic-webfont.woff') format('woff'),
-         url('../fonts/raleway/500/raleway-medium-italic-webfont.ttf') format('truetype'),
-         url('../fonts/raleway/500/raleway-medium-italic-webfont.svg#ralewaymedium_italic') format('svg');
-    font-weight: 500;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'raleway';
-    src: url('../fonts/raleway/500/raleway-medium-webfont.eot');
-    src: url('../fonts/raleway/500/raleway-medium-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/raleway/500/raleway-medium-webfont.woff2') format('woff2'),
-         url('../fonts/raleway/500/raleway-medium-webfont.woff') format('woff'),
-         url('../fonts/raleway/500/raleway-medium-webfont.ttf') format('truetype'),
-         url('../fonts/raleway/500/raleway-medium-webfont.svg#ralewaymedium') format('svg');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'raleway';
-    src: url('../fonts/raleway/600/raleway-semibold-italic-webfont.eot');
-    src: url('../fonts/raleway/600/raleway-semibold-italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/raleway/600/raleway-semibold-italic-webfont.woff2') format('woff2'),
-         url('../fonts/raleway/600/raleway-semibold-italic-webfont.woff') format('woff'),
-         url('../fonts/raleway/600/raleway-semibold-italic-webfont.ttf') format('truetype'),
-         url('../fonts/raleway/600/raleway-semibold-italic-webfont.svg#ralewaysemibold_italic') format('svg');
-    font-weight: 600;
-    font-style: italic;
-}
-*/
 @font-face {
     font-family: 'raleway';
     src: url('../fonts/raleway/600/raleway-semibold-webfont.eot');
@@ -94,7 +33,6 @@
     font-weight: 600;
     font-style: normal;
 }
-
 
 @font-face {
     font-family: 'raleway';
@@ -147,8 +85,8 @@ body {
 
 p {
 	font-size: rem-calc(14);
-    line-height: 1.875;
-    margin: 0 0 rem-calc(7);
+    line-height: 2;
+    margin: 0 0 1em;
 }
 
 a, 
@@ -165,9 +103,35 @@ a:visited {
     }
     
     &:hover,
-    :focus {
+    &:focus {
         .icon {
             left: rem-calc(5);
+        }
+    }
+}
+
+main a {
+    position: relative;
+    z-index: 0;
+    
+    &:before {
+        content: '';
+        width: 100%;
+        position: absolute;
+        height: 4px;
+        background: $light-grey;
+        top: 50%;
+        z-index: -1;
+        transition: $transition-all;
+    }
+    
+    &:hover,
+    &:focus {
+        color: $text-colour--neg;
+        &:before {
+            top: 0;
+            height: 100%;
+            background: $black;
         }
     }
 }
@@ -178,4 +142,17 @@ a:visited {
     p {
         font-size: rem-calc(16);
     }
+}
+
+@include mq($from: xxlarge) {
+    
+    body,
+    p {
+        font-size: rem-calc(30);
+    }
+}
+
+.sticky {
+    position: sticky!important;
+    top: 20px;
 }

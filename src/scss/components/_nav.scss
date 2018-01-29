@@ -76,11 +76,11 @@ a.pageHeader__helper {
 .navTrigger:hover {
     
     .navTrigger__bar1 { 
-        transform: translate(0, -1px);
+        transform: translate(-50%, -2px);
     }
         
     .navTrigger__bar2 { 
-        transform: translate(0, 1px);
+        transform: translate(-50%, 2px);
     }
 }
 
