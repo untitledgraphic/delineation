@@ -1,0 +1,18 @@
+.contact {
+    padding: rem-calc(120) 0;
+}
+
+.contact__intro {
+    position: relative;
+    left: 8.333%;
+    
+    p {
+        font-size: rem-calc(20);
+    }
+}
+
+.contact__title {
+    text-transform: uppercase;
+    margin: 0;
+    font-size: rem-calc(36);
+}

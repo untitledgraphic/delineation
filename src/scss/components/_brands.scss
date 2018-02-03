@@ -1,0 +1,38 @@
+.brands {
+    color: $text-colour--neg;
+    padding: rem-calc(120) 0;
+    background: linear-gradient(
+        135deg, 
+        #9391f3 0%,
+        #f2919d 100%
+    );
+    overflow-x: hidden;
+    
+    p {
+        text-align: right;
+        margin: rem-calc(80) 0 0;
+        font-family: $serif;
+        font-size: rem-calc(36);
+    }
+}
+
+.brands__title {
+    color: $text-colour--neg;
+    position: relative;
+    left: 8.333%;
+    font-family: $serif;
+    font-size: rem-calc(36);
+    margin: 0 0 rem-calc(80);
+}
+
+.brands__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brands__item {
+    flex: 0 0 auto;
+    margin: 0 rem-calc(15);
+    
+}
