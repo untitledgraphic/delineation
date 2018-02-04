@@ -8,12 +8,12 @@
     
     <section class="hello">
         <div class="row">
-            <div class="column">
-                <h2 class="large--8 hello__title">
+            <header class="column">
+                <h2 class="large-8 hello__title">
                     <span class="hello__hello">Hello</span>
                     <span class="hello__name">My name is Craig.</span>
                 </h2>
-            </div>
+            </header>
         
             <div class="medium-8 large-6 column hello__summary">
                 <p>I'm a print/UI/UX designer and front end developer based in Ludlow, Shropshire, just an hour from Birmingham and the West Midlands and within shouting distance of Mid-Wales.</p>
@@ -49,17 +49,37 @@
     
     <section class="contact">
         <div class="row">
-            <div class="column">
-                <div class="contact__intro large-5">
+                <div class="contact__intro large-5 column">
                     <h2 class="contact__title">Let's work together</h2>
                     <p>if you've got some marketing to do, or maybe a little bit of refreshment to your existing collateral, why not get in touch.</p>
                 </div>
-                <div class="contact__form">
-                    <form>
-                        
-                    </form>
-                </div>
-            </div>
+                <form id="contact" class="large-5 column contact__form">
+                    <div class="form__item">
+                        <input id="name" class="form__txt" type="text" name="name" />
+                        <label class="form__label" for="name">Your name</label>
+                        <div class="underlay"></div>
+                    </div>
+                    <div class="form__item">
+                        <input id="email" class="form__txt" type="email" name="email" />
+                        <label class="form__label" for="email">Your email</label>
+                        <div class="underlay"></div>
+                    </div>
+                    <div class="form__item">
+                        <input id="phone" class="form__txt" type="tel" name="phone" />
+                        <label class="form__label" for="phone">Your phone number</label>
+                        <div class="underlay"></div>
+                    </div>
+                    <div class="form__item">
+                        <textarea id="message" class="form__txt" name="name"></textarea>
+                        <label class="form__label" for="message">Your message</label>
+                        <div class="underlay"></div>
+                    </div>
+                    <div class="form__item">
+                        <input id="send" class="btn" type="submit" name="send" />
+                        <label class="form__label visuallyhidden" for="message">Send</label>
+<!--                        <div class="underlay"></div>-->
+                    </div>
+                </form>
         </div>
     </section>
     
