@@ -1,0 +1,88 @@
+.form__item {
+    position: relative;
+    margin-top: rem-calc(40);
+}
+
+.form__label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    transition: all $t-time $bezier;
+    line-height: rem-calc(50);
+    padding: 0 rem-calc(15);
+    font-family: $serif;
+    font-size: rem-calc(24);
+}
+
+.underlay {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    transition: all ease .3s;
+    background: linear-gradient(
+        to bottom right, 
+        #bc0142 0%, 
+        #de9102 47%, 
+        #de9102 52%, 
+        #8003df 100%
+    );
+    opacity: .4;
+    height: rem-calc(50);
+    width: 100%;
+    border-radius: 3px;
+}
+
+input.form__txt,
+textarea.form__txt {
+    display: block;
+    width: 100%;
+    height: rem-calc(50);
+    line-height: rem-calc(50);
+    padding: 0 rem-calc(15);
+    transition: all ease .3s;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    position: relative;
+    z-index: 1;
+    
+    &:focus,
+    &.filled {
+        background: #f4f4f4;
+        outline: none;
+        border-color: #f4f4f4;
+        
+        ~ .form__label {
+            top: rem-calc(-38);
+            font-size: rem-calc(20);
+        }
+        
+        ~ .underlay {
+            bottom: rem-calc(-6);
+        }
+    }
+}
+
+textarea.form__txt {
+    height: rem-calc(180);
+    padding: rem-calc(15);
+    line-height: rem-calc(25);
+}
+
+.btn {
+    display: block;
+    background: $text-colour;
+    color: $text-colour--neg;
+    font-weight: 700;
+    border-radius: 3px;
+    padding: 0 rem-calc(30);
+    line-height: rem-calc(50);
+    height: rem-calc(50);
+    border: 0;
+    cursor: pointer;
+}
+
+input.btn {
+    float:right;
+}

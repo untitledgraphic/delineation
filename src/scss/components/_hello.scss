@@ -1,0 +1,32 @@
+.hello {
+    padding: rem-calc(85) 0;
+    
+    p {
+        font-size: rem-calc(20);
+    }
+//    min-height: 100vh;
+}
+
+.hello__title {
+    position: relative;
+    left: 16.666%;
+    margin: 0 0 rem-calc(120);
+}
+
+.hello__hello {
+    display: block;
+    font-family: $serif;
+    font-size: rem-calc(30);
+    font-weight: 400;
+}
+
+.hello__name {
+	display: block;
+    font-size: rem-calc(48);
+    line-height: rem-calc(48);
+}
+
+.hello__summary {
+    position: relative;
+    left: 25%;
+}

@@ -14,8 +14,10 @@
     
     <link href="css/styles.css" rel="stylesheet">
     <!-- Fonts -->
+<!--
     <script src="https://use.typekit.net/jbo0sbd.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
+-->
     
     <!-- Scripts -->
     <script src="js/libs/modernizr-custom.js" rel="javascript"></script>
@@ -76,7 +78,7 @@
     <ul class="mainNav__list listless">
     
         <li class="mainNav__item">
-            <a href="about.php" class="mainNav__link">
+            <a href="about.html" class="mainNav__link">
                 <div class="mainNav__block">
                     <div class="mainNav__content">
                         <p class="mainNav__title">About</p>
@@ -98,7 +100,7 @@
         </li>
         
         <li class="mainNav__item">
-            <a href="archive.php" class="mainNav__link">
+            <a href="archive.html" class="mainNav__link">
                 <div class="mainNav__block">
                     <div class="mainNav__content">
                         <p class="mainNav__title">Archive</p>
@@ -109,7 +111,7 @@
         </li>
         
         <li class="mainNav__item">
-            <a href="contact.php" class="mainNav__link">
+            <a href="contact.html" class="mainNav__link">
                 <div class="mainNav__block">
                     <div class="mainNav__content">
                         <p class="mainNav__title">Contact</p>
@@ -136,53 +138,80 @@
     
     <h1 class="site">Craig_Cooper_Digital_Designer</h1>
     
-    <section class="intro">
+    <section class="hello">
         <div class="row">
-            <header class="page__head column">
-                <h2 class="page__title">Hello. My name is Craig and I’d like to work with you.</h2>
+            <header class="column">
+                <h2 class="large-8 hello__title">
+                    <span class="hello__hello">Hello</span>
+                    <span class="hello__name">My name is Craig.</span>
+                </h2>
             </header>
         
-            <div class="large-6 column page__text">
-                <p>I'm a multi-disciplinary print/UI/UX designer and front end developer based in Ludlow, Shropshire, just an hour from Birmingham and the West Midlands and within shouting distance of Mid-Wales.</p>
+            <div class="medium-8 large-6 column hello__summary">
+                <p>I'm a print/UI/UX designer and front end developer based in Ludlow, Shropshire, just an hour from Birmingham and the West Midlands and within shouting distance of Mid-Wales.</p>
                 <p>I enjoy taking seemingly complex problems and transforming them into simple, easy to use solutions for both print and web. I work for companies of all shapes and sizes, from small local businesses to large brands and organisations. I can build you a website design you a logo or produce you a brochure, to your budget and timescales. </p>
             </div>
         </div>
     </section>
     
-    <section class="brand">
+    <section class="brands">
         <div class="row">
-            <div class="column">
-                <h2 class="brand__title">I've been lucky enough to work on projects for</h2>
-                <ul class="brand__list">
-                    <li class="brand__item">LSE</li>
-                    <li class="brand__item">National Trust</li>
-                    <li class="brand__item">Jaguar</li>
-                    <li class="brand__item">Arup</li>
-                    <li class="brand__item">Alfred McAlpine</li>
-                    <li class="brand__item">HDA</li>
-                    <li class="brand__item">IMI</li>
-                    <li class="brand__item">Shelter</li>
-                    <li class="brand__item">Gambling Commission</li>
-                    <li class="brand__item">Gwynedd County Council</li>
-                    <li class="brand__item">Wall Street Journal (Europe)</li>
-                    <li class="brand__item">Guys & St. Thomas NHS Trust</li>
-                    <li class="brand__item">Barnsby</li>
-                    <li class="brand__item">Ministry of Defence</li>
-                    <li class="brand__item">Defence Estates</li>
-                    <li class="brand__item">Learning & Skills Council</li>
-                    <li class="brand__item">Tros Gynnal</li>
-                    <li class="brand__item">Le Shark</li>
-                    <li class="brand__item">Brown & Sharpe</li>
+            <div class="column"> 
+                <h2 class="brands__title">I've been lucky enough to work on projects for…</h2>
+                <ul class="brands__list listless">
+<!--                    <li class="brands__item">LSE</li>-->
+                    <li class="brands__item"><img src="images/brands/national-trust.svg" alt="National Trust" /></li>
+                    <li class="brands__item"><img src="images/brands/jaguar.svg" alt="Jaguar" /></li>
+                    <li class="brands__item"><img src="images/brands/arup.svg" alt="Arup" /></li>
+                    <li class="brands__item"><img src="images/brands/department-of-health.svg" alt="Department of Health" /></li>
+                    <li class="brands__item"><img src="images/brands/imi.svg" alt="IMI" /></li>
+                    <li class="brands__item"><img src="images/brands/shelter.svg" alt="Shelter" /></li>
+<!--                    <li class="brands__item">Gambling Commission</li>-->
+                    <li class="brands__item"><img src="images/brands/gwynedd-council.svg" alt="Gwynedd County Council" /></li>
+                    <li class="brands__item"><img src="images/brands/wsj.svg" alt="Wall Street Journal" /></li>
+                    <li class="brands__item"><img src="images/brands/nhs.svg" alt="NHS" /></li>
+                    <li class="brands__item"><img src="images/brands/barnsby.svg" alt="Barnsby" /></li>
+<!--                    <li class="brands__item"><img src="images/brands/mod.svg" alt="Ministry of Defence" /></li>-->
+                    <li class="brands__item"><img src="images/brands/lsc.svg" alt="Learning and Skills Council" /></li>
                 </ul>
+                <p>…and many more.</p>
             </div>
         </div>
     </section>
     
-    <section class="intro">
+    <section class="contact">
         <div class="row">
-            <div class="large-6 column page__text">
-                <p>So if you've got some marketing to do, or maybe a little bit of refreshment to your existing collateral, why not <a href="contact.html" aria-label="Contact a designer in Ludlow, Shropshire about your website, logo or brochure">get in touch</a>.</p>
-            </div>
+                <div class="contact__intro large-5 column">
+                    <h2 class="contact__title">Let's work together</h2>
+                    <p>if you've got some marketing to do, or maybe a little bit of refreshment to your existing collateral, why not get in touch.</p>
+                </div>
+                <form id="contact" class="large-5 column contact__form">
+                    <div class="form__item">
+                        <input id="name" class="form__txt" type="text" name="name" />
+                        <label class="form__label" for="name">Your name</label>
+                        <div class="underlay"></div>
+                    </div>
+                    <div class="form__item">
+                        <input id="email" class="form__txt" type="email" name="email" />
+                        <label class="form__label" for="email">Your email</label>
+                        <div class="underlay"></div>
+                    </div>
+                    <div class="form__item">
+                        <input id="phone" class="form__txt" type="tel" name="phone" />
+                        <label class="form__label" for="phone">Your phone number</label>
+                        <div class="underlay"></div>
+                    </div>
+                    <div class="form__item">
+                        <textarea id="message" class="form__txt" name="name"></textarea>
+                        <label class="form__label" for="message">Your message</label>
+                        <div class="underlay"></div>
+                    </div>
+                    <div class="form__item">
+                        <input id="send" class="btn" type="submit" name="send" />
+                        <label class="form__label visuallyhidden" for="message">Send</label>
+<!--                        <div class="underlay"></div>-->
+                    </div>
+                </form>
         </div>
     </section>
     
@@ -198,6 +227,9 @@
                 </li>
                 <li class="secondary-nav__item">
                     <a href="https://dribbble.com/craigomatic" class="secondary-nav__link">dribbble</a>
+                </li>
+                <li class="secondary-nav__item">
+                    <a href="https://unsplash.com/craigomatic" class="secondary-nav__link">unsplash</a>
                 </li>
                 <li class="secondary-nav__item">
                     <a href="https://www.behance.net/craigcooper" class="secondary-nav__link">behance</a>

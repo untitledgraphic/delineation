@@ -24,18 +24,6 @@
 
 @font-face {
     font-family: 'raleway';
-    src: url('../fonts/raleway/600/raleway-semibold-webfont.eot');
-    src: url('../fonts/raleway/600/raleway-semibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/raleway/600/raleway-semibold-webfont.woff2') format('woff2'),
-         url('../fonts/raleway/600/raleway-semibold-webfont.woff') format('woff'),
-         url('../fonts/raleway/600/raleway-semibold-webfont.ttf') format('truetype'),
-         url('../fonts/raleway/600/raleway-semibold-webfont.svg#ralewaysemibold') format('svg');
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'raleway';
     src: url('../fonts/raleway/700/raleway-bold-italic-webfont.eot');
     src: url('../fonts/raleway/700/raleway-bold-italic-webfont.eot?#iefix') format('embedded-opentype'),
          url('../fonts/raleway/700/raleway-bold-italic-webfont.woff2') format('woff2'),
@@ -56,6 +44,17 @@
          url('../fonts/raleway/700/raleway-bold-webfont.svg#ralewaybold') format('svg');
     font-weight: 700;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'mrs-eaves';
+    src: url('../fonts/MrsEavesItalic.eot');
+    src: url('../fonts/MrsEavesItalic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/MrsEavesItalic.woff') format('woff'),
+         url('../fonts/MrsEavesItalic.ttf') format('truetype'),
+         url('../fonts/MrsEavesItalic.svg#ralewaybold') format('svg');
+    font-weight: 400;
+    font-style: italic;
 }
 
 /* Heading sizes

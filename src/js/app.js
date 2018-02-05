@@ -18,6 +18,7 @@ var app = (function ($) {
             this.bindWindowActions();   // Window actions (scrolling, resize etc)
             this.nav();                 // Main navigation
 //            this.features();            // do stuff on scroll (Scrollify)
+            this.form();                // form type stuff
             this.lazy();                // lazyload config
         },
 
@@ -63,6 +64,20 @@ var app = (function ($) {
                 }
                 else {
                     $(first).addClass(active);
+                }
+            });
+        },
+        
+        form: function() {
+            
+            $('.form__txt').blur(function() {
+                var tmpval = $(this).val();
+                if(tmpval === '') {
+//                    $(this).addClass('empty');
+                    $(this).removeClass('filled');
+                } else {
+                    $(this).addClass('filled');
+//                    $(this).removeClass('empty');
                 }
             });
         },

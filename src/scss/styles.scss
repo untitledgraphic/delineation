@@ -25,7 +25,15 @@
 @import "base/normalize";
 @import "base/base";
 @import "base/typography";
+@import "base/forms";
 //@import "base/utility";
+
+/**
+ * Patterns
+ * objects that have children
+ */
+
+@import "patterns/grid";
 
 /**
  * Components
@@ -49,14 +57,12 @@
 @import "components/project-images";
 @import "components/project-testimonial";
 @import "components/project-thumbnails";
+
+@import "components/hello";
+@import "components/brands";
+@import "components/contact";
+
 @import "components/project-footer";
-
-/**
- * Patterns
- * objects that have children
- */
-
-@import "patterns/grid";
 
 /**
  * Views
