@@ -1,9 +1,16 @@
-.secondary-nav {
+.home .secondary-nav {
     position: fixed;
     bottom: rem-calc(20);
     left: 0;
-    padding: 0 rem-calc(30);
     z-index: 1;
+}
+
+.secondary-nav {
+    padding: 0 rem-calc(30);
+}
+
+.page .secondary-nav {
+    padding-bottom: rem-calc(20);
 }
 
 .secondary-nav__item {
@@ -38,7 +45,7 @@
 
 @include mq($from: medium) {
     
-    .secondary__nav {
+    .home .secondary__nav {
         z-index: 0;
     }
     
@@ -50,7 +57,7 @@
 
 @include mq($from: small, $and: '(orientation: landscape)') {
     
-    .secondary-nav {
+    .home .secondary-nav {
         z-index: 6;
     }
 }
@@ -58,28 +65,42 @@
 
 @include mq($from: medium, $and: '(orientation: portrait)') {
     
-    .secondary-nav {
+    .home .secondary-nav {
         left: rem-calc(60);
         bottom: rem-calc(42);
+    }
+    
+    .secondary-nav {
         padding-left: rem-calc(16);
+    }
+    
+    .page .secondary-nav {
+        padding-bottom: rem-calc(42);
     }
 }
 
 
 @include mq($from: medium, $and: '(orientation: landscape)') {
     
-    .secondary-nav {
+    .home .secondary-nav {
         padding: 0 8.333%;
         z-index: 0;
+    }
+    
+    .secondary-nav {
+        padding: 0 8.333%;
     }
 }
 
 
 @include mq($from: large, $and: '(orientation: landscape)') {
     
-    .secondary-nav {
-        position: absolute;
+    .home .secondary-nav {
         left: 0;
         bottom: rem-calc(27);
+    }
+    
+    .page .secondary-nav {
+        padding-bottom: rem-calc(27);
     }
 }
