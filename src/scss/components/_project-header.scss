@@ -52,7 +52,7 @@
         left: 50%;
         bottom: rem-calc(70);
         right: auto;
-        width: 100%;
+//        width: 100%;
         transform: translateX(-50%);
         //padding: rem-calc(70) 10%;
     }
@@ -82,7 +82,7 @@
 @include mq($from: xlarge) {
     
     .hero__banner {
-         padding: rem-calc(70) 10%;
+         padding: rem-calc(70) 8.333%;
     }
 }
 

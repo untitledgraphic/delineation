@@ -143,6 +143,14 @@ main a {
     }
 }
 
+@include mq($from: xlarge) {
+    
+    body,
+    p {
+        font-size: rem-calc(22);
+    }
+}
+
 @include mq($from: xxlarge) {
     
     body,
