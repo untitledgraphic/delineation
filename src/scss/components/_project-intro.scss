@@ -67,11 +67,14 @@
 @include mq($from: large) {
     
     .intro {
-        padding: rem-calc(110);
+//        padding: rem-calc(110);
+        padding: rem-calc(110) 0;
     }
     
     .intro__summary {
         padding-bottom: 0;
+        padding-bottom: 33.333%;
+        margin-bottom: rem-calc(110);
     }
     
     .intro__thumb {
