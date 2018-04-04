@@ -1,20 +1,49 @@
 .contact {
-    padding: rem-calc(120) 0;
+    padding: rem-calc(60) 0;
 }
 
-.contact__intro {
-    position: relative;
-    left: 8.333%;
-    
-    p {
-        font-size: rem-calc(20);
-    }
+.contact__intro p {
+    font-size: rem-calc(16);
 }
 
 .contact__title {
+    line-height: 1.2em;
     text-transform: uppercase;
-    margin: 0;
+    margin: 0 0 rem-calc(20);
     font-size: rem-calc(36);
+}
+
+
+@include mq($from: small, $and: '(orientation: landscape)') {
+    
+    .contact {
+        padding-right: rem-calc(90);
+    }
+}
+
+
+@include mq($from: medium) {
+    
+    .contact {
+        padding: rem-calc(120) 0;
+    }
+    
+    .contact__intro {
+        position: relative;
+        left: 8.333%;
+
+        p {
+            font-size: rem-calc(20);
+        }
+    }
+}
+
+
+@include mq($from: large) {
+    
+    .contact {
+        padding: rem-calc(120) 0;
+    }
 }
 
 
@@ -22,8 +51,24 @@
 // Form ================================ /
 
 .contact__form {
-    float: right;
-    position: relative;
-    right: 16.666%;
     clear: both;
+}
+
+
+@include mq($from: medium) {
+    
+    .contact__form {
+        float: right;
+        position: relative;
+        right: 8.333%;
+    }
+}
+
+
+@include mq($from: large) {
+    
+    .contact__form {
+        position: relative;
+        right: 16.666%;
+    }
 }

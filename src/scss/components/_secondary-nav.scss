@@ -34,6 +34,10 @@
     }
 }
 
+.page .secondary-nav__item {
+    color: $text-colour;
+}
+
 
 @include mq($until: medium) {
     
