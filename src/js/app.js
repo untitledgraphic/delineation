@@ -7,11 +7,11 @@ var app = (function ($) {
     //var s;
 
     return {
-        settings: function() {
+        settings: function () {
             this.$window        = $(window);
         },
 
-        init: function() {
+        init: function () {
             //var s = new this.settings();
             
             this.bindUIActions();       // UI Actions (click, focus etc)
