@@ -135,6 +135,10 @@ main a {
     }
 }
 
+.noclass {
+    display: block;
+}
+
 @include mq($from: medium) {
     
     body,

@@ -24,6 +24,7 @@
     
     img {
         border: 1px solid #ccc;
+        width: 100%;
     }
     
     &:first-child img {
@@ -67,5 +68,6 @@
     
     .thumbnails__item {
         flex: 1 1 33.333%;
+        padding: rem-calc(20);
     }
 }
