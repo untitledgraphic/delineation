@@ -1,0 +1,133 @@
+{% macro header(
+    title,
+    hero,
+    hero_alt,
+    subtitle,
+    completion,
+    client,
+    client_url,
+    roles
+) %}
+
+<section class="hero">
+    <div class="image__container">
+        <img class="lazy" data-src="{{ hero }}" alt="{{ hero_alt }}" />
+        <img class="pre" src="{{ hero }}" alt="{{ hero_alt }}" />
+        <noscript><img src="{{ hero }}" alt="{{ hero_alt }}" /></noscript>
+    </div>
+    
+    <header class="hero__banner medium-centered medium-10">
+        <h1 class="hero__title column">{{ title }}</h1>
+        <p class="hero__summary column">{{ subtitle }}</p> 
+
+        <dl class="project-meta row">
+            <div class="project-meta__block column">
+                <dt class="project-meta__type">Completion:</dt>
+                <dd class="project-meta__detail">{{ completion }}</dd>
+            </div>
+            <div class="project-meta__block column">
+                <dt class="project-meta__type">Client:</dt>
+                <dd class="project-meta__detail"><a href="{{ client_url }}">{{ client }}</a></dd>
+            </div>
+            <div class="project-meta__block project-meta__block--double column">
+                <dt class="project-meta__type">Role:</dt>
+                <dd class="project-meta__detail">{{ roles }}</dd>
+            </div>
+        </dl>
+    </header>
+</section>
+
+{% endmacro %}
+
+
+{% macro preview(
+    project_name,
+    project_url,
+    class,
+    image_url,
+    image_alt, 
+    colour_start,
+    colour_stop,
+    prev_project,
+    prev_project_url
+) %}
+
+<footer class="preview {{ class }}">
+    
+    <article class="preview__content">
+        
+        <div class="preview__image">
+            <img class="lazy" data-src="{{ image_url }}" alt="{{ image_alt}}">
+        </div>
+        <svg viewBox="0,0,100,100" preserveAspectRatio="none">
+            <defs>
+                <filter id="maMaskFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+                    <feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+                </filter>
+            </defs>
+
+            <!-- fade out to nothing -->
+            <mask maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100" id="ma1">
+                <!-- left to right -->
+                <g class="mask--horz" style="filter:url(#maMaskFilter);">
+                    <linearGradient id="ma2" gradientUnits="userSpaceOnUse" x1="0" y1="50" x2="100" y2="50">
+                        <stop  offset="0.2" style="stop-color:#FFFFFF"/>
+                        <stop  offset="0.8" style="stop-color:#000000"/>
+                    </linearGradient>
+                    <rect style="fill:url(#ma2);" width="100" height="100"/>
+                </g>
+            </mask>
+
+            <!-- gradient -->
+            <g style="mask:url(#ma1);">
+                <linearGradient id="ma3" gradientUnits="userSpaceOnUse" x1="40" y1="107" x2="60" y2="-7">
+                    <stop class="start" offset="0.2" style="stop-color: {{ colour_start }}"/>
+                    <stop class="stop" offset="0.8" style="stop-color: {{ colour_stop }}"/>
+                </linearGradient>
+                <rect y="0" style="fill:url(#ma3);" width="100" height="100"/>
+            </g>
+        </svg>
+        
+        <div class="row column">
+            <div class="medium-10 medium-centered column">
+                <a href="{{ prev_project_url }}" class="preview__previous"><span class="preview__direction">Back to</span> {{ prev_project }}</a>
+                <a href="{{ project_url }}" class="preview__link">
+                    <h3 class="preview__next"><span class="preview__direction">Next up</span> <span>{{ project_name }}</span></h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-right"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right"></use></svg>
+                </a>
+            </div>
+        </div>
+    </article>
+</footer>
+
+{% endmacro %}
+
+
+{% macro intro (
+    title,
+    subtitle,
+    intro_text,
+    intro_image,
+    intro_image_alt
+) %}
+
+<section class="intro">
+    <div class="row">
+        <div class="large-4 xlarge-3 large-push-1 column">
+            <h2 class="intro__title">
+                <span class="intro__client">{{ title }}</span>
+                <span class="intro__name">{{ subtitle }}</span>
+            </h2>
+        </div>
+
+        <div class="large-6 xlarge-4 large-push-1 column intro__summary">
+            <p>{{ intro_text }}</p>
+        </div>
+
+        <div class="intro__thumb small-6 medium-3">
+            <img class="lazy" data-class="lazy" data-src="{{ intro_image }}" alt="{{ intro_image_alt }}" />
+        </div>
+    </div>
+</section>
+
+{% endmacro %}

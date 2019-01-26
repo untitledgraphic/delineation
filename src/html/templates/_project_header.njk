@@ -1,0 +1,40 @@
+{% macro header(
+    title,
+    hero,
+    hero_alt,
+    subtitle,
+    completion,
+    client,
+    client_url,
+    roles
+) %}
+
+<section class="hero">
+    <div class="image__container">
+        <img class="lazy" data-src="{{ hero }}" alt="{{ hero_alt }}" />
+        <img class="pre" src="{{ hero }}" alt="{{ hero_alt }}" />
+        <noscript><img src="{{ hero }}" alt="{{ hero_alt }}" /></noscript>
+    </div>
+    
+    <header class="hero__banner medium-centered medium-10">
+        <h1 class="hero__title column">{{ title }}</h1>
+        <p class="hero__summary column">{{ subtitle }}</p> 
+
+        <dl class="project-meta row">
+            <div class="project-meta__block column">
+                <dt class="project-meta__type">Completion:</dt>
+                <dd class="project-meta__detail">{{ completion }}</dd>
+            </div>
+            <div class="project-meta__block column">
+                <dt class="project-meta__type">Client:</dt>
+                <dd class="project-meta__detail"><a href="{{ client_url }}">{{ client }}</a></dd>
+            </div>
+            <div class="project-meta__block project-meta__block--double column">
+                <dt class="project-meta__type">Role:</dt>
+                <dd class="project-meta__detail">{{ roles }}</dd>
+            </div>
+        </dl>
+    </header>
+</section>
+
+{% endmacro %}
