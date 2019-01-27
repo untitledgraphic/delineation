@@ -28,16 +28,13 @@
     <meta property="og:description" content="User focused design online and in print."/>
     <meta property="og:image" content="https://www.sequoiacap.com/img/c/home_intro_us_1.jpg"/>
     
-    {% include "partials/_deferscript-home.html" %}
+    {% include "partials/_deferscript-home.njk" %}
 
 </head>
 <body class="home" data-hijacking="on" data-animation="parallax">
-
-    {% include "partials/_header.html" %} 
-
+    {% include "partials/_header.njk" %} 
     <!-- You write code for this content block in another file -->
     {% block content %}
-    {% endblock %}
-    
+    {% endblock %}  
 </body>
 </html>

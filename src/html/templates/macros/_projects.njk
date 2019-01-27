@@ -216,8 +216,8 @@
     <div class="thumbnails__container">
         <div class="medium-push-1">
             <ul class="thumbnails__list listless">  
-                {% for thumb in thumbs %}
-                <li class="thumbnails__item" data-thumb="{{ thumb }}"><img class="lazy" data-src="{{ thumb }}" alt="thumbnail of publication"></li>
+                {% for thumb, alt in thumbs %}
+                <li class="thumbnails__item" data-thumb="{{ thumb }}"><img class="lazy" data-src="{{ thumb }}" alt="{{ alt }}"></li>
                 {% endfor %}
             </ul>
         </div>

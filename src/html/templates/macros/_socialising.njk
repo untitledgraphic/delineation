@@ -1,0 +1,15 @@
+{% macro socialLink(
+    links
+) %}
+
+<nav class="secondary-nav">
+    <ul class="secondary-nav__list listless clearfix">
+        {% for text, url in links %}
+        <li class="secondary-nav__item">
+            <a href="{{ url }}" class="secondary-nav__link">{{ text }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
+
+{% endmacro %}

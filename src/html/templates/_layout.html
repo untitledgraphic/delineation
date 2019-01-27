@@ -12,6 +12,7 @@
     <!-- icons -->
     <link rel="icon" href="images/favicon.png">
     
+    <!-- styles -->
     <link href="css/styles.css" rel="stylesheet">
     <!-- Fonts -->
 <!--
@@ -25,21 +26,17 @@
     <!-- Open Graph -->
     <meta name="twitter:site" content="@craigdoesdesign" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="og:site_name" content="Craig Cooper Digital Design"/>
+    <meta property="og:site_name" content="Craig Cooper Digital Designer"/>
     <meta property="og:title" content="Craig Cooper"/>
     <meta property="og:description" content="User focused design online and in print."/>
     <meta property="og:image" content="https://www.sequoiacap.com/img/c/home_intro_us_1.jpg"/>
     
-    {% include "partials/_deferscript.html" %}
+    {% include "partials/_deferscript.njk" %}
 
 </head>
-<body class="page" itemscope="" itemtype="http://schema.org/WebPage">
-
-    {% include "partials/_header.html" %}
-
-    <!-- You write code for this content block in another file -->
+<body class="page">
+    {% include "partials/_header.njk" %}
     {% block content %}
     {% endblock %}
-    
 </body>
 </html>
