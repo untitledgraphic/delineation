@@ -1,0 +1,61 @@
+{% macro feature(
+    title,
+    id,
+    summary,
+    image
+) %} 
+
+<section id="{{ id }}" class="feature {{ id }}">
+    <div class="feature__container"> 
+            
+        <div class="feature__overlay">
+            <svg viewbox="0,0,100,100" preserveaspectratio="none">
+                <defs>
+                    <filter id="maMaskFilter" filterunits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+                        <fecolormatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+                    </filter>
+                </defs>
+                <!-- fade out to nothing -->
+                <mask maskunits="userSpaceOnUse" x="0" y="0" width="100" height="100" id="{{ id }}1">
+                <!-- left to right -->
+                    <g class="mask--horz" style="filter:url(#maMaskFilter);">
+                        <lineargradient id="{{ id }}2" gradientunits="userSpaceOnUse" x1="0" y1="50" x2="100" y2="50">
+                            <stop  offset="0.2"/>
+                            <stop  offset="0.8"/>
+                        </lineargradient>
+                        <rect style="fill:url(#{{ id }}2);" width="100" height="100"/>
+                    </g>
+                    <!-- top to bottom -->
+                    <g class="mask--vert" style="filter:url(#maMaskFilter);">
+                        <lineargradient id="{{ id }}2b" gradientunits="userSpaceOnUse"  x1="50" y1="0" x2="50" y2="100">
+                            <stop  offset="0.2"/>
+                            <stop  offset="0.8"/>
+                        </lineargradient>
+                        <rect style="fill:url(#{{ id }}2b);" width="100" height="100"/>
+                    </g>
+                </mask>
+                <!-- gradient -->
+                <g style="mask:url(#{{ id }}1);">
+                    <lineargradient id="{{ id }}3" gradientunits="userSpaceOnUse" x1="40" y1="107" x2="60" y2="-7">
+                        <stop class="start" offset="0.2"/>
+                        <stop class="stop" offset="0.8"/>
+                    </lineargradient>
+                    <rect y="0" style="fill:url(#{{ id }}3);" width="100" height="100"/>
+                </g>
+            </svg> 
+        </div>
+            
+        <div class="feature__head">
+            <h2 class="feature__title">{{ title }}</h2>
+            <p class="feature__summary">{{ summary }}</p>
+        </div> 
+        <a href="{{ id }}.html" class="feature__link">View project<span class="icon--arrow-right"></span></a>
+        <ul class="feature__nav listless">
+            <li><a href="#0" class="cd-prev inactive">Prev</a></li>
+            <li><a href="#0" class="cd-next">Next</a></li>
+        </ul>
+        <div class="feature__image"><img src="/images/{{ image }}" alt="{{ title }}" /></div>
+    </div>
+</section>
+
+{% endmacro %}
