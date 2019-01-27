@@ -150,7 +150,7 @@ gulp.task('svg', function() {
  */
 gulp.task('html', function() {
   // Gets .html files in pages
-  return gulp.src('src/html/pages/**/*.html')
+  return gulp.src('src/html/pages/**/*.+(html|njk)')
   // Renders template with nunjucks
   .pipe(nunjucksRender({
       path: ['src/html/templates']
