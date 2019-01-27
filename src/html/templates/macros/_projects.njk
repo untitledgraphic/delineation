@@ -31,7 +31,9 @@
             </div>
             <div class="project-meta__block project-meta__block--double column">
                 <dt class="project-meta__type">Role:</dt>
-                <dd class="project-meta__detail">{{ roles }}</dd>
+                {% for role in roles %}
+                <dd class="project-meta__detail">{{ role }}</dd>
+                {% endfor %}
             </div>
         </dl>
     </header>

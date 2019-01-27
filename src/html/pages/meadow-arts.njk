@@ -1,0 +1,47 @@
+{% import "macros/_projects.njk" as project %} 
+
+<!-- vars -->
+{% set Title = "Meadow Arts" %}
+{% set SubTitle = "Marketing & interpretation material" %}
+
+{% extends "_layout.html" %}
+{% block content %}
+
+<main id="main" class="project">
+    
+    {% include "partials/_me.njk" ignore missing %}
+    
+    {{ project.hero(
+        Title,                              
+        '/images/feature-meadow-arts.jpg',                        
+        'Meadow arts',
+        SubTitle,     
+        'current',                  
+        'Meadow Arts',                                  
+        'http://www.meadowarts.org',                                  
+        ['Design', 'Production']
+    )}}
+
+    {{ project.intro (
+        Title,
+        SubTitle,
+        '<p>Write some text in here. <a href="" >You can</a> also use <em>italics</em>, and <strong>bold</strong> text. Woo hoo!</p>',
+        'https://unsplash.it/220',
+        'The alt text'
+    )}}
+    
+</main>
+    
+{{ project.preview(
+    'Meadow Arts',                              
+    '/meadow-arts.html',                        
+    'meadow-arts',                              
+    '/images/feature-meadowarts.jpg',     
+    'meadow arts image thing',                  
+    '#008e4c',                                  
+    '#4ab6e9',                                  
+    'Parkway Restaurant',                       
+    '/parkway.html')                            
+}}
+
+{% endblock %}
