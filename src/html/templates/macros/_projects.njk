@@ -1,19 +1,17 @@
 {% macro hero(
     title,
+    subtitle,
     hero,
     hero_alt,
-    subtitle,
-    completion,
-    client,
-    client_url,
+    date,
     roles
 ) %} 
 
 <section class="hero">
     <div class="image__container">
-        <img class="lazy" data-src="{{ hero }}" alt="{{ hero_alt }}" />
-        <img class="pre" src="{{ hero }}" alt="{{ hero_alt }}" />
-        <noscript><img src="{{ hero }}" alt="{{ hero_alt }}" /></noscript>
+        <img class="lazy" data-src="/images/{{ hero }}" alt="{{ hero_alt }}" />
+        <img class="pre" src="/images/{{ hero }}" alt="{{ hero_alt }}" />
+        <noscript><img src="/images/{{ hero }}" alt="{{ hero_alt }}" /></noscript>
     </div>
     
     <header class="hero__banner medium-centered medium-10">
@@ -23,11 +21,7 @@
         <dl class="project-meta row">
             <div class="project-meta__block column">
                 <dt class="project-meta__type">Completion:</dt>
-                <dd class="project-meta__detail">{{ completion }}</dd>
-            </div>
-            <div class="project-meta__block column">
-                <dt class="project-meta__type">Client:</dt>
-                <dd class="project-meta__detail"><a href="{{ client_url }}">{{ client }}</a></dd>
+                <dd class="project-meta__detail">{{ date }}</dd>
             </div>
             <div class="project-meta__block project-meta__block--double column">
                 <dt class="project-meta__type">Role:</dt>
@@ -44,23 +38,19 @@
 {# ================================================================================ #}
 
 {% macro preview(
-    project_name,
-    project_url,
-    class,
-    image_url,
+    id,
     image_alt, 
-    colour_start,
-    colour_stop,
+    next_project,
     prev_project,
     prev_project_url
 ) %}
 
-<footer class="preview {{ class }}">
+<footer class="preview {{ id }}">
     
     <article class="preview__content">
         
         <div class="preview__image">
-            <img class="lazy" data-src="{{ image_url }}" alt="{{ image_alt}}">
+            <img class="lazy" data-src="/images/feature-{{ id }}.jpg" alt="{{ image_alt}}">
         </div>
         <svg viewBox="0,0,100,100" preserveAspectRatio="none">
             <defs>
@@ -84,8 +74,8 @@
             <!-- gradient -->
             <g style="mask:url(#ma1);">
                 <linearGradient id="ma3" gradientUnits="userSpaceOnUse" x1="40" y1="107" x2="60" y2="-7">
-                    <stop class="start" offset="0.2" style="stop-color: {{ colour_start }}"/>
-                    <stop class="stop" offset="0.8" style="stop-color: {{ colour_stop }}"/>
+                    <stop class="start" offset="0.2" />
+                    <stop class="stop" offset="0.8" />
                 </linearGradient>
                 <rect y="0" style="fill:url(#ma3);" width="100" height="100"/>
             </g>
@@ -94,8 +84,8 @@
         <div class="row column">
             <div class="medium-10 medium-centered column">
                 <a href="{{ prev_project_url }}" class="preview__previous"><span class="preview__direction">Back to</span> {{ prev_project }}</a>
-                <a href="{{ project_url }}" class="preview__link">
-                    <h3 class="preview__next"><span class="preview__direction">Next up</span> <span>{{ project_name }}</span></h3>
+                <a href="{{ id }}.html" class="preview__link">
+                    <h3 class="preview__next"><span class="preview__direction">Next up</span> <span>{{ next_project }}</span></h3>
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-right"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right"></use></svg>
                 </a>
             </div>

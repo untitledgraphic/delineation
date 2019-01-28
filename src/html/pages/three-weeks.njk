@@ -1,8 +1,8 @@
 {% import "macros/_projects.njk" as project %} 
 
 <!-- vars -->
-{% set Title = "Meadow Arts" %}
-{% set SubTitle = "Marketing & interpretation material" %}
+{% set Title = "3 Weeks in Ludlow" %}
+{% set SubTitle = "Events guide for three festivals held during a three week period" %}
 
 {% extends "_layout.html" %}
 {% block content %}
@@ -15,10 +15,10 @@
     {{ project.hero(
         Title,                            
         SubTitle,     
-        'feature-meadow-arts.jpg',
-        'Meadow arts',
-        '2010 to present',                  
-        ['Design', 'Print Production']
+        'feature-three-weeks.jpg',
+        'alt',
+        '2017 to 2018',                  
+        ['Branding', 'Design']
     )}}
 
     {# Project title | Hero image URL | Hero image alt | Subtitle | Date | roles #}
@@ -34,11 +34,11 @@
     
 {# Class | Preview image alt | Next project | Previous project | Previous project URL #}
 {{ project.preview(
-    'dorsetforyou',                              
-    'Dorsetforyou arts image thing',                  
-    'Dorsetforyou',                              
-    'Benedict Homer',                       
-    'benedict-homer.html')                            
-}}
+    'wycopedia',                              
+    'alt',                  
+    'Wycopedia',                              
+    'NMNI',                       
+    'nmni.html'
+)}}
 
 {% endblock %}

@@ -1,0 +1,89 @@
+{% import "macros/_projects.njk" as project %} 
+
+<!-- vars -->
+{% set Title = "Cader Idris" %}
+{% set SubTitle = "Exhibition Catalogue" %}
+
+{% extends "_layout.html" %}
+{% block content %}
+
+<main id="main" class="project">
+    
+    {% include "partials/_me.njk" ignore missing %}
+
+    {# Project title | Subtitle | Hero image URL | Hero image alt | Date | roles #} 
+    {{ project.hero(
+        Title,                            
+        SubTitle,     
+        'feature-gwynedd-council.jpg',
+        'alt',
+        '2012',                  
+        ['Design', 'Production']
+    )}}
+    
+    {# Project title | Hero image URL | Hero image alt | Subtitle | Date | roles #}
+    {{ project.intro (
+        Title,
+        SubTitle,
+        '<p>Peter Bishop a highly talented painter specialises in paintings of Cader Idris and the surrounding mountains. His Book <em>Cader Idris</em> was designed to accompany an exhibition at MoMA Wales.</p>',
+        'https://unsplash.it/220',
+        'The alt text'
+    )}}
+
+    <section class="image image--full">
+    <!--    <div class="row">-->
+            <div class="image__container medium-10 large-9 large-centered column">
+                <img class="lazy" data-src="https://unsplash.it/1120/650" alt="image" />
+                <noscript><img src="https://unsplash.it/1120/650" alt="image" /></noscript>
+            </div>
+    <!--    </div>-->
+    </section>
+
+    {{ project.testimonial (
+        '<p>Craig designed an exhibition catalogue for me in 2012. His undoubted talent as a designer is aided by his ability to communicate fully with his client over any issue or concern over the development process culminating in the final publication. The Cader Idris cover is a work of art in itself. As an art world professional I always enjoy showing Craig\'s superb catalogue design to my collogues and friends.</p>'
+    )}}
+
+    <section class="image split">
+        <div class="split__text medium-6 large-5 medium-push-1 large-push-2 column">
+            <div class="text__container">
+                <p>A careful balance of typography and colour to compliment the artworks yet still let them leap from the page</p>
+            </div>
+        </div>
+        <div class="image__container split__image medium-5 large-4 large-push-1 column">
+            <img class="lazy" data-src="https://unsplash.it/540/720" alt="image" />
+        </div>
+    </section>
+
+    <section class="image image--offset-left">
+        <div class="image__container large-pull-1">
+            <img class="lazy" data-src="https://unsplash.it/1270/650" alt="image" />
+        </div>
+    </section>
+
+    <section class="thumbnails">
+        <div class="thumbnails__container">
+            <div class="medium-push-1">
+                <ul class="thumbnails__list listless">
+                    <li class="thumbnails__item"><img class="lazy" data-src="https://unsplash.it/215/195/?random"></li>
+                    <li class="thumbnails__item"><img class="lazy" data-src="https://unsplash.it/430/195/?random"></li>
+                    <li class="thumbnails__item"><img class="lazy" data-src="https://unsplash.it/430/195/?random"></li>
+                    <li class="thumbnails__item"><img class="lazy" data-src="https://unsplash.it/430/195/?random"></li>
+                    <li class="thumbnails__item"><img class="lazy" data-src="https://unsplash.it/430/195/?random"></li>
+                    <li class="thumbnails__item"><img class="lazy" data-src="https://unsplash.it/430/195/?random"></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+</main>
+
+{# Class | Preview image alt | Next project | Previous project | Previous project URL #}
+{{ project.preview(
+    '',                              
+    '',                  
+    '',                              
+    'Gwynedd Council',                       
+    'gwynedd-council.html'
+)}}
+
+{% endblock %}

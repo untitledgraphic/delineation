@@ -2,26 +2,26 @@
 
 <!-- vars -->
 {% set Title = "Benedict Homer" %}
-{% set SubTitle = "Designer-maker branding and website" %}
+{% set SubTitle = "Designer-maker branding & website" %}
 
 {% extends "_layout.html" %}
 {% block content %}
 
 <main id="main" class="project">
     
-    {% include "partials/_me.njk" ignore missing %}
+    {% include "partials/_me.njk" ignore missing %} 
     
+    {# Project title | Subtitle | Hero image | Hero image alt | Date | roles #}  
     {{ project.hero(
         Title,                              
-        '/images/feature-ben.jpg',                        
-        'Apple scuplture by Benedict Homer',
         SubTitle,     
-        'current',                  
-        'Benedict Homer',                                  
-        'http://www.treenwood.co.uk',                                  
+        'feature-benedict-homer.jpg',                        
+        'Apple scuplture by Benedict Homer',
+        '2011 to present',                  
         ['Design', 'Branding', 'UX', 'Development', 'Photography']
     )}}
 
+    {# Project title | Subtitle | text | image | image alt text #}
     {{ project.intro (
         Title,
         SubTitle,
@@ -31,17 +31,14 @@
     )}}
     
 </main>
-    
+
+{# Class | Preview image alt | Next project | Previous project | Previous project URL #}
 {{ project.preview(
-    'Meadow Arts',                              
-    '/meadow-arts.html',                        
     'meadow-arts',                              
-    '/images/feature-meadowarts.jpg',     
     'meadow arts image thing',                  
-    '#008e4c',                                  
-    '#4ab6e9',                                  
-    'Parkway Restaurant',                       
-    '/parkway.html')                            
-}}
+    'Meadow Arts',
+    'Nik Burns',                       
+    'nik-burns.html'
+)}}
 
 {% endblock %}

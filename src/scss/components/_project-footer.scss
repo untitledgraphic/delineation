@@ -80,6 +80,9 @@
 
 .preview__link {
 	display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .preview__next {
@@ -88,9 +91,6 @@
     font-weight: 700;
     line-height: 1;
     margin: 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
     
     span {
         display: block;

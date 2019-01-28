@@ -1,8 +1,7 @@
 {% macro feature(
     title,
     id,
-    summary,
-    image
+    summary
 ) %} 
 
 <section id="{{ id }}" class="feature {{ id }}">
@@ -54,7 +53,7 @@
             <li><a href="#0" class="cd-prev inactive">Prev</a></li>
             <li><a href="#0" class="cd-next">Next</a></li>
         </ul>
-        <div class="feature__image"><img src="/images/{{ image }}" alt="{{ title }}" /></div>
+        <div class="feature__image"><img src="/images/feature-{{ id }}.jpg" alt="{{ title }}" /></div>
     </div>
 </section>
 
