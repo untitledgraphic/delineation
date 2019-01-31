@@ -317,42 +317,47 @@
         <div class="preview__image">
             <img class="lazy" data-src="/images/feature-This is the Title.jpg" alt="/meadow-arts.html">
         </div>
-        <svg viewBox="0,0,100,100" preserveAspectRatio="none">
-            <defs>
-                <filter id="maMaskFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
-                    <feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
-                </filter>
-            </defs>
+        <div class="feature__overlay">
+            <svg viewBox="0,0,100,100" preserveAspectRatio="none"> 
+                <defs>
+                    <filter id="maMaskFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+                        <feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+                    </filter>
+                </defs>
 
-            <!-- fade out to nothing -->
-            <mask maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100" id="ma1">
-                <!-- left to right -->
-                <g class="mask--horz" style="filter:url(#maMaskFilter);">
-                    <linearGradient id="ma2" gradientUnits="userSpaceOnUse" x1="0" y1="50" x2="100" y2="50">
-                        <stop  offset="0.2" style="stop-color:#FFFFFF"/>
-                        <stop  offset="0.8" style="stop-color:#000000"/>
+                <!-- fade out to nothing -->
+                <mask maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100" id="ma1">
+                    <!-- left to right -->
+                    <g class="mask--horz" style="filter:url(#maMaskFilter);">
+                        <linearGradient id="ma2" gradientUnits="userSpaceOnUse" x1="0" y1="50" x2="100" y2="50">
+                            <stop  offset="0.2" style="stop-color:#FFFFFF"/>
+                            <stop  offset="0.8" style="stop-color:#000000"/>
+                        </linearGradient>
+                        <rect style="fill:url(#ma2);" width="100" height="100"/>
+                    </g>
+                </mask>
+
+                <!-- gradient -->
+                <g style="mask:url(#ma1);">
+                    <linearGradient id="ma3" gradientUnits="userSpaceOnUse" x1="40" y1="107" x2="60" y2="-7">
+                        <stop class="start" offset="0.2" />
+                        <stop class="stop" offset="0.8" />
                     </linearGradient>
-                    <rect style="fill:url(#ma2);" width="100" height="100"/>
+                    <rect y="0" style="fill:url(#ma3);" width="100" height="100"/>
                 </g>
-            </mask>
-
-            <!-- gradient -->
-            <g style="mask:url(#ma1);">
-                <linearGradient id="ma3" gradientUnits="userSpaceOnUse" x1="40" y1="107" x2="60" y2="-7">
-                    <stop class="start" offset="0.2" />
-                    <stop class="stop" offset="0.8" />
-                </linearGradient>
-                <rect y="0" style="fill:url(#ma3);" width="100" height="100"/>
-            </g>
-        </svg>
-        
+            </svg>
+        </div>
         <div class="row column">
             <div class="medium-10 medium-centered column">
+                
                 <a href="meadow arts image thing" class="preview__previous"><span class="preview__direction">Back to</span> https://unsplash.it/1400/384/?random</a>
+                
+                
                 <a href="This is the Title.html" class="preview__link">
                     <h3 class="preview__next"><span class="preview__direction">Next up</span> <span>meadow-arts</span></h3>
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-arrow-right"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right"></use></svg>
                 </a>
+                
             </div>
         </div>
     </article>

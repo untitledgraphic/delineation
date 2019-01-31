@@ -20,6 +20,7 @@ var app = (function ($) {
 //            this.features();            // do stuff on scroll (Scrollify)
             this.form();                // form type stuff
             this.lazy();                // lazyload config
+            this.parallax();            // parallaxy images
         },
 
         bindUIActions: function() {
@@ -98,7 +99,18 @@ var app = (function ($) {
                     console.log('loaded' + e.data('src'));
                 }
             });
-        }    
+        },
+        
+        parallax: function() {
+            
+            $( window ).scroll(function() {
+                
+                var scroll = $(window).scrollTop();
+                var h = $( window ).innerHeight()/2;
+                $('.hero img').css('top', scroll/5);
+                $('.hero__banner').css('opacity', 1 - scroll/h);
+            });
+        }
     };
 })(jQuery);
 

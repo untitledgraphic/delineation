@@ -4,6 +4,11 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    overflow: hidden;
+    
+    img {
+        position: relative;
+    }
 }
 
 .hero__banner {
@@ -60,12 +65,16 @@
         margin-bottom: 0;
     }
     
-    .project-meta__block.column {
-        width: 25%;
+    .project-meta {
+        display: flex;
+    }
+    
+    .project-meta__block {
+        flex: 1;
     }
 
-    .project-meta__block--double.column {
-        width: 50%;
+    .project-meta__block--double {
+        flex: 2;
     }
 }
 
@@ -73,7 +82,7 @@
 
     .project-meta__type,
     .project-meta__detail {
-        float: left;
+        display: inline-block;
     }
 }
 

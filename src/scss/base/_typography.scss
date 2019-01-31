@@ -84,7 +84,7 @@ body {
 
 p {
 	font-size: rem-calc(14);
-    line-height: 2;
+    line-height: rem-calc(28);
     margin: 0 0 1em;
 }
 
@@ -144,6 +144,7 @@ main a {
     body,
     p {
         font-size: rem-calc(16);
+        line-height: rem-calc(36);
     }
 }
 

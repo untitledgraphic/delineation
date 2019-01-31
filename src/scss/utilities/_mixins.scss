@@ -257,7 +257,11 @@
 @mixin colourway($start, $stop) {
     
     .feature__overlay { 
-        background-image: linear-gradient(to top, $start 0%, $stop 100%); 
+        background-image: linear-gradient(
+            to top, 
+            $start 0%, 
+            $stop 100%
+        ); 
     }
     .start {
         stop-color: $start;

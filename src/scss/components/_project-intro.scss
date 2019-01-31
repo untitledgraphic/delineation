@@ -7,8 +7,8 @@
 .intro__title {
     font-size: rem-calc(30);
     line-height: rem-calc(36);
-    text-transform: uppercase;
     margin: 0;
+    font-weight: 400;
 }
 
 .intro__summary {
@@ -17,6 +17,11 @@
 
 .intro__client {
     font-weight: 300;
+    text-transform: uppercase;
+}
+
+.intro__name {
+    font-family: 'mrs-eaves', serif;
 }
 
 .intro__client,
