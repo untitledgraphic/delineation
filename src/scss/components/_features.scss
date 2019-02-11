@@ -69,7 +69,6 @@ body:before {
     }
 }
 
-
 .feature__overlay {
     display: block;
     position: absolute;
@@ -100,7 +99,7 @@ body:before {
 }
 
 .feature__title {
-	font-size: rem-calc(42);
+	font-size: rem-calc(39);
     text-transform: uppercase;
     line-height: 1;
     margin: 0;
@@ -380,8 +379,10 @@ mask lineargradient stop {
 // Gradients & Masks
 //=================================================
 
+.nik-burns {                @include colourway(#252525, #e09e4d); }
 .meadow-arts {              @include colourway(#008e4c, #4ab6e9); }
 .benedict-homer {           @include colourway(#774636, #c9914a); }
+.dorsetforyou {             @include colourway(#ffad16, #8edd65); }
 .parkway-restaurant {       @include colourway(#341160, #35bfae); }
 .peter-bishop {             @include colourway(#d0c7d8, #4f869a); }
 .three-weeks {              @include colourway(#e763a4, #815fa8); }

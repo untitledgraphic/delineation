@@ -49,6 +49,11 @@
     margin-right: .3em;
 }
 
+.project-meta__type,
+    .project-meta__detail {
+        display: inline-block;
+    }
+
 
 @include mq($from: medium) {
     

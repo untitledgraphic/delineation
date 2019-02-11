@@ -23,8 +23,6 @@
     color: $text-colour--neg;
     padding: rem-calc(15);
 
-
-    
     svg {
         position: absolute;
         top: 0;
@@ -72,6 +70,19 @@
     .preview__direction {
         text-transform: none;
     }
+    
+    .icon--arrow-left {
+        font-size: rem-calc(15);
+        position: relative;
+        transition: left ease .2s;
+        left: 0;
+    }
+    
+    &:hover {
+        .icon--arrow-left {
+            left: rem-calc(-5);
+        }
+    }
 }
 
 .preview__direction {
@@ -92,13 +103,24 @@
     line-height: 1;
     margin: 0;
     
-    span {
-        display: block;
-    }
-    
     .preview__direction {
+        display: block;
         font-size: rem-calc(18);
         font-weight: 300;
+    }
+    
+    .icon--arrow-right {
+        font-size: rem-calc(20);
+        position: relative;
+        top: -2px;
+        left: 0;
+        transition: left ease .2s;
+    }
+    
+    &:hover {
+        .icon--arrow-right {
+            left: rem-calc(5);
+        }
     }
 }
 
@@ -127,6 +149,10 @@
     
     .preview__next {
         font-size: rem-calc(42);
+        
+        .icon--arrow-right {
+            font-size: rem-calc(30);
+        }
     }
     
     .preview__next .preview__direction {
@@ -143,6 +169,10 @@
     
     .preview__next {
         font-size: rem-calc(60);
+        
+        .icon--arrow-right {
+            font-size: rem-calc(42);
+        }
     }
     
     .preview__next .preview__direction {
