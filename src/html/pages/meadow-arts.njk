@@ -1,7 +1,7 @@
 {% import "macros/_projects.njk" as project %} 
 
 <!-- vars -->
-{% set Title = "Meadow Arts" %}
+{% set Title = "The Precious Clay" %}
 {% set SubTitle = "Marketing & interpretation material" %}
 
 {% extends "_layout.html" %}
@@ -17,7 +17,7 @@
         SubTitle,     
         'feature-meadow-arts.jpg',
         'Meadow arts',
-        '2010 to present',                  
+        '2018',                  
         ['Design', 'Print Production']
     )}}
 
@@ -28,6 +28,18 @@
         '<p>Write some text in here. <a href="" >You can</a> also use <em>italics</em>, and <strong>bold</strong> text. Woo hoo!</p>',
         'https://unsplash.it/220',
         'The alt text'
+    )}}
+    
+    {{ project.imageSplit (
+        'https://unsplash.it/540/720',
+        'early poster design for The Precious Clay featuring a decorative teapot that appears to be exploding',
+        'A work by Bouke De Vris was chosen for the original poster design. The dynamism of the exploding teapot gave a somewhat typographic feel to the design.'
+    )}}
+    
+    {{ project.imageSplit (
+        'https://unsplash.it/540/720',
+        'Hollowware leaflet cver',
+    'Interpretation material for a performance of <em>&lsquo;Hollowware&rsquo;</em> by Emily Speed which wound its way around the Worcester docks.'
     )}}
     
 </main>
