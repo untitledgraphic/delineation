@@ -12,12 +12,13 @@
 .thumbnails__list {
 	display: flex;
     flex-wrap: wrap;
+    align-items: center;
     height: 100%;
     padding: rem-calc(7.5);
 }
 
 .thumbnails__item {
-    flex: 1 1 50%;
+    flex: 0 0 50%;
     float: none;
     padding: rem-calc(7.5);
     overflow: hidden;
@@ -26,9 +27,15 @@
         border: 1px solid #ccc;
         width: 100%;
     }
+}
+
+.thumbnails--book {
     
-    &:first-child img {
-        width: 50%;
+    .thumbnails__item {
+        
+        &:first-child img {
+            width: 50%;
+        }
     }
 }
 
@@ -44,7 +51,7 @@
 @include mq($from: medium) {
     
     .thumbnails__item {
-        flex: 1 1 50%;
+        flex: 0 0 50%;
     }
     
     .thumbnails{
@@ -67,7 +74,7 @@
     }
     
     .thumbnails__item {
-        flex: 1 1 33.333%;
+        flex: 0 0 33.333%;
         padding: rem-calc(20);
     }
 }

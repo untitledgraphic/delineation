@@ -124,7 +124,7 @@
         </div>
 
         <div class="intro__thumb small-6 medium-3">
-            <img class="lazy" data-class="lazy" data-src="{{ intro_image }}" alt="{{ intro_image_alt }}" />
+            <img class="lazy" data-class="lazy" data-src="/images/{{ intro_image }}" alt="{{ intro_image_alt }}" />
         </div>
     </div>
 </section>
@@ -141,8 +141,8 @@
 
 <section class="image image--full">
     <div class="image__container {{ classes }} medium-10 large-9 large-centered column">
-        <img class="lazy" data-src="{{ image_url }}" alt="{{ image_alt }}" />
-        <noscript><img src="{{ image_url }}" alt="{{ image_alt }}" /></noscript>
+        <img class="lazy" data-src="/images/{{ image_url }}" alt="{{ image_alt }}" />
+        <noscript><img src="/images/{{ image_url }}" alt="{{ image_alt }}" /></noscript>
     </div>
 </section>
 
@@ -168,10 +168,28 @@
 
 {# ================================================================================ #}
 
+{% macro imageSquare (
+    image_url,
+    image_alt,
+    classes
+) %}
+
+<section class="image image--square">
+    <div class="image__container {{ classes }} medium-9 large-6 medium-centered column">
+        <img class="lazy" data-src="/images/{{ image_url }}" alt="{{ image_alt }}" />
+        <noscript><img src="/images/{{ image_url }}" alt="{{ image_alt }}" /></noscript>
+    </div>
+</section>
+
+{% endmacro %}
+
+{# ================================================================================ #}
+
 {% macro imageSplit (
     image_url,
     image_alt,
-    text
+    text,
+    classes
 ) %}
 
 <section class="image split">
@@ -180,8 +198,30 @@
             <p>{{ text | safe }}</p>
         </div>
     </div>
-    <div class="image__container split__image medium-5 large-4 medium-push-1 large-push-2 column">
-        <img class="lazy" data-src="{{ image_url }}" alt="{{ image__alt }}" />
+    <div class="image__container split__image medium-5 large-4 medium-push-1 large-push-2 column {{ classes }}">
+        <img class="lazy" data-src="/images/{{ image_url }}" alt="{{ image__alt }}" />
+    </div>
+</section>
+
+{% endmacro %}
+
+{# ================================================================================ #}
+
+{% macro imageSplitLeft (
+    image_url,
+    image_alt,
+    text,
+    classes
+) %}
+
+<section class="image split">
+    <div class="image__container split__image medium-5 large-4 medium-push-1 large-push-2 column contain {{ classes }}">
+        <img class="lazy" data-src="/images/{{ image_url }}" alt="{{ image__alt }}" />
+    </div>
+    <div class="split__text medium-5 large-4 large-push-1 column">
+        <div class="text__container">
+            <p>{{ text | safe }}</p>
+        </div>
     </div>
 </section>
 
@@ -192,29 +232,32 @@
 {% macro imageOffset (
     image_url,
     image_alt,
-    text
+    classes
 ) %}
 
 <section class="image image--offset-left">
-        <div class="image__container large-pull-1">
-            <img class="lazy" data-src="https://unsplash.it/1270/650" alt="image" />
-        </div>
-    </section>
+    <div class="image__container large-pull-1 {{ classes }}">
+        <img class="lazy" data-src="/images/{{ image_url }}" alt="{{ image_alt }}" />
+    </div>
+</section>
 
 {% endmacro %}
 
 {# ================================================================================ #}
 
 {% macro thumbnails (
-    thumbs
+    thumbs,
+    classes
 ) %}
 
-<section class="thumbnails">
+<section class="thumbnails {{ classes }}">
     <div class="thumbnails__container">
         <div class="medium-push-1">
             <ul class="thumbnails__list listless">  
                 {% for thumb, alt in thumbs %}
-                <li class="thumbnails__item" data-thumb="{{ thumb }}"><img class="lazy" data-src="{{ thumb }}" alt="{{ alt }}"></li>
+                <li class="thumbnails__item" data-thumb="{{ thumb }}">
+                    <img class="lazy" data-src="/images/{{ thumb }}" alt="{{ alt }}">
+                </li>
                 {% endfor %}
             </ul>
         </div>
