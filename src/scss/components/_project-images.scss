@@ -57,11 +57,24 @@
     .image {
         height: 50vh;
         padding: rem-calc(15);
+        
+        &.split {
+            height: auto;
+        }
+        
+        .image__container + .split__text {
+            margin-top: rem-calc(20);
+        }
     }
     
     .split__text {
         display: flex;
         align-items: center;
+        padding: rem-calc(20) rem-calc(20) rem-calc(6) rem-calc(20);
+        
+        + .split__image {
+            margin-top: rem-calc(20);
+        }
     }
 }
 
