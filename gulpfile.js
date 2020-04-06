@@ -1,9 +1,9 @@
 /*
- * Name: Atlas
- * Author: Zengenti Ltd
- * Author URI: http://zengenti.com
- * Description: A modern front-end framework
- * Version: 0.0.2
+ * Name: Scaffolding
+ * Author: Craig Cooper
+ * Author URI: http://craigomatic.co.uk
+ * Description: A front-end framework
+ * Version: 0.1.1
  */ 
 
 // Paths
@@ -19,7 +19,6 @@ var browserSync  = require('browser-sync');
 var rename       = require('gulp-rename');
 var plumber      = require('gulp-plumber');
 var notify       = require('gulp-notify');
-var inject       = require('gulp-inject');
 var sourcemaps   = require('gulp-sourcemaps');
 
 // Sass
@@ -29,17 +28,12 @@ var autoprefixer = require('gulp-autoprefixer');
 // JavaScript
 var eslint       = require('gulp-eslint');
 var concat       = require('gulp-concat');
-var uglify       = require('gulp-uglify');
-
-// SVG
-var svgSprite    = require('gulp-svg-sprite');
+var uglify       = require('gulp-terser');
 
 // Module Build
 var nunjucksRender = require('gulp-nunjucks-render');
 
-/*
- * Scripts object
- */
+// Scripts object
 var uiscripts = [
     pathJs + 'app.js',
     pathJs + 'libs/jquery.lazy.js'
@@ -53,9 +47,7 @@ var homescripts = [
     pathJs + 'libs/jquery.lazy.js'
 ];
 
-/*
- * Sass
- */
+// Sass
 gulp.task('sass', function() {
     return gulp.src(pathSass + '**/*.scss')
     .pipe(sourcemaps.init())
@@ -68,11 +60,16 @@ gulp.task('sass', function() {
     .pipe(browserSync.stream());
 });
 
-/*
- * JavaScript linting (excludes any third party scripts in libs)
- */
+// JavaScript linting 
+// excludes any third party scripts in libs
 gulp.task('js-lint', function() {
-  return gulp.src([pathJs + '**/*', '!' + pathJs + 'libs/**/*'])
+    return gulp.src(
+        [
+            pathJs + '**/*', 
+            '!' + pathJs + 'libs/**/*',
+            '!' + pathJs + 'json/**/*'
+        ]
+    )
     .pipe(eslint())
     .pipe(plumber())
     .pipe(eslint.format())
@@ -80,110 +77,61 @@ gulp.task('js-lint', function() {
     .on('error', notify.onError('JS lint failed.\n<%= error.message %>')));
 });
 
-/*
- * JavaScript concat and minify
- */
-gulp.task('js', ['js-lint'], function() {
-  return gulp.src(uiscripts)
-    .pipe(sourcemaps.init())
+// JavaScript concat and minify
+gulp.task('js', gulp.series('js-lint', function() {
+    return gulp.src(uiscripts)
+    //.pipe(sourcemaps.init())
     .pipe(concat('app.min.js'))
-    .pipe(uglify({
-      preserveComments: 'license'
-    }))
-    .pipe(sourcemaps.write('.'))
+//    .pipe(uglify({
+//      preserveComments: 'license'
+//    }))
+//    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('public/js'));
-});
+}));
 
 // Homepage only
-gulp.task('js1', ['js-lint'], function() {
-  return gulp.src(homescripts)
+gulp.task('js1', gulp.series('js-lint', function() {
+    return gulp.src(homescripts)
     .pipe(sourcemaps.init())
     .pipe(concat('home.min.js'))
-    .pipe(uglify({
-      preserveComments: 'license'
-    }))
+//    .pipe(uglify({
+//      preserveComments: 'license'
+//    }))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('public/js'));
-});
+}));
 
-/*
- * JavaScript watch
- * Ensures the 'js' task is complete before reloading browsers
- */
-gulp.task('js-watch', ['js', 'js1'], browserSync.reload);
+// JavaScript watch
+// Ensures the 'js' task is complete before reloading browsers
+gulp.task('js-watch', gulp.series(['js', 'js1'], browserSync.reload));
 
-/*
- * SVG sprite
- */
-gulp.task('svg', function() {
-  var svgs = gulp
-  .src(pathImg + 'icons/**/*.svg')
-  .pipe(rename({
-    prefix: 'icon-'
-  }))
-  .pipe(svgSprite({
-    mode: {
-      symbol: {
-        dest: '',
-        sprite: 'icons/icons.svg',
-        bust: false,
-        inline: true
-      }
-    }
-  }).on('error', notify.onError('SVG lint failed.\n<%= error.message %>')));
-
-  // Inlining result into HTML body
-  function fileContents (filePath, file) {
-    return file.contents.toString();
-  }
-
-  return gulp
-    .src('public/**/*.html')
-    .pipe(inject(svgs, {
-      transform: fileContents
-    }))
-    .pipe(gulp.dest('public'));
-});
-
-/*
- * Nunjucks build
- */
+// Nunjucks build
 gulp.task('html', function() {
-  // Gets .html files in pages
-  return gulp.src('src/html/pages/**/*.+(html|njk)')
-  // Renders template with nunjucks
-  .pipe(nunjucksRender({
-      path: ['src/html/templates']
+    return gulp.src('src/html/pages/**/*.+(html|njk)')
+    .pipe(nunjucksRender({
+        path: ['src/html/templates']
     }))
-  // output files in app folder
-  .pipe(gulp.dest('public/'))
+    .pipe(gulp.dest('public/'))
 });
 
-/*
- * HTML watch
- * Ensures the 'html' task is complete before reloading browsers
- */
-gulp.task('html-watch', ['html'], browserSync.reload);
+// HTML watch
+// Ensures the 'html' task is complete before reloading browsers
+gulp.task('html-watch', gulp.series('html', browserSync.reload));
 
 
 
-/*
- * Serve
- */
-gulp.task('serve', ['sass', 'js', 'js1', 'html', 'svg'], function() {
-  browserSync.init({
-    server: {
-      baseDir: './public'
-    },
-    notify: false
-  });
+// Serve
+gulp.task('serve', gulp.series('sass', 'js', 'js1', 'html', function() {
+    browserSync.init({
+        server: {
+            baseDir: './public'
+        },
+        notify: false
+    });
+    gulp.watch(pathSass + '**/*.scss', gulp.series('sass'));
+    gulp.watch(pathJs + '**/*', gulp.series('js-watch'));
+    gulp.watch(pathHtml + '**/*', gulp.series('html-watch'));
+}));
 
-  gulp.watch(pathSass + '**/*.scss', ['sass']);
-  gulp.watch(pathJs + '**/*', ['js-watch']);
-  gulp.watch(pathHtml + '**/*', ['html-watch']);
-});
-
-/*
- * Tasks
- */
-gulp.task('default', ['sass', 'js', 'js1', 'html', 'svg', 'serve'], browserSync.reload);
+// Tasks
+gulp.task('default', gulp.series('sass', 'js', 'js1', 'html', 'serve', browserSync.reload));
