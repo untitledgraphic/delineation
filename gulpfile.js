@@ -107,7 +107,7 @@ gulp.task('js-watch', gulp.series(['js', 'js1'], browserSync.reload));
 
 // Nunjucks build
 gulp.task('html', function() {
-    return gulp.src('src/html/pages/**/*.+(html|njk)')
+    return gulp.src('src/html/pages/**/*.njk')
     .pipe(nunjucksRender({
         path: ['src/html/templates']
     }))
