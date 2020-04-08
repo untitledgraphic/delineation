@@ -44,7 +44,7 @@ body:before {
 
 .feature {
     height: 100%;
-    padding: rem-calc(85) rem-calc(15) rem-calc(15);
+    padding: rem-calc(85) rem-calc(24) rem-calc(24);
     
     &:first-of-type {
         display: none;
@@ -343,6 +343,8 @@ mask lineargradient stop {
     display: none;
     color: $text-colour--neg;
     bottom: 10%;
+    font-size: 16px;
+    text-transform: uppercase;
     
     li {
         float: left;

@@ -1,11 +1,7 @@
 .brands {
     color: $text-colour--neg;
     padding: rem-calc(40) 0;
-    background: linear-gradient(
-        135deg, 
-        #9391f3 0%,
-        #f2919d 100%
-    );
+    background: $bg--dark;
     overflow-x: hidden;
     
     p {
