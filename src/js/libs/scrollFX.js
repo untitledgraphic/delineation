@@ -9,9 +9,11 @@ jQuery(document).ready(function($){
     
     //DOM elements
     var sectionsAvailable = $('.feature'),
-    	verticalNav = $('.feature__nav'),
-    	prevArrow = verticalNav.find('a.cd-prev'),
-    	nextArrow = verticalNav.find('a.cd-next');
+//    	verticalNav = $('.feature__nav'),
+//    	prevArrow = verticalNav.find('a.cd-prev'),
+//    	nextArrow = verticalNav.find('a.cd-next');
+        prevArrow = $('.cd-prev'),
+        nextArrow = $('.cd-next');
 
 	
 	//check the media query and bind corresponding events

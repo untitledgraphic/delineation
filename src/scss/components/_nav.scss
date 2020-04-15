@@ -31,25 +31,29 @@ a.navTrigger {
     z-index: 1;
 }
         
-a.logo,
-a.pageHeader__helper {
-    border: rem-calc(1.5) solid $text-colour;
-    text-align: center;
-    background: $bg;
-}
-
 a.logo {
-    font-size: rem-calc(30);
-    line-height: rem-calc(36);
+    border: rem-calc(1.5) solid $text-colour;
+    background: $bg;
+    
+    svg {
+        display: block;
+        width: 90%;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 a.pageHeader__helper {
-    font-size: rem-calc(22);
-    line-height: rem-calc(36);
     
-    &:before {
-        left: -0.1em;
-        position: relative;
+    svg {
+        display: block;
+        width: 90%;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 }
 
