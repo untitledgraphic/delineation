@@ -15,12 +15,12 @@ var app = (function ($) {
             //var s = new this.settings();
             
             this.bindUIActions();       // UI Actions (click, focus etc)
-            this.bindWindowActions();   // Window actions (scrolling, resize etc)
             this.nav();                 // Main navigation
 //            this.features();            // do stuff on scroll (Scrollify)
             this.form();                // form type stuff
             this.lazy();                // lazyload config
             this.parallax();            // parallaxy images
+            this.scrollon();            // scroll down a bit
         },
 
         bindUIActions: function() {
@@ -30,10 +30,6 @@ var app = (function ($) {
                 $('body').addClass('loaded');
             }, 2000);
         },
-
-        bindWindowActions: function() {
-            ////////// Nothing to see here ///////////
-        }, 
         
         nav: function() {
             var nav = '#mainNav';
@@ -67,6 +63,20 @@ var app = (function ($) {
                     $(first).addClass(active);
                 }
             });
+        },
+        
+        scrollon: function() {
+            if(window.location.href !== 'http://localhost:3000/') { 
+                $('#helper').on('click', function(e) {
+                    e.preventDefault(); 
+
+                    var scrollPos = $(document).scrollTop();
+
+                    $('html, body').animate({ 
+                        scrollTop: $(window).height() + scrollPos  //Get the document height
+                    }, 'slow'); //Animates the scroll
+                });
+            }
         },
         
         form: function() {
