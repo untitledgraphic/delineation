@@ -2,28 +2,19 @@
 
 {% block content %}
 
-<main id="main" class="about">
+<main id="main" class="contact">
     
     {% include "partials/_title.njk" %}
     
-    <section class="intro">
-        <div class="row">
-            <div class="large-4 xlarge-3 xlarge-push-1 column sticky">
-                <h2 class="intro__title">
-                    <span class="intro__name">Get in touch</span>
-                </h2>
-            </div>
-        
-            <div class="large-7 xlarge-4 xlarge-push-1 column intro__summary form">
-                
-            </div>
-        </div>
+    <section class="contact__content">
+        <h2 class="contact__title">Call me</h2>
+        <p>Go on, you know you want to.</p>
+        <p class="contact__phone">07814 745549</p>
     </section>
     
+    {% include "partials/_social.njk" %}
+
+    {% include "partials/_footer.njk" %}
 </main>
-
-{% include "partials/_social.njk" %}
-
-{% include "partials/_footer.njk" %}
 
 {% endblock %}
