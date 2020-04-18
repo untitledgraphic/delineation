@@ -47,14 +47,29 @@ a.logo {
 
 a.pageHeader__helper {
     
-    svg {
-        display: block;
-        width: 90%;
-        left: 50%;
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
+    border: 2px solid black;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .arrow-down {
+        
+        &:after {
+            border-width: 2px;
+            left: 0;
+            top: -2px;
+        }
     }
+    
+//    svg {
+//        display: block;
+//        width: 90%;
+//        left: 50%;
+//        position: absolute;
+//        top: 50%;
+//        transform: translate(-50%, -50%);
+//    }
 }
 
 .navTrigger__bar1,
@@ -330,6 +345,7 @@ a.mainNav__link {
     font-size: rem-calc(20);
     line-height: rem-calc(20);
     font-family: $text-secondary;
+    font-style: italic;
     letter-spacing: 0.02em;
     color: $text-colour--light;
     margin: 0;
