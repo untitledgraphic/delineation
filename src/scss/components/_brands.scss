@@ -9,6 +9,7 @@
         text-align: right;
         margin: rem-calc(40) 0 0;
         font-family: $serif;
+        font-style: italic;
         font-size: rem-calc(28);
     }
 }
@@ -16,6 +17,7 @@
 .brands__title {
     color: $text-colour--neg;
     font-family: $serif;
+    font-style: italic;
     font-weight: 400;
     font-size: rem-calc(28);
     margin: 0 0 rem-calc(40);
