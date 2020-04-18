@@ -40,7 +40,8 @@
     function theDomHasLoaded(e) {
         [
             // The default scripts loaded on the page
-            'js/libs/jquery.min.js',
+            //'js/libs/jquery.min.js',
+            'js/libs/jquery.3.4.1.min.js',
             'js/app.min.js'
             // add any further scripts to defer here
         ].forEach(function(src) {
@@ -63,7 +64,7 @@
             <span class="visuallyhidden">Craig Cooper Web Design and development</span>
         </a>
         
-        <a href="https://www.google.com" id="helper" class="pageHeader__helper cd-next">
+        <a id="helper" class="pageHeader__helper cd-next">
             <div class="arrow-down"></div>
             <span class="visuallyhidden">Scrolls down</span>
         </a>

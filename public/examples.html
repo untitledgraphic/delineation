@@ -23,7 +23,11 @@
     <link href="css/styles.css" rel="stylesheet">
     
     <!-- Scripts -->
-    <script src="js/libs/modernizr-custom.js" rel="javascript"></script>
+    <script src="js/libs/jquery.3.4.1.min.js"></script>
+    <script src="js/libs/velocity.min.js" defer></script>
+<!--    <script src="js/libs/velocity.ui.min.js" defer></script>-->
+    <script src="js/home.min.js" defer></script>
+<!--    <script src="js/libs/modernizr-custom.js" rel="javascript"></script>-->
     
     <!-- Open Graph -->
     <meta name="twitter:site" content="@craigdoesdesign" />
@@ -31,25 +35,9 @@
     <meta property="og:site_name" content="Craig Cooper Digital Design"/>
     <meta property="og:title" content="Craig Cooper"/>
     <meta property="og:description" content="User focused design online and in print."/>
-    <meta property="og:image" content="https://www.sequoiacap.com/img/c/home_intro_us_1.jpg"/>
+    <meta property="og:image" content=""/>
     
-    <script>
-    document.addEventListener("DOMContentLoaded", theDomHasLoaded, false);
     
-    function theDomHasLoaded(e) {
-        [
-            // The default scripts loaded on the page
-            'js/libs/jquery.min.js',
-            'js/home.min.js'
-            // add any further scripts to defer here
-        ].forEach(function(src) {
-            var script = document.createElement('script');
-            script.src = src;
-            script.async = false;
-            document.head.appendChild(script);
-        });
-    }
-</script>
 
 </head>
 <body class="home" data-hijacking="on" data-animation="parallax">
@@ -62,7 +50,7 @@
             <span class="visuallyhidden">Craig Cooper Web Design and development</span>
         </a>
         
-        <a href="https://www.google.com" id="helper" class="pageHeader__helper cd-next">
+        <a id="helper" class="pageHeader__helper cd-next">
             <div class="arrow-down"></div>
             <span class="visuallyhidden">Scrolls down</span>
         </a>

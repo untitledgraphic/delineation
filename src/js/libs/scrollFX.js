@@ -9,9 +9,6 @@ jQuery(document).ready(function($){
     
     //DOM elements
     var sectionsAvailable = $('.feature'),
-//    	verticalNav = $('.feature__nav'),
-//    	prevArrow = verticalNav.find('a.cd-prev'),
-//    	nextArrow = verticalNav.find('a.cd-next');
         prevArrow = $('.cd-prev'),
         nextArrow = $('.cd-next');
 
@@ -42,16 +39,7 @@ jQuery(document).ready(function($){
 			}
 			prevArrow.on('click', prevSection);
     		nextArrow.on('click', nextSection);
-    		
-    		$(document).on('keydown', function(event){
-				if( event.which=='40' && !nextArrow.hasClass('inactive') ) {
-					event.preventDefault();
-					nextSection();
-				} else if( event.which=='38' && (!prevArrow.hasClass('inactive') || (prevArrow.hasClass('inactive') && $(window).scrollTop() != sectionsAvailable.eq(0).offset().top) ) ) {
-					event.preventDefault();
-					prevSection();
-				}
-			});
+            
 			//set navigation arrows visibility
 			checkNavigation();
 		} else if( MQ == 'mobile' ) {
@@ -134,7 +122,6 @@ jQuery(document).ready(function($){
 
     function prevSection(event) {
     	//go to previous section
-    	typeof event !== 'undefined' && event.preventDefault();
     	
     	var visibleSection = sectionsAvailable.filter('.visible'),
     		middleScroll = ( hijacking == 'off' && $(window).scrollTop() != visibleSection.offset().top) ? true : false;
@@ -159,7 +146,6 @@ jQuery(document).ready(function($){
 
     function nextSection(event) {
     	//go to next section
-    	typeof event !== 'undefined' && event.preventDefault();
 
         var visibleSection = sectionsAvailable.filter('.visible'),
     		middleScroll = ( hijacking == 'off' && $(window).scrollTop() != visibleSection.offset().top) ? true : false;
@@ -219,50 +205,6 @@ jQuery(document).ready(function($){
 			easing = 'ease',
 			animDuration = 800;
 
-		switch(animationName) {
-		    case 'scaleDown':
-		    	animationTop = 'scaleDown';
-		    	easing = 'easeInCubic';
-		        break;
-		    case 'rotate':
-		    	if( hijacking == 'off') {
-		    		animationTop = 'rotation.scroll';
-		    		animationBottom = 'translateNone';
-		    	} else {
-		    		animationTop = 'rotation';
-		    		easing = 'easeInCubic';
-		    	}
-		        break;
-		    case 'gallery':
-		    	animDuration = 1500;
-		    	if( middleScroll ) {
-		    		animationTop = 'scaleDown.moveUp.scroll';
-		    		animationVisible = 'scaleUp.moveUp.scroll';
-		    		animationBottom = 'scaleDown.moveDown.scroll';
-		    	} else {
-		    		animationVisible = (direction == 'next') ? 'scaleUp.moveUp' : 'scaleUp.moveDown';
-					animationTop = 'scaleDown.moveUp';
-					animationBottom = 'scaleDown.moveDown';
-		    	}
-		        break;
-		    case 'catch':
-		    	animationVisible = 'translateUp.delay';
-		        break;
-		    case 'opacity':
-		    	animDuration = 700;
-				animationTop = 'hide.scaleUp';
-				animationBottom = 'hide.scaleDown';
-		        break;
-		    case 'fixed':
-		    	animationTop = 'translateNone';
-		    	easing = 'easeInCubic';
-		        break;
-		    case 'parallax':
-		    	animationTop = 'translateUp.half';
-		    	easing = 'easeInCubic';
-		        break;
-		}
-
 		return [animationVisible, animationTop, animationBottom, animDuration, easing];
 	}
 
@@ -273,152 +215,6 @@ jQuery(document).ready(function($){
 			rotateX = '0deg',
 			opacity = 1,
 			boxShadowBlur = 0;
-		
-		if( sectionOffset >= -windowHeight && sectionOffset <= 0 ) {
-			// section entering the viewport
-			translateY = (-sectionOffset)*100/windowHeight;
-			
-			switch(animationName) {
-			    case 'scaleDown':
-			        scale = 1;
-					opacity = 1;
-					break;
-				case 'rotate':
-					translateY = 0;
-					break;
-				case 'gallery':
-			        if( sectionOffset>= -windowHeight &&  sectionOffset< -0.9*windowHeight ) {
-			        	scale = -sectionOffset/windowHeight;
-			        	translateY = (-sectionOffset)*100/windowHeight;
-			        	boxShadowBlur = 400*(1+sectionOffset/windowHeight);
-			        } else if( sectionOffset>= -0.9*windowHeight &&  sectionOffset< -0.1*windowHeight) {
-			        	scale = 0.9;
-			        	translateY = -(9/8)*(sectionOffset+0.1*windowHeight)*100/windowHeight;
-			        	boxShadowBlur = 40;
-			        } else {
-			        	scale = 1 + sectionOffset/windowHeight;
-			        	translateY = 0;
-			        	boxShadowBlur = -400*sectionOffset/windowHeight;
-			        }
-					break;
-				case 'catch':
-			        if( sectionOffset>= -windowHeight &&  sectionOffset< -0.75*windowHeight ) {
-			        	translateY = 100;
-			        	boxShadowBlur = (1 + sectionOffset/windowHeight)*160;
-			        } else {
-			        	translateY = -(10/7.5)*sectionOffset*100/windowHeight;
-			        	boxShadowBlur = -160*sectionOffset/(3*windowHeight);
-			        }
-					break;
-				case 'opacity':
-					translateY = 0;
-			        scale = (sectionOffset + 5*windowHeight)*0.2/windowHeight;
-			        opacity = (sectionOffset + windowHeight)/windowHeight;
-					break;
-			}
-
-		} else if( sectionOffset > 0 && sectionOffset <= windowHeight ) {
-			//section leaving the viewport - still has the '.visible' class
-			translateY = (-sectionOffset)*100/windowHeight;
-			
-			switch(animationName) {
-			    case 'scaleDown':
-			        scale = (1 - ( sectionOffset * 0.3/windowHeight)).toFixed(5);
-					opacity = ( 1 - ( sectionOffset/windowHeight) ).toFixed(5);
-					translateY = 0;
-					boxShadowBlur = 40*(sectionOffset/windowHeight);
-
-					break;
-				case 'rotate':
-					opacity = ( 1 - ( sectionOffset/windowHeight) ).toFixed(5);
-					rotateX = sectionOffset*90/windowHeight + 'deg';
-					translateY = 0;
-					break;
-				case 'gallery':
-			        if( sectionOffset >= 0 && sectionOffset < 0.1*windowHeight ) {
-			        	scale = (windowHeight - sectionOffset)/windowHeight;
-			        	translateY = - (sectionOffset/windowHeight)*100;
-			        	boxShadowBlur = 400*sectionOffset/windowHeight;
-			        } else if( sectionOffset >= 0.1*windowHeight && sectionOffset < 0.9*windowHeight ) {
-			        	scale = 0.9;
-			        	translateY = -(9/8)*(sectionOffset - 0.1*windowHeight/9)*100/windowHeight;
-			        	boxShadowBlur = 40;
-			        } else {
-			        	scale = sectionOffset/windowHeight;
-			        	translateY = -100;
-			        	boxShadowBlur = 400*(1-sectionOffset/windowHeight);
-			        }
-					break;
-				case 'catch':
-					if(sectionOffset>= 0 &&  sectionOffset< windowHeight/2) {
-						boxShadowBlur = sectionOffset*80/windowHeight;
-					} else {
-						boxShadowBlur = 80*(1 - sectionOffset/windowHeight);
-					} 
-					break;
-				case 'opacity':
-					translateY = 0;
-			        scale = (sectionOffset + 5*windowHeight)*0.2/windowHeight;
-			        opacity = ( windowHeight - sectionOffset )/windowHeight;
-					break;
-				case 'fixed':
-					translateY = 0;
-					break;
-				case 'parallax':
-					translateY = (-sectionOffset)*50/windowHeight;
-					break;
-
-			}
-
-		} else if( sectionOffset < -windowHeight ) {
-			//section not yet visible
-			translateY = 100;
-
-			switch(animationName) {
-			    case 'scaleDown':
-			        scale = 1;
-					opacity = 1;
-					break;
-				case 'gallery':
-			        scale = 1;
-					break;
-				case 'opacity':
-					translateY = 0;
-			        scale = 0.8;
-			        opacity = 0;
-					break;
-			}
-
-		} else {
-			//section not visible anymore
-			translateY = -100;
-
-			switch(animationName) {
-			    case 'scaleDown':
-			        scale = 0;
-					opacity = 0.7;
-					translateY = 0;
-					break;
-				case 'rotate':
-					translateY = 0;
-			        rotateX = '90deg';
-			        break;
-			    case 'gallery':
-			        scale = 1;
-					break;
-				case 'opacity':
-					translateY = 0;
-			        scale = 1.2;
-			        opacity = 0;
-					break;
-				case 'fixed':
-					translateY = 0;
-					break;
-				case 'parallax':
-					translateY = -50;
-					break;
-			}
-		}
 
 		return [translateY, scale, rotateX, opacity, boxShadowBlur]; 
 	}
@@ -426,141 +222,27 @@ jQuery(document).ready(function($){
 
 /* Custom effects registration - feature available in the Velocity UI pack */
 //none
-$.Velocity
-    .RegisterEffect("translateUp", {
-    	defaultDuration: 1,
-        calls: [ 
-            [ { translateY: '-100%'}, 1]
-        ]
-    });
-$.Velocity
-    .RegisterEffect("translateDown", {
-    	defaultDuration: 1,
-        calls: [ 
-            [ { translateY: '100%'}, 1]
-        ]
-    });
-$.Velocity
-    .RegisterEffect("translateNone", {
-    	defaultDuration: 1,
-        calls: [ 
-            [ { translateY: '0', opacity: '1', scale: '1', rotateX: '0', boxShadowBlur: '0'}, 1]
-        ]
-    });
-
-//scale down
-$.Velocity
-    .RegisterEffect("scaleDown", {
-    	defaultDuration: 1,
-        calls: [ 
-            [ { opacity: '0', scale: '0.7', boxShadowBlur: '40px' }, 1]
-        ]
-    });
-//rotation
-$.Velocity
-    .RegisterEffect("rotation", {
-    	defaultDuration: 1,
-        calls: [ 
-            [ { opacity: '0', rotateX: '90', translateY: '-100%'}, 1]
-        ]
-    });
-$.Velocity
-    .RegisterEffect("rotation.scroll", {
-    	defaultDuration: 1,
-        calls: [ 
-            [ { opacity: '0', rotateX: '90', translateY: '0'}, 1]
-        ]
-    });
-//gallery
-$.Velocity
-    .RegisterEffect("scaleDown.moveUp", {
-    	defaultDuration: 1,
-        calls: [ 
-        	[ { translateY: '-10%', scale: '0.9', boxShadowBlur: '40px'}, 0.20 ],
-        	[ { translateY: '-100%' }, 0.60 ],
-        	[ { translateY: '-100%', scale: '1', boxShadowBlur: '0' }, 0.20 ]
-        ]
-    });
-$.Velocity
-    .RegisterEffect("scaleDown.moveUp.scroll", {
-    	defaultDuration: 1,
-        calls: [ 
-        	[ { translateY: '-100%', scale: '0.9', boxShadowBlur: '40px' }, 0.60 ],
-        	[ { translateY: '-100%', scale: '1', boxShadowBlur: '0' }, 0.40 ]
-        ]
-    });
-$.Velocity
-    .RegisterEffect("scaleUp.moveUp", {
-    	defaultDuration: 1,
-        calls: [ 
-        	[ { translateY: '90%', scale: '0.9', boxShadowBlur: '40px' }, 0.20 ],
-        	[ { translateY: '0%' }, 0.60 ],
-        	[ { translateY: '0%', scale: '1', boxShadowBlur: '0'}, 0.20 ]
-        ]
-    });
-$.Velocity
-    .RegisterEffect("scaleUp.moveUp.scroll", {
-    	defaultDuration: 1,
-        calls: [ 
-        	[ { translateY: '0%', scale: '0.9' , boxShadowBlur: '40px' }, 0.60 ],
-        	[ { translateY: '0%', scale: '1', boxShadowBlur: '0'}, 0.40 ]
-        ]
-    });
-$.Velocity
-    .RegisterEffect("scaleDown.moveDown", {
-    	defaultDuration: 1,
-        calls: [ 
-        	[ { translateY: '10%', scale: '0.9', boxShadowBlur: '40px'}, 0.20 ],
-        	[ { translateY: '100%' }, 0.60 ],
-        	[ { translateY: '100%', scale: '1', boxShadowBlur: '0'}, 0.20 ]
-        ]
-    });
-$.Velocity
-    .RegisterEffect("scaleDown.moveDown.scroll", {
-    	defaultDuration: 1,
-        calls: [ 
-        	[ { translateY: '100%', scale: '0.9', boxShadowBlur: '40px' }, 0.60 ],
-        	[ { translateY: '100%', scale: '1', boxShadowBlur: '0' }, 0.40 ]
-        ]
-    });
-$.Velocity
-    .RegisterEffect("scaleUp.moveDown", {
-    	defaultDuration: 1,
-        calls: [ 
-        	[ { translateY: '-90%', scale: '0.9', boxShadowBlur: '40px' }, 0.20 ],
-        	[ { translateY: '0%' }, 0.60 ],
-        	[ { translateY: '0%', scale: '1', boxShadowBlur: '0'}, 0.20 ]
-        ]
-    });
-//catch up
-$.Velocity
-    .RegisterEffect("translateUp.delay", {
-    	defaultDuration: 1,
-        calls: [ 
-            [ { translateY: '0%'}, 0.8, { delay: 100 }],
-        ]
-    });
-//opacity
-$.Velocity
-    .RegisterEffect("hide.scaleUp", {
-    	defaultDuration: 1,
-        calls: [ 
-            [ { opacity: '0', scale: '1.2'}, 1 ]
-        ]
-    });
-$.Velocity
-    .RegisterEffect("hide.scaleDown", {
-    	defaultDuration: 1,
-        calls: [ 
-            [ { opacity: '0', scale: '0.8'}, 1 ]
-        ]
-    });
-//parallax
-$.Velocity
-    .RegisterEffect("translateUp.half", {
-    	defaultDuration: 1,
-        calls: [ 
-            [ { translateY: '-50%'}, 1]
-        ]
-    });
+$.Velocity.RegisterEffect("translateUp", {
+    defaultDuration: 1,
+    calls: [ 
+        [ { translateY: '-100%'}, 1]
+    ]
+});
+$.Velocity.RegisterEffect("translateDown", {
+    defaultDuration: 1,
+    calls: [ 
+        [ { translateY: '100%'}, 1]
+    ]
+});
+$.Velocity.RegisterEffect("translateNone", {
+    defaultDuration: 1,
+    calls: [ 
+        [ { 
+            translateY: '0', 
+            opacity: '1', 
+            scale: '1', 
+            rotateX: '0', 
+            boxShadowBlur: '0'}, 1]
+    ]
+});
 

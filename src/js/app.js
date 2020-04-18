@@ -16,7 +16,6 @@ var app = (function ($) {
             
             this.bindUIActions();       // UI Actions (click, focus etc)
             this.nav();                 // Main navigation
-//            this.features();            // do stuff on scroll (Scrollify)
             this.form();                // form type stuff
             this.lazy();                // lazyload config
             this.parallax();            // parallaxy images
@@ -112,12 +111,12 @@ var app = (function ($) {
                 effect: 'fadeIn',
                 effectTime: 1000,
                 visibleOnly: true,
-                onError: function(element) {
-                    console.log('error loading ' + element.data('src'));
-                },
-                afterLoad: function(e) {
+                //onError: function(element) {
+                    //console.log('error loading ' + element.data('src'));
+                //},
+                afterLoad: function() {
                     $(this).addClass('loadeded');
-                    console.log('loaded' + e.data('src'));
+                    //console.log('loaded' + e.data('src'));
                 }
             });
         },
