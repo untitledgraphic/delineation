@@ -1,0 +1,20 @@
+{% extends "_layout.njk" %}
+
+{% block content %}
+
+<main id="main" class="contact">
+    
+    {% include "partials/_title.njk" %}
+    
+    <section class="contact__content">
+        <h2 class="contact__title">Get in touch</h2>
+        <p>Go on, you know you want to.</p>
+        <p class="contact__phone"><a href="mailto:craig@craigomatic.co.uk?Subject=A%20message%20from%20the%20website">email me</a></p>
+    </section>
+    
+    {% include "partials/_social.njk" %}
+
+    {% include "partials/_footer.njk" %}
+</main>
+
+{% endblock %}

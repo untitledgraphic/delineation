@@ -44,7 +44,7 @@ body:before {
 
 .feature {
     height: 100%;
-    padding: rem-calc(85) rem-calc(15) rem-calc(15);
+    padding: rem-calc(85) rem-calc(24) rem-calc(24);
     
     &:first-of-type {
         display: none;
@@ -107,6 +107,7 @@ body:before {
 
 .feature__summary {
     font-family: $text-secondary;
+    font-style: italic;
     letter-spacing: 0.02em;
     font-size: rem-calc(24);
     margin-top: rem-calc(10);
@@ -137,7 +138,7 @@ body:before {
 }
 
 .feature__image {
-    mix-blend-mode: overlay;
+    mix-blend-mode: soft-light;
     position: absolute;
     top: 0;
     left: 0;
@@ -343,6 +344,8 @@ mask lineargradient stop {
     display: none;
     color: $text-colour--neg;
     bottom: 10%;
+    font-size: 16px;
+    text-transform: uppercase;
     
     li {
         float: left;
@@ -379,17 +382,19 @@ mask lineargradient stop {
 // Gradients & Masks
 //=================================================
 
-.nik-burns {                @include colourway(#252525, #e09e4d); }
-.meadow-arts {              @include colourway(#2c3a75, #f3c234); }
-.benedict-homer {           @include colourway(#774636, #c9914a); }
-.dorsetforyou {             @include colourway(#ffad16, #8edd65); }
-.parkway-restaurant {       @include colourway(#341160, #35bfae); }
-.peter-bishop {             @include colourway(#d0c7d8, #4f869a); }
-.three-weeks {              @include colourway(#e763a4, #815fa8); }
-.marc-soubeyran {           @include colourway(#b15a27, #5a1d0b); }
-.gwynedd-council {          @include colourway(#408627, #404040); }
-.sbif {                     @include colourway(#e6e6e6, #1a283a); }
-.wycopedia {                @include colourway(#cccccc, #0070be); }
-.nmni {                     @include colourway(#474747, #61116a); }
-.toolsave {                 @include colourway(#a91f23, #881a22); }
-.ideal-saddles {            @include colourway(#d18642, #ad9d3b); }
+.nik-burns {                        @include colourway(#252525, #e09e4d); }
+.meadow-arts {                      @include colourway(#2c3a75, #f3c234); }
+.benedict-homer {                   @include colourway(#774636, #c9914a); }
+.dorset-council {                   @include colourway(#06a099, #c7d42f); }
+.parkway-restaurant {               @include colourway(#341160, #35bfae); }
+.peter-bishop {                     @include colourway(#d0c7d8, #4f869a); }
+.three-weeks {                      @include colourway(#e763a4, #815fa8); }
+.marc-soubeyran {                   @include colourway(#b15a27, #5a1d0b); }
+.gwynedd-council {                  @include colourway(#408627, #404040); }
+.sbif {                             @include colourway(#e6e6e6, #1a283a); }
+.wycopedia {                        @include colourway(#cccccc, #0070be); }
+.nmni {                             @include colourway(#474747, #61116a); }
+.toolsave {                         @include colourway(#a91f23, #881a22); }
+.lumberjack-tools {                 @include colourway(#a91f23, #881a22); }
+.ideal-saddles {                    @include colourway(#d18642, #ad9d3b); }
+.church-stretton-visitor-guides {   @include colourway(#203a1d, #909347); }

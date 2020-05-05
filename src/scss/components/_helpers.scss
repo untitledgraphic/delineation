@@ -54,3 +54,19 @@
     padding: 0;
     margin: 0; 
 }
+
+.arrow-up {
+    @include arrow(up, black, .7em);
+}
+
+.arrow-down {
+    @include arrow(down, black, .7em);
+}
+
+.arrow-left {
+    @include arrow(left, black, .7em);
+}
+
+.arrow-right {
+    @include arrow(right, black, .7em);
+}

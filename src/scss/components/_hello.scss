@@ -7,13 +7,15 @@
 }
 
 .hello__title {
-    margin: 0 0 rem-calc(60);
+    margin: 0 0 rem-calc(40);
     line-height: 1;
+    text-transform: uppercase;
 }
 
 .hello__hello {
     display: block;
     font-family: $serif;
+    font-style: italic;
     font-weight: 400;
     position: relative;
     left: rem-calc(-40);
@@ -51,16 +53,6 @@
         margin: 0 0 rem-calc(60);
     }
     
-    .hello__hello {
-        font-size: rem-calc(30);
-    }
-    
-    .hello__name {
-        font-size: rem-calc(36);
-        line-height: rem-calc(36);
-        margin-top: 0;
-    }
-    
     .hello__summary {
         position: relative;
         left: 25%;
@@ -74,5 +66,11 @@
         position: relative;
         left: 16.666%;
         margin: 0 0 rem-calc(120);
+        font-size: rem-calc(60);
+        font-size: rem-calc(90);
+    }
+    
+    .hello__summary {
+        left: 50%;
     }
 }

@@ -1,11 +1,7 @@
 .brands {
     color: $text-colour--neg;
     padding: rem-calc(40) 0;
-    background: linear-gradient(
-        135deg, 
-        #9391f3 0%,
-        #f2919d 100%
-    );
+    background: $bg--dark;
     overflow-x: hidden;
     
     p {
@@ -13,6 +9,7 @@
         text-align: right;
         margin: rem-calc(40) 0 0;
         font-family: $serif;
+        font-style: italic;
         font-size: rem-calc(28);
     }
 }
@@ -20,6 +17,7 @@
 .brands__title {
     color: $text-colour--neg;
     font-family: $serif;
+    font-style: italic;
     font-weight: 400;
     font-size: rem-calc(28);
     margin: 0 0 rem-calc(40);
