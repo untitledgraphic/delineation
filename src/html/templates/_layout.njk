@@ -26,6 +26,8 @@
     <!-- Scripts -->
     <script src="js/libs/modernizr-custom.js" rel="javascript"></script>
     
+    {% include "partials/_gtm.njk" %}
+    
     <!-- Open Graph -->
     <meta name="twitter:site" content="@craigdoesdesign" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -38,6 +40,7 @@
 
 </head>
 <body class="page">
+    {% include "partials/_gtm-noscript.njk" %}
     {% include "partials/_header.njk" %}
     {% block content %}
     {% endblock %}

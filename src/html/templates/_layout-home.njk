@@ -25,6 +25,8 @@
     <!-- Scripts -->
     <script src="js/libs/modernizr-custom.js" rel="javascript"></script>
     
+    {% include "partials/_gtm.njk" %}
+    
     <!-- Open Graph -->
     <meta name="twitter:site" content="@craigdoesdesign" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -37,6 +39,9 @@
 
 </head>
 <body class="home" data-hijacking="on" data-animation="parallax">
+    
+    {% include "partials/_gtm-noscript.njk" %}
+
     {% include "partials/_header.njk" %} 
     <!-- You write code for this content block in another file -->
     {% block content %}
