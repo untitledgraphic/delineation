@@ -22,7 +22,7 @@ var notify       = require('gulp-notify');
 var sourcemaps   = require('gulp-sourcemaps');
 
 // Sass
-var sass         = require('gulp-sass');
+var sass         = require('gulp-sass')(require('sass'));
 var autoprefixer = require('gulp-autoprefixer');
 
 // JavaScript
