@@ -1,3 +1,16 @@
+{% import "macros/_socialising.njk" as social %}
+
 <footer class="page-footer">
-    
+    <nav class="secondary-nav">
+        {{ social.socialLink (
+            [
+                ['get in touch', '/contact.html'],
+                ['twitter', 'https://twitter.com/CraigDoesDesign'],
+                ['dribbble', 'https://dribbble.com/craigomatic'],
+                ['unsplash', 'https://unsplash.com/craigomatic'],
+                ['behance', 'https://www.behance.net/craigcooper'],
+                ['linked in', 'https://www.linkedin.com/in/craigjcooper/']
+            ]
+        ) }}
+    </nav>
 </footer>

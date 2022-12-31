@@ -1,48 +1,23 @@
-body:before {
-    content: 'mobile'; // never visible - this is used in jQuery to check the current MQ 
-    display: none;
-}
-
-@include mq($from: large) {
-    
-    body {
-        
-        &:before {
-            content: 'desktop'; // never visible - this is used in jQuery to check the current MQ
-        }
-        
-        &[data-hijacking="on"] {
-            overflow: hidden;
-        }
-    }
-}
-
-.wrap {
-    height: 100vh;
-}
-
-@include mq($from: large) {
-    
-    .wrap {
-        position: absolute;
-        left: 8.333%;
-        right: 8.333%;
-        top: rem-calc(80);
-        bottom: rem-calc(80);
-        overflow: hidden;
-        height: auto;
-    }
-}
-
-@include mq($from: xxlarge) {
-    
-    .wrap {
-        top: rem-calc(120);
-        bottom: rem-calc(120);
-    }
+.content {
+    position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	border: 100px solid white;
+	overflow: auto;
+	font-size: 90px;
+	scroll-snap-type: y mandatory;
+	scroll-behavior: smooth; 
+	
+	&::-webkit-scrollbar {
+		display: none;
+	}
 }
 
 .feature {
+    scroll-snap-align: start;
+    position: relative;
     height: 100%;
     padding: rem-calc(85) rem-calc(24) rem-calc(24);
     
@@ -194,30 +169,13 @@ mask lineargradient stop {
     }
     
     .feature__container {
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         /* Force Hardware Acceleration */
         transform: translateZ(0);
         backface-visibility: hidden;
-    }
-    
-    [data-hijacking="on"] {
-        
-        .feature {
-            opacity: 0;
-            visibility: hidden;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-        }
-        
-        .feature__container {
-            visibility: visible;
-            position: absolute;
-        }
     }
     
     .feature__title {

@@ -19,12 +19,14 @@
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="msapplication-config" content="/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+
+    <!-- preload & preconnect -->
     
     <link href="css/styles.css" rel="stylesheet">
     
     <!-- Scripts -->
-    <script src="js/libs/modernizr-custom.js" rel="javascript"></script>
-    
+    {# <script src="js/home.min.js" async></script> #}
+
     <!-- Open Graph -->
     <meta name="twitter:site" content="@craigdoesdesign" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -33,13 +35,17 @@
     <meta property="og:description" content="User focused design online and in print."/>
     <meta property="og:image" content="https://www.sequoiacap.com/img/c/home_intro_us_1.jpg"/>
     
-    {% include "partials/_deferscript-home.njk" %}
-
+    {# {% include "partials/_deferscript-home.njk" %} #}
 </head>
-<body class="home" data-hijacking="on" data-animation="parallax">
+
+<body class="home" data-animation="parallax">
     {% include "partials/_header.njk" %} 
+
     <!-- You write code for this content block in another file -->
     {% block content %}
+
     {% endblock %}  
+    {% include "partials/_footer.njk" %}
 </body>
+
 </html>

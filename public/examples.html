@@ -19,12 +19,14 @@
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="msapplication-config" content="/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+
+    <!-- preload & preconnect -->
     
     <link href="css/styles.css" rel="stylesheet">
     
     <!-- Scripts -->
-    <script src="js/libs/modernizr-custom.js" rel="javascript"></script>
     
+
     <!-- Open Graph -->
     <meta name="twitter:site" content="@craigdoesdesign" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -33,26 +35,10 @@
     <meta property="og:description" content="User focused design online and in print."/>
     <meta property="og:image" content="https://www.sequoiacap.com/img/c/home_intro_us_1.jpg"/>
     
-    <script>
-    document.addEventListener("DOMContentLoaded", theDomHasLoaded, false);
     
-    function theDomHasLoaded(e) {
-        [
-            // The default scripts loaded on the page
-            'js/libs/jquery.min.js',
-            'js/home.min.js'
-            // add any further scripts to defer here
-        ].forEach(function(src) {
-            var script = document.createElement('script');
-            script.src = src;
-            script.async = false;
-            document.head.appendChild(script);
-        });
-    }
-</script>
-
 </head>
-<body class="home" data-hijacking="on" data-animation="parallax">
+
+<body class="home" data-animation="parallax">
     <header class="pageHeader">
     <div class="pageHeader__nav">
         <a href="/" class="logo">
@@ -73,6 +59,7 @@
 
 
  
+
     <!-- You write code for this content block in another file -->
      
 
@@ -102,10 +89,6 @@
 <div class="wrap">
     
      
-
-<section class="feature visible">
-    <div class="feature__container"><!-- wait! what? is this empty? --></div>
-</section>
 
 
  
@@ -154,11 +137,14 @@
             <h2 class="feature__title">Nik Burns</h2>
             <p class="feature__summary">Website for steampunk sculptor &amp; designer-maker</p>
         </div> 
+
+        <a href="nik-burns.html" class="feature__link">View project<span class="icon--arrow-right"></span></a>
         
         <ul class="feature__nav listless">
             <li><a href="#0" class="cd-prev inactive">Prev</a></li>
             <li><a href="#0" class="cd-next">Next</a></li>
         </ul>
+        
         <div class="feature__image"><img src="/images/feature-nik-burns.jpg" alt="Nik Burns" /></div>
     </div>
 </section>
@@ -211,11 +197,14 @@
             <h2 class="feature__title">Benedict Homer</h2>
             <p class="feature__summary">Branding &amp; website for artist &amp; designer-maker</p>
         </div> 
+
+        <a href="benedict-homer.html" class="feature__link">View project<span class="icon--arrow-right"></span></a>
         
         <ul class="feature__nav listless">
             <li><a href="#0" class="cd-prev inactive">Prev</a></li>
             <li><a href="#0" class="cd-next">Next</a></li>
         </ul>
+        
         <div class="feature__image"><img src="/images/feature-benedict-homer.jpg" alt="Benedict Homer" /></div>
     </div>
 </section>
@@ -268,11 +257,14 @@
             <h2 class="feature__title">Meadow Arts</h2>
             <p class="feature__summary">Marketing &amp; exhibition interpretation material</p>
         </div> 
+
+        <a href="meadow-arts.html" class="feature__link">View project<span class="icon--arrow-right"></span></a>
         
         <ul class="feature__nav listless">
             <li><a href="#0" class="cd-prev inactive">Prev</a></li>
             <li><a href="#0" class="cd-next">Next</a></li>
         </ul>
+        
         <div class="feature__image"><img src="/images/feature-meadow-arts.jpg" alt="Meadow Arts" /></div>
     </div>
 </section>
@@ -325,11 +317,14 @@
             <h2 class="feature__title">Dorset Council</h2>
             <p class="feature__summary">County council website &amp; information hub</p>
         </div> 
+
+        <a href="dorset-council.html" class="feature__link">View project<span class="icon--arrow-right"></span></a>
         
         <ul class="feature__nav listless">
             <li><a href="#0" class="cd-prev inactive">Prev</a></li>
             <li><a href="#0" class="cd-next">Next</a></li>
         </ul>
+        
         <div class="feature__image"><img src="/images/feature-dorset-council.jpg" alt="Dorset Council" /></div>
     </div>
 </section>
@@ -382,11 +377,14 @@
             <h2 class="feature__title">Lumberjack Tools</h2>
             <p class="feature__summary">Branding &amp; website for online tools retailer</p>
         </div> 
+
+        <a href="lumberjack-tools.html" class="feature__link">View project<span class="icon--arrow-right"></span></a>
         
         <ul class="feature__nav listless">
             <li><a href="#0" class="cd-prev inactive">Prev</a></li>
             <li><a href="#0" class="cd-next">Next</a></li>
         </ul>
+        
         <div class="feature__image"><img src="/images/feature-lumberjack-tools.jpg" alt="Lumberjack Tools" /></div>
     </div>
 </section>
@@ -439,11 +437,14 @@
             <h2 class="feature__title">Church Stretton Visitor Guides</h2>
             <p class="feature__summary">Visitor guides for a beautiful tourist destination in the Shropshire Hills</p>
         </div> 
+
+        <a href="church-stretton-visitor-guides.html" class="feature__link">View project<span class="icon--arrow-right"></span></a>
         
         <ul class="feature__nav listless">
             <li><a href="#0" class="cd-prev inactive">Prev</a></li>
             <li><a href="#0" class="cd-next">Next</a></li>
         </ul>
+        
         <div class="feature__image"><img src="/images/feature-church-stretton-visitor-guides.jpg" alt="Church Stretton Visitor Guides" /></div>
     </div>
 </section>
@@ -496,11 +497,14 @@
             <h2 class="feature__title">Parkway Restaurant</h2>
             <p class="feature__summary">Website for tasca bar &amp; restaurant</p>
         </div> 
+
+        <a href="parkway-restaurant.html" class="feature__link">View project<span class="icon--arrow-right"></span></a>
         
         <ul class="feature__nav listless">
             <li><a href="#0" class="cd-prev inactive">Prev</a></li>
             <li><a href="#0" class="cd-next">Next</a></li>
         </ul>
+        
         <div class="feature__image"><img src="/images/feature-parkway-restaurant.jpg" alt="Parkway Restaurant" /></div>
     </div>
 </section>
@@ -510,5 +514,45 @@
 </div>
 
   
+    
+
+<footer class="page-footer">
+    <nav class="secondary-nav">
+        
+
+<nav class="secondary-nav">
+    <ul class="secondary-nav__list listless clearfix">
+        
+        <li class="secondary-nav__item">
+            <a href="/contact.html" class="secondary-nav__link">get in touch</a>
+        </li>
+        
+        <li class="secondary-nav__item">
+            <a href="https://twitter.com/CraigDoesDesign" class="secondary-nav__link">twitter</a>
+        </li>
+        
+        <li class="secondary-nav__item">
+            <a href="https://dribbble.com/craigomatic" class="secondary-nav__link">dribbble</a>
+        </li>
+        
+        <li class="secondary-nav__item">
+            <a href="https://unsplash.com/craigomatic" class="secondary-nav__link">unsplash</a>
+        </li>
+        
+        <li class="secondary-nav__item">
+            <a href="https://www.behance.net/craigcooper" class="secondary-nav__link">behance</a>
+        </li>
+        
+        <li class="secondary-nav__item">
+            <a href="https://www.linkedin.com/in/craigjcooper/" class="secondary-nav__link">linked in</a>
+        </li>
+        
+    </ul>
+</nav>
+
+
+    </nav>
+</footer>
 </body>
+
 </html>

@@ -1,31 +1,20 @@
-{% import "macros/_socialising.njk" as social %} 
+{# {% import "macros/_socialising.njk" as social %}  #}
 
 {% extends "_layout-home.njk" %}
 {% block content %} 
 
-<section class="section splash">
-    {% include "partials/_title.njk" %}
+<div class="content">
+    <section class="section splash">
+        {% include "partials/_title.njk" %}
 
-    <div class="splash__content">
-        <div class="splash__monogram"><img src="images/monogram.svg" alt="slowly animating logo"></div>
-        <h2 class="splash__strap">Creating user-focused design <br>for the web and in print</h2>
-    </div>
+        <div class="splash__content">
+            <div class="splash__monogram"><img src="images/monogram.svg" alt="slowly animating logo"></div>
+            <h2 class="splash__strap">Creating user-focused design <br>for the web and in print</h2>
+        </div>
+        
+    </section>
 
-    {{ social.socialLink (
-        [
-            ['get in touch', '/contact.html'],
-            ['twitter', 'https://twitter.com/CraigDoesDesign'],
-            ['dribbble', 'https://dribbble.com/craigomatic'],
-            ['unsplash', 'https://unsplash.com/craigomatic'],
-            ['behance', 'https://www.behance.net/craigcooper'],
-            ['linked in', 'https://www.linkedin.com/in/craigjcooper/']
-        ]
-    )}}
-    
-</section>
-
-<div class="wrap">
-    {% include "partials/_features.njk" %} 
+{% include "partials/_features.njk" %} 
 </div>
 
 {% endblock %}

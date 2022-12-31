@@ -4,7 +4,7 @@
     summary
 ) %} 
 
-<section id="{{ id }}" class="feature {{ id }}">
+<section id="{{ title | replace(" ", "-") | lower }}" class="feature {{ title | replace(" ", "-") | lower }}">
     <div class="feature__container"> 
             
         <div class="feature__overlay">
@@ -48,12 +48,15 @@
             <h2 class="feature__title">{{ title }}</h2>
             <p class="feature__summary">{{ summary }}</p>
         </div> 
-        {#<a href="{{ id }}.html" class="feature__link">View project<span class="icon--arrow-right"></span></a>#}
+
+        <a href="{{ id }}.html" class="feature__link">View project<span class="icon--arrow-right"></span></a>
+        
         <ul class="feature__nav listless">
             <li><a href="#0" class="cd-prev inactive">Prev</a></li>
             <li><a href="#0" class="cd-next">Next</a></li>
         </ul>
-        <div class="feature__image"><img src="/images/feature-{{ id }}.jpg" alt="{{ title }}" /></div>
+        
+        <div class="feature__image"><img src="/images/feature-{{ title | replace(" ", "-") | lower }}.jpg" alt="{{ title }}" /></div>
     </div>
 </section>
 
