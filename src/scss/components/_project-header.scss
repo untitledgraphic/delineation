@@ -56,7 +56,7 @@
     }
 
 
-@include mq($from: medium) {
+@media ($from-medium) {
     
     .hero__banner {
         background: $bg;
@@ -84,7 +84,7 @@
     }
 }
 
-@include mq($from: large) {
+@media ($from-large) {
 
     .project-meta__type,
     .project-meta__detail {
@@ -93,7 +93,7 @@
 }
 
 
-@include mq($from: xlarge) {
+@media ($from-xlarge) {
     
     .hero__banner {
          padding: rem-calc(70) 8.333%;
@@ -101,7 +101,7 @@
 }
 
 
-@include mq($until: large, $and: '(orientation: landscape)') {
+@media ($to-large) and ($landscape) {
     
     .hero__banner {
         right: rem-calc(70);

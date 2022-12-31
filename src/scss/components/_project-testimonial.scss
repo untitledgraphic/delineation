@@ -46,7 +46,7 @@
 }
 
 
-@include mq($and: '(orientation: landscape)') {
+@media ($landscape) {
     
     .testimonial {
         padding-right: rem-calc(70);
@@ -54,7 +54,7 @@
 }
 
 
-@include mq($from: large, $and: '(orientation: landscape)') {
+@media ($from-large) and ($landscape) {
     
     .testimonial {
         padding-right: 0;
@@ -62,7 +62,7 @@
 }
 
 
-@include mq($from: medium) {
+@media ($from-medium) {
     
     .testimonial__content,
     .testimonial__content p {
@@ -71,11 +71,7 @@
 }
     
 
-@include mq($from: large) {
-    
-    .testimonial__content,
-    .testimonial__content p {
-    }
+@media ($from-large) {
     
     .testimonial__content {
 
@@ -101,7 +97,7 @@
 }
 
 
-@include mq($from: xlarge) {
+@media ($from-xlarge) {
     
     .testimonial__content {
         

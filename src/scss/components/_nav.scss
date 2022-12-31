@@ -112,7 +112,7 @@ a.pageHeader__helper {
 }
 
 
-@include mq($from: small, $and: '(orientation: portarit)') {
+@media ($from-small) and ($portrait) {
     
     .rule {
         top: 50%;
@@ -122,7 +122,7 @@ a.pageHeader__helper {
 }
 
 
-@include mq($from: small, $and: '(orientation: landscape)') {
+@media ($from-small) and  ($landscape) {
         
     .pageHeader {
         left: auto;
@@ -144,7 +144,7 @@ a.pageHeader__helper {
     }
 }
 
-@include mq($from: medium, $and: '(orientation: landscape)') {
+@media ($from-medium) and ($landscape) {
     
     .pageHeader {
 	   width: 8.333%;
@@ -157,7 +157,7 @@ a.pageHeader__helper {
 }
 
 
-@include mq($from: medium, $and: '(orientation: portrait)') {
+@media ($from-medium) and ($portrait) {
     
     .pageHeader {
         padding: rem-calc(22) rem-calc(20);
@@ -170,7 +170,7 @@ a.pageHeader__helper {
 }
 
 
-@include mq($from: large, $and: '(orientation: landscape)') {  
+@media ($from-large) and ($landscape) {  
         
     .pageHeader {
         padding: rem-calc(20) 0;
@@ -182,7 +182,7 @@ a.pageHeader__helper {
     }
 }
 
-@include mq($from: xxlarge) {  
+@media ($from-xxlarge) {  
     
     .pageHeader {
         padding: rem-calc(30) 0;
@@ -357,7 +357,7 @@ a.mainNav__link:hover .mainNav__summary {
 }
 
 
-@media (orientation: portrait) {
+@media ($portrait) {
     
     .mainNav {
         top: auto;
@@ -371,7 +371,7 @@ a.mainNav__link:hover .mainNav__summary {
 }
 
 
-@media (orientation: landscape) {
+@media ($landscape) {
     
     .mainNav {
         flex-direction: row;
@@ -427,7 +427,7 @@ a.mainNav__link:hover .mainNav__summary {
 }
 
 
-@include mq($from: large) {
+@media ($from-large) {
     
     .mainNav__title,
     .mainNav__summary {
@@ -438,7 +438,7 @@ a.mainNav__link:hover .mainNav__summary {
 }
 
 
-@include mq($from: medium, $and: '(orientation: landscape)') {  
+@media ($from-medium) and ($landscape) {  
     
     .mainNav__action {
         width: rem-calc(110);

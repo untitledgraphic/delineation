@@ -125,7 +125,7 @@
 }
 
 
-@include mq($and: '(orientation: portrait)') {
+@media ($portrait) {
     
     .project {
         margin-bottom: 25vh;
@@ -141,7 +141,7 @@
 }
 
 
-@include mq($from: medium) {
+@media ($from-medium) {
     
     .preview__content {
         padding: rem-calc(45) 0;
@@ -161,7 +161,7 @@
 }
 
 
-@include mq($from: large) {
+@media ($from-large) {
     
     .preview__content {
         padding: rem-calc(60) 0;

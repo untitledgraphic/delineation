@@ -95,10 +95,7 @@ textarea {
 img {
     max-width: 100%;
     height: auto;
-
-    // IE fix bicubic scaling for images
-    -ms-interpolation-mode: bicubic;
-
+    
     // Get rid of gap under images by making them display: inline-block; by default
     display: inline-block;
     vertical-align: middle;

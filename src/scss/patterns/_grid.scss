@@ -53,22 +53,4 @@
     }
  }
 
-/**
- * Grid HTML classes
- */
 
-@include mq() {
-    @include grid-html-classes($size: small);
-}
-
-@include mq($from: medium) {
-    @include grid-html-classes($size: medium);
-}
-
-@include mq($from: large) {
-    @include grid-html-classes($size: large);
-}
-
-@include mq($from: xlarge) {
-    @include grid-html-classes($size: xlarge);
-}

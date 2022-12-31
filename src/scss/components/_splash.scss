@@ -90,7 +90,7 @@
 }
 
 
-@include mq($from: medium) {
+@media ($from-medium) {
     
     .splash__monogram {
         width: 40%;
@@ -102,7 +102,7 @@
 }
 
 
-@include mq($from: large) {
+@media ($from-large) {
     
     .splash__monogram {
         width: 33.333%;

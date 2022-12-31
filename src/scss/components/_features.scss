@@ -37,7 +37,7 @@
 }
 
 
-@include mq($and: '(orientation: landscape)') {
+@media ($landscape) {
     
     .feature {
         padding: rem-calc(15) rem-calc(85) rem-calc(15) rem-calc(15);
@@ -135,7 +135,7 @@
     display: inline;
 }
     
-@media (min-width:rem-calc(375)) and (orientation: portrait) {
+@media (min-width:rem-calc(375)) and ($portrait) {
     
     .feature__head,
     .feature.visible .feature__head {
@@ -155,7 +155,7 @@ mask lineargradient stop {
 }
 
 
-@include mq($from: large) {
+@media ($from-large) {
     
     .feature {
         
@@ -191,7 +191,7 @@ mask lineargradient stop {
     }
 }
 
-@include mq($and: '(orientation: landscape)') {
+@media ($landscape) {
     
     .mask--horz {
         display: inline;
@@ -203,7 +203,7 @@ mask lineargradient stop {
 }
 
 
-@include mq($from: medium, $and: '(orientation: portrait)') {
+@media ($from-medium) and ($portrait) {
     
     .feature {
         padding: rem-calc(85) rem-calc(80);
@@ -228,7 +228,7 @@ mask lineargradient stop {
 }
 
 
-@include mq($from: medium, $and: '(orientation: landscape)') {
+@media ($from-medium) and ($landscape) {
     
     .feature {
         padding: rem-calc(80) 8.333%;
@@ -257,7 +257,7 @@ mask lineargradient stop {
 }
 
 
-@include mq($from: large, $and: '(orientation: landscape)') {
+@media ($from-large) and ($landscape) {
     
     .feature__head {
         top: calc(25% + 60px);
@@ -281,7 +281,7 @@ mask lineargradient stop {
     }
 }
 
-@include mq($from: large) {
+@media ($from-large) {
     
     .feature__head {
         position: absolute;
@@ -330,7 +330,7 @@ mask lineargradient stop {
         visibility 0s 0.2s;
 }
 
-@include mq($from: large) {
+@media ($from-large) {
     
     .feature__nav {
         display: block;

@@ -36,7 +36,7 @@
 }
 
 
-@include mq($and: '(orientation: portrait)') {
+@media ($portrait) {
     
     .intro {
         padding: rem-calc(70) rem-calc(30);
@@ -54,7 +54,7 @@
     }
 }
 
-@include mq($from: medium, $and: '(orientation: portrait)') {
+@media ($from-medium) and ($portrait) {
     
     .intro {
         min-height: 50vh;
@@ -69,7 +69,7 @@
     }
 }
 
-@include mq($from: large) {
+@media ($from-large) {
     
     .intro {
 //        padding: rem-calc(110);

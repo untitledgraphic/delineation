@@ -4,121 +4,13 @@
  * Grid HTML classes
  */
 
-@mixin grid-html-classes($size, $breakpoints: $mq-breakpoints) {
-  // Check the size is in our mq-breakpoints map
-  @if map-has-key($breakpoints, $size) {
-    // Push and pull
-    @for $i from 0 through $total-columns - 1 {
-      .#{$size}-push-#{$i} {
-        position: relative;
-        left: column-calc($i);
-        right: auto;
-      }
 
-      .#{$size}-pull-#{$i} {
-        position: relative;
-        right: column-calc($i);
-        left: auto;
-      }
-    }
-
-    // Column
-    @for $i from 1 through $total-columns {
-      .#{$size}-#{$i} {
-        width: column-calc($i);
-      }
-    }
-
-    // Offset
-    @for $i from 0 through $total-columns - 1 {
-      .#{$size}-offset-#{$i} {
-        margin-left: column-calc($i) !important;
-      }
-    }
-
-    // Reset
-    .#{$size}-reset-order {
-      float: left;
-      left: auto;
-      margin-left: 0;
-      margin-right: 0;
-      right: auto;
-    }
-
-    // Centered
-    .column.#{$size}-centered {
-      margin-left: auto;
-      margin-right: auto;
-      float: none;
-    }
-
-    .column.#{$size}-uncentered {
-      float: left;
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-    // Fighting [class*="column"] + [class*="column"]:last-child
-    .column.#{$size}-centered:last-child {
-      float: none;
-    }
-
-    // Fighting .column.<previous-size>-centered:last-child
-    .column.#{$size}-uncentered:last-child {
-      float: left;
-    }
-
-    .column.#{$size}-uncentered.opposite {
-      float: right;
-    }
-
-    // Row
-    .row {
-      &.#{$size}-collapse {
-        > .column {
-          padding-left: 0;
-          padding-right: 0;
-        }
-
-        .row {
-          margin-left: 0;
-          margin-right: 0;
-        }
-      }
-      &.#{$size}-uncollapse {
-        > .column {
-          padding-left: ( math.div($column-gutter, 2) );
-          padding-right: ( math.div($column-gutter, 2) );
-          float: left;
-        }
-      }
-    }
-  } @else {
-    @warn "Breakpoint #{$size} wasn't found in $breakpoints.";
-  }
-}
 
 /**
  * Align classes
  */
 
-@mixin align-classes($size) {
-    .#{$size}-text-left {
-        text-align: left !important;
-    }
 
-    .#{$size}-text-right {
-        text-align: right !important;
-    }
-
-    .#{$size}-text-center {
-        text-align: center !important;
-    }
-
-    .#{$size}-text-justify {
-        text-align: justify !important;
-    }
-}
 
 /**
  * Vertical align middle

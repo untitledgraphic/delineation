@@ -39,7 +39,7 @@
 }
 
 
-@include mq($until: medium) {
+@media ($to-medium)  {
     
     .secondary-nav__item:nth-of-type(2) {
         clear: left;
@@ -47,7 +47,7 @@
 }
 
 
-@include mq($from: medium) {
+@media ($from-medium) {
     
     .home .secondary__nav {
         z-index: 0;
@@ -59,7 +59,7 @@
 }
 
 
-@include mq($from: small, $and: '(orientation: landscape)') {
+@media ($from-small) and  ($landscape) {
     
     .home .secondary-nav {
         z-index: 6;
@@ -67,7 +67,7 @@
 }
 
 
-@include mq($from: medium, $and: '(orientation: portrait)') {
+@media ($from-medium) and ($portrait) {
     
     .home .secondary-nav {
         left: rem-calc(60);
@@ -84,7 +84,7 @@
 }
 
 
-@include mq($from: medium, $and: '(orientation: landscape)') {
+@media ($from-medium) and ($landscape) {
     
     .home .secondary-nav {
         padding: 0 8.333%;
@@ -97,7 +97,7 @@
 }
 
 
-@include mq($from: large, $and: '(orientation: landscape)') {
+@media ($from-large) and ($landscape) {
     
     .home .secondary-nav {
         left: 0;

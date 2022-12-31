@@ -29,7 +29,7 @@
 }
 
 
-@include mq($from: small, $and: '(orientation: landscape)') {
+@media ($from-small) and  ($landscape) {
     
     .hello {
         padding-right: rem-calc(90);
@@ -37,7 +37,7 @@
 }
 
 
-@include mq($from: medium) {
+@media ($from-medium) {
     
     .hello {
         padding: rem-calc(85) 0;
@@ -60,7 +60,7 @@
 }
 
 
-@include mq($from: large) {
+@media ($from-large) {
     
     .hello__title {
         position: relative;

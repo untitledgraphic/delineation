@@ -1,10 +1,10 @@
 /*
- * Name: Scaffolding
+ * Name: Delineation
  * Author: Craig Cooper
- * Author URI: http://craigomatic.co.uk
+ * Author URI: http://craigomaic.co.uk
  * Description: A front-end framework
- * Version: 0.1.1
- */ 
+ * Version: 0.0.2
+ */
 
 // Paths
 var pathSass     = 'src/scss/';
@@ -35,16 +35,13 @@ var nunjucksRender = require('gulp-nunjucks-render');
 
 // Scripts object
 var uiscripts = [
-    pathJs + 'app.js',
-    pathJs + 'libs/jquery.lazy.js'
+    pathJs + 'global.js',
+    //pathJs + 'libs/jquery.lazy.js'
 ];
 
 var homescripts = [
-    pathJs + 'libs/velocity.min.js',
-    pathJs + 'libs/velocity.ui.min.js',
-    pathJs + 'libs/scrollFX.js',
-    pathJs + 'app.js',
-    pathJs + 'libs/jquery.lazy.js'
+    pathJs + 'global.js',
+    // pathJs + 'libs/jquery.lazy.js'
 ];
 
 // Sass
@@ -80,12 +77,9 @@ gulp.task('js-lint', function() {
 // JavaScript concat and minify
 gulp.task('js', gulp.series('js-lint', function() {
     return gulp.src(uiscripts)
-    //.pipe(sourcemaps.init())
+    .pipe(sourcemaps.init())
     .pipe(concat('app.min.js'))
-//    .pipe(uglify({
-//      preserveComments: 'license'
-//    }))
-//    .pipe(sourcemaps.write('.'))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('public/js'));
 }));
 
@@ -94,9 +88,6 @@ gulp.task('js1', gulp.series('js-lint', function() {
     return gulp.src(homescripts)
     .pipe(sourcemaps.init())
     .pipe(concat('home.min.js'))
-//    .pipe(uglify({
-//      preserveComments: 'license'
-//    }))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('public/js'));
 }));

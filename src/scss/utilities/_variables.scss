@@ -1,8 +1,27 @@
-/**
- * Assets paths
- */
-
+// Assets paths
 $path--compile:             "../";
+
+// Breakpoints
+$small:             415;
+$medium:            768;
+$large:             1180;
+$xlarge:            1440;
+$xxlarge:           1920;
+
+$to-small:          'max-width:' $small - 1 + px;
+$to-medium:         'max-width:' $medium - 1 + px;
+$to-large:          'max-width:' $large - 1 + px;
+$to-xlarge:         'max-width:' $xlarge - 1 + px;
+$to-xxlarge:        'max-width:' $xxlarge - 1 + px;
+
+$from-small:        'min-width:' $small + px;
+$from-medium:       'min-width:' $medium + px;
+$from-large:        'min-width:' $large + px;
+$from-xlarge:       'min-width:' $xlarge + px;
+$from-xxlarge:      'min-width:' $xxlarge + px;
+
+$landscape:         'orientation:' landscape;
+$portrait:          'orientation:' portrait;
 
 /**
  * Base
@@ -76,25 +95,7 @@ $header-sizes: (
   ),
 ) !default;
 
-/**
- * Breakpoints
- * Override default settings from _mq.scss partial
- * https://github.com/sass-mq/sass-mq
- */
 
-$mq-breakpoints: (
-  small:   321px,
-  medium:  768px,
-  large:   1025px,
-  xlarge:  1380px,
-  xxlarge: 1920px
-);
-
-// Set the media type
-$mq-media-type: only screen;
-
-// Show the breakpoints in the browser
-// $mq-show-breakpoints: (small, medium, large, xlarge, xxlarge);
 
 /**
  * Icons

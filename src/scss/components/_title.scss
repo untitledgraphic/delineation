@@ -2,7 +2,7 @@
     display: none;
 }
 
-@include mq($from: medium, $and: '(orientation: portrait)') {
+@media ($from-medium) and ($portrait) {
     .site {
         display: block;
         position: fixed;
@@ -20,7 +20,7 @@
     }
 }
 
-@include mq($from: medium, $and: '(orientation: landscape)') {
+@media ($from-medium) and ($landscape) {
     
     .site {
         display: block;

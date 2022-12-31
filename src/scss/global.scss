@@ -1,8 +1,8 @@
 /*
- * Name: Atlas
- * Author: Zengenti Ltd
- * Author URI: http://zengenti.com
- * Description: A modern front-end framework
+ * Name: Delineation
+ * Author: Craig Cooper
+ * Author URI: http://craigomaic.co.uk
+ * Description: A front-end framework
  * Version: 0.0.2
  */
 
@@ -15,7 +15,6 @@
 @import "utilities/mixins";
 @import "utilities/functions";
 @import "utilities/variables";
-@import "utilities/mq";
 
 /**
  * Base
@@ -41,26 +40,25 @@
  */
 
 @import "components/helpers";
-@import "components/visibility";
+//@import "components/visibility";
 @import "components/utility";
-@import "components/icons";
-@import "components/nav";
+//@import "components/icons";
+//@import "components/nav";
 @import "components/secondary-nav";
 @import "components/title";
-@import "components/splash";
-//@import "components/scrollFX";
-@import "components/features";
-@import "components/nav-slides";
+// @import "components/splash";
+// @import "components/features";
+// @import "components/nav-slides";
 
-@import "components/project-header";
-@import "components/project-intro";
-@import "components/project-images";
-@import "components/project-testimonial";
-@import "components/project-thumbnails";
+// @import "components/project-header";
+// @import "components/project-intro";
+// @import "components/project-images";
+// @import "components/project-testimonial";
+// @import "components/project-thumbnails";
 
-@import "components/hello";
-@import "components/brands";
-@import "components/contact";
+// @import "components/hello";
+// @import "components/brands";
+// @import "components/contact";
 
 @import "components/project-footer";
 

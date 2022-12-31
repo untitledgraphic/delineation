@@ -38,7 +38,7 @@
 }
 
 
-@include mq($from: small, $and: '(orientation: landscape)') {
+@media ($from-small) and  ($landscape) {
     
     .brands p {
         padding-right: rem-calc(90);
@@ -46,7 +46,7 @@
 }
 
 
-@include mq($from: medium) {
+@media ($from-medium) {
     
     .brands {
         
@@ -73,7 +73,7 @@
 }
 
 
-@include mq($from: large) {
+@media ($from-large) {
     
     .brands {
         padding: rem-calc(120) 0;
