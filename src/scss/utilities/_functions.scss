@@ -1,9 +1,11 @@
+@use "sass:math";
+
 /**
  * Calculate columns
  */
 
 @function column-calc($columns) {
-    $result: percentage(( $columns / $total-columns ));
+    $result: percentage(( math.div($columns, $total-columns) ));
     @if $result == 0% { $result: 0; }
     @return $result;
 }
@@ -14,7 +16,10 @@
  */
 
 @function strip-unit($num) {
-    @return $num / ($num * 0 + 1);
+    //@return $num / ($num * 0 + 1);
+
+    @return math.div( $num, ( $num * 0 * 1 ) );
+    //math.div(12px, 4px);
 }
 
 /**
@@ -22,7 +27,7 @@
  */
 
 @function convert-to-rem($value, $base-value: $base--rem) {
-    $value: strip-unit($value) / strip-unit($base-value) * 1rem;
+    $value: math.div(strip-unit($value), strip-unit($base-value)) * 1rem;
     @if ($value == 0rem) { $value: 0; } // Turn 0rem into 0
     @return $value;
 }

@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /**
  * Row
  */
@@ -23,7 +25,7 @@
 
 .row .row {
     @include clearfix;
-    margin: 0 (-$column-gutter / 2);
+    margin: 0 ( math.div(-$column-gutter, 2) );
     max-width: none;
     width: auto;
 
@@ -41,8 +43,8 @@
 
 .column {
     position: relative;
-    padding-left: ($column-gutter / 2);
-    padding-right: ($column-gutter / 2);
+    padding-left: (math.div(-$column-gutter, 2));
+    padding-right: (math.div(-$column-gutter, 2));
     width: 100%;
     float: left;
 

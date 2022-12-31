@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /// https://github.com/sass-mq/sass-mq
 
 /// Base font size on the `<body>` element
@@ -98,7 +100,10 @@ $mq-media-type: all !default;
     } @else if unit($px) == em {
         @return $px;
     }
-    @return ($px / $base-font-size) * 1em;
+    //@return ($px / $base-font-size) * 1em;
+    @return ( math.div( $px, $base-font-size ) ) * 1em;
+
+
 }
 
 /// Get a breakpoints width
